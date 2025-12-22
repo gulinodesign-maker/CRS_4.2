@@ -2047,7 +2047,7 @@ body {
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.74 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.77 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -2082,6 +2082,83 @@ body {
   display:flex;
   justify-content:center;
 }
+
+/* ===== BUILD 4.77 – HOME login/logout pill under yellow card (like reference) ===== */
+#home-view{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  min-height:100vh;
+}
+
+.home-bottom-area{
+  width: 100%;
+  max-width: 420px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.home-account-pill{
+  width: min(340px, 86vw);
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  background: var(--coyote-red, #e00);
+  color:#fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.28);
+}
+
+.home-version-label{
+  font-size: 14px;
+  opacity: 0.55;
+}
+
+.home-footer-hidden{ display:none !important; }
+
+
+/* ===== BUILD 4.77 – HOME audio toggle under account pill ===== */
+.home-audio-pill{
+  width: min(340px, 86vw);
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  background: rgba(255,255,255,0.10);
+  color:#fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.22);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+
+/* ===== BUILD 4.77 – Audio icon button + red build label ===== */
+.home-audio-pill{
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.12);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 20px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+.home-version-label{
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #e00;
+  opacity: 0.9;
+}
+
 </style>
 
 
@@ -6319,8 +6396,17 @@ body {
 
   </div>
 
+  <!-- Home account button + version (outside yellow card) -->
+  <div class="home-bottom-area">
+    <button id="home-account-pill" type="button" class="home-account-pill" aria-label="Account">Account</button>
+
+    <button id="home-audio-pill" type="button" class="home-audio-pill" aria-label="Audio toggle">🔊</button>
+    <div id="home-version-label" class="home-version-label"></div>
+
+</div>
+
   <div style="height:60px;"></div>
-<div id="home-footer">
+<div id="home-footer" class="home-footer-hidden">
     <div id="tech-status-bar" role="group" aria-label="Barra stato">
       <div class="tsb-left">
         <button id="home-logout-btn" type="button" class="tsb-icon-btn" aria-label="Logout">⎋</button>
@@ -6659,7 +6745,7 @@ body {
 <script>
 "use strict";
 
-const APP_VERSION = "4.73";
+const APP_VERSION = "4.77";
 const BUILD_DATE = "";
 const API_URL = "https://script.google.com/macros/s/AKfycbxon71F47wVkq1DFK7DBqQ2-j90ZTevoKOWEpE6h8DEbE5pW4eAl0GvC6gbTGXQp-_1sA/exec";
 
@@ -7395,8 +7481,27 @@ function updateHomeAccountPill() {
 }
 
 if (versionLabel) {
-  versionLabel.textContent = "Build " + APP_VERSION;
+  versionLabel.textContent = APP_VERSION;
 }
+
+const homeVersionLabel = document.getElementById("home-version-label");
+if (homeVersionLabel) homeVersionLabel.textContent = APP_VERSION;
+
+// Home audio toggle (soundsEnabled + localStorage)
+const homeAudioPill = document.getElementById("home-audio-pill");
+function __syncHomeAudioPill(){
+  if (!homeAudioPill) return;
+  homeAudioPill.textContent = soundsEnabled ? "🔊" : "🔇";
+}
+__syncHomeAudioPill();
+homeAudioPill?.addEventListener("click", () => {
+  setSoundsEnabled(!soundsEnabled);
+  // iOS: ensure AudioContext is allowed only after gesture; this call is safe
+  __ensureAudioCtx();
+  __syncHomeAudioPill();
+});
+
+
 
 updateAccountBadge();
 updateHomeAccountPill();
