@@ -2047,7 +2047,7 @@ body {
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.77 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.78 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -2083,7 +2083,7 @@ body {
   justify-content:center;
 }
 
-/* ===== BUILD 4.77 – HOME login/logout pill under yellow card (like reference) ===== */
+/* ===== BUILD 4.78 – HOME login/logout pill under yellow card (like reference) ===== */
 #home-view{
   display:flex;
   flex-direction:column;
@@ -2121,7 +2121,7 @@ body {
 .home-footer-hidden{ display:none !important; }
 
 
-/* ===== BUILD 4.77 – HOME audio toggle under account pill ===== */
+/* ===== BUILD 4.78 – HOME audio toggle under account pill ===== */
 .home-audio-pill{
   width: min(340px, 86vw);
   border: none;
@@ -2137,7 +2137,7 @@ body {
 }
 
 
-/* ===== BUILD 4.77 – Audio icon button + red build label ===== */
+/* ===== BUILD 4.78 – Audio icon button + red build label ===== */
 .home-audio-pill{
   width: 44px;
   height: 44px;
@@ -2157,6 +2157,16 @@ body {
   font-weight: 700;
   color: #e00;
   opacity: 0.9;
+}
+
+
+/* ===== BUILD 4.78 – Grouped home controls, lowered by 50px ===== */
+.home-controls-group{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap: 10px;
+  margin-top: 50px; /* move group down */
 }
 
 </style>
@@ -6397,15 +6407,17 @@ body {
   </div>
 
   <!-- Home account button + version (outside yellow card) -->
-  <div class="home-bottom-area">
+  
+<div class="home-bottom-area">
+  <div class="home-controls-group">
     <button id="home-account-pill" type="button" class="home-account-pill" aria-label="Account">Account</button>
-
     <button id="home-audio-pill" type="button" class="home-audio-pill" aria-label="Audio toggle">🔊</button>
     <div id="home-version-label" class="home-version-label"></div>
-
+  </div>
 </div>
 
-  <div style="height:60px;"></div>
+<div style="height:60px;"></div>
+
 <div id="home-footer" class="home-footer-hidden">
     <div id="tech-status-bar" role="group" aria-label="Barra stato">
       <div class="tsb-left">
@@ -6745,7 +6757,7 @@ body {
 <script>
 "use strict";
 
-const APP_VERSION = "4.77";
+const APP_VERSION = "4.78";
 const BUILD_DATE = "";
 const API_URL = "https://script.google.com/macros/s/AKfycbxon71F47wVkq1DFK7DBqQ2-j90ZTevoKOWEpE6h8DEbE5pW4eAl0GvC6gbTGXQp-_1sA/exec";
 
