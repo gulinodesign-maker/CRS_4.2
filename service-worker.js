@@ -1,4 +1,4 @@
-const CACHE_NAME = "CRS-4.84";
+const CACHE_NAME = "CRS-4.85";
 
 const PRECACHE = [
   "./",
@@ -6,7 +6,9 @@ const PRECACHE = [
   "./manifest.json",
   "./service-worker.js",
   "./bg-track.jpg",
-  "./logo_crs_4.84.png",
+  "./crs-logo-4.85.svg",
+  "./logo_clean_4.85.png",
+  
   
   "./crs-icon.png",
   "./crs-icon-192.png",
