@@ -2029,7 +2029,7 @@ body {
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.85 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.88 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -2065,7 +2065,7 @@ body {
   justify-content:center;
 }
 
-/* ===== BUILD 4.85 – HOME login/logout pill under yellow card (like reference) ===== */
+/* ===== BUILD 4.88 – HOME login/logout pill under yellow card (like reference) ===== */
 #home-view{
   display:flex;
   flex-direction:column;
@@ -2103,7 +2103,7 @@ body {
 .home-footer-hidden{ display:none !important; }
 
 
-/* ===== BUILD 4.85 – HOME audio toggle under account pill ===== */
+/* ===== BUILD 4.88 – HOME audio toggle under account pill ===== */
 .home-audio-pill{
   width: min(340px, 86vw);
   border: none;
@@ -2119,7 +2119,7 @@ body {
 }
 
 
-/* ===== BUILD 4.85 – Audio icon button + red build label ===== */
+/* ===== BUILD 4.88 – Audio icon button + red build label ===== */
 .home-audio-pill{
   width: 44px;
   height: 44px;
@@ -2142,7 +2142,7 @@ body {
 }
 
 
-/* ===== BUILD 4.85 – Grouped home controls, lowered by 50px ===== */
+/* ===== BUILD 4.88 – Grouped home controls, lowered by 50px ===== */
 .home-controls-group{
   display:flex;
   flex-direction:column;
@@ -2152,7 +2152,7 @@ body {
 }
 
 
-/* ===== BUILD 4.85 – GLOBAL banner FIX ===== */
+/* ===== BUILD 4.88 – GLOBAL banner FIX ===== */
 #global-banner{
   position: sticky;
   top: 0;
@@ -6323,7 +6323,7 @@ body{
 
 <style id="crs-banner-style">
 
-/* ===== BUILD 4.85 – GLOBAL banner ===== */
+/* ===== BUILD 4.88 – GLOBAL banner ===== */
 #global-banner{
   position: sticky;
   top: 0;
@@ -6345,9 +6345,8 @@ body{
 
 </style>
 <style id="crs-liquid-glass-style">
-
 /* ===============================
-   LIQUID GLASS THEME – BUILD 4.85
+   LIQUID GLASS THEME – BUILD 4.88
    (injected as separate <style>)
    =============================== */
 :root{
@@ -6440,6 +6439,116 @@ input, select, textarea{
   background: rgba(0,0,0,0.62) !important;
   backdrop-filter: blur(10px) !important;
   -webkit-backdrop-filter: blur(10px) !important;
+}
+
+
+/* ===== BUILD 4.88 – Glass calendar + performance panels ===== */
+
+/* Calendar day cells & header */
+#race-calendar,
+#race-calendar .calendar,
+#race-calendar .calendar-header,
+#race-calendar .calendar-grid,
+#race-calendar .calendar-day,
+#race-calendar .day,
+#race-calendar button{
+  background: rgba(255,255,255,0.14) !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 6px)) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 6px)) saturate(160%) !important;
+  border: 1px solid rgba(255,255,255,0.28) !important;
+  border-radius: 14px !important;
+}
+
+/* Selected days stronger glass */
+#race-calendar .selected,
+#race-calendar .active{
+  background: rgba(255,255,255,0.26) !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35) !important;
+}
+
+/* Performance main panel */
+#performance-race-header,
+#test-ranking-box,
+.bp-profile,
+.bp-history,
+.bp-race-card{
+  background: rgba(255,255,255,0.14) !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 4px)) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 4px)) saturate(150%) !important;
+  border: 1px solid rgba(255,255,255,0.30) !important;
+  border-radius: var(--lg-radius) !important;
+  box-shadow: 0 14px 34px rgba(0,0,0,0.35) !important;
+}
+
+/* Buttons inside performance */
+#performance-race-header .btn,
+#performance-race-header .home-btn,
+#performance-race-header button{
+  background: rgba(255,255,255,0.18) !important;
+  backdrop-filter: blur(var(--lg-blur)) saturate(160%) !important;
+}
+
+/* Chart / bars background glass */
+#performance-view canvas,
+#performance-view svg,
+.bp-chart,
+.bp-bars{
+  background: rgba(255,255,255,0.10) !important;
+  border-radius: 18px !important;
+  backdrop-filter: blur(var(--lg-blur)) saturate(140%) !important;
+}
+
+
+/* ===== BUILD 4.88 – Override inline backgrounds (Performance) ===== */
+
+/* Main performance white panel (inline background) -> glass */
+#performance-chart,
+#performance-chart *{
+  box-sizing: border-box;
+}
+
+#performance-chart{
+  background: rgba(255,255,255,0.14) !important;
+  border: 1px solid rgba(255,255,255,0.28) !important;
+  border-top-color: rgba(255,255,255,0.46) !important;
+  border-left-color: rgba(255,255,255,0.30) !important;
+  border-radius: var(--lg-radius) !important;
+  box-shadow: 0 16px 44px rgba(0,0,0,0.40) !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 8px)) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 8px)) saturate(160%) !important;
+  padding: 14px 14px 18px !important;
+}
+
+/* Bars container - keep transparent */
+#performance-bars{
+  background: rgba(255,255,255,0.06) !important;
+  border-radius: 18px !important;
+}
+
+/* Performance buttons (inline colors) -> glass */
+#performance-overall-btn,
+#performance-race-btn,
+#performance-reset-btn{
+  background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.10)) !important;
+  border: 1px solid rgba(255,255,255,0.34) !important;
+  border-top-color: rgba(255,255,255,0.55) !important;
+  border-left-color: rgba(255,255,255,0.35) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.34) !important;
+  backdrop-filter: blur(var(--lg-blur)) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(var(--lg-blur)) saturate(160%) !important;
+}
+
+/* Optional: keep subtle semantic tint (glass + tint) */
+#performance-overall-btn{
+  background: linear-gradient(180deg, rgba(253,224,0,0.35), rgba(255,255,255,0.10)) !important;
+  color: #111827 !important;
+}
+#performance-race-btn{
+  background: linear-gradient(180deg, rgba(22,163,74,0.35), rgba(255,255,255,0.10)) !important;
+}
+#performance-reset-btn{
+  background: linear-gradient(180deg, rgba(220,38,38,0.32), rgba(255,255,255,0.10)) !important;
 }
 
 </style>
@@ -6892,7 +7001,7 @@ input, select, textarea{
 <script>
 "use strict";
 
-const APP_VERSION = "4.85";
+const APP_VERSION = "4.88";
 const BUILD_DATE = "";
 const API_URL = "https://script.google.com/macros/s/AKfycbxon71F47wVkq1DFK7DBqQ2-j90ZTevoKOWEpE6h8DEbE5pW4eAl0GvC6gbTGXQp-_1sA/exec";
 
