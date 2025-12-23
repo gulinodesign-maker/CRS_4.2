@@ -1,38 +1,34 @@
-const CACHE_NAME = "CRS-4.79";
-const FILES_TO_CACHE = [
-  './',
-  './index.html',
-  './manifest.json',
-  './crs-icon-192.png',
-  './crs-icon-512.png',
-  './crs-icon.png',
-  './bg.jpg',
-  './logo_crs.png'
+const CACHE_NAME = "CRS-4.80";
+
+const PRECACHE = [
+  "./",
+  "./index.html",
+  "./manifest.json",
+  "./service-worker.js",
+  "./bg-track.jpg",
+  "./logo_crs.png",
+  "./crs-icon.png",
+  "./crs-icon-192.png",
+  "./crs-icon-512.png"
 ];
 
 self.addEventListener("install", e => {
-  e.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(FILES_TO_CACHE)));
   self.skipWaiting();
+  e.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(PRECACHE)));
 });
 
 self.addEventListener("activate", e => {
   e.waitUntil(
     caches.keys().then(keys =>
-      Promise.all(keys.map(k => k !== CACHE_NAME && caches.delete(k)))
+      Promise.all(keys.map(k => k !== CACHE_NAME && k.startsWith("CRS-") && caches.delete(k)))
     )
   );
   self.clients.claim();
 });
 
 self.addEventListener("fetch", e => {
-  // Avoid caching API calls
-  if (e.request.url.includes("script.google.com") || e.request.url.includes("/exec")) {
-    e.respondWith(fetch(e.request, { cache: "no-store" }));
-    return;
-  }
-
   const url = new URL(e.request.url);
-  if (url.hostname.includes("script.google.com")) return;
+  if (url.pathname.startsWith("/api")) return;
 
   if (e.request.mode === "navigate") {
     e.respondWith(
