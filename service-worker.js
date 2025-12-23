@@ -1,4 +1,4 @@
-const CACHE_NAME = "CRS-4.79";
+const CACHE_NAME = "CRS-4.78";
 const FILES_TO_CACHE = [
   "./",
   "./index.html",
@@ -6,8 +6,7 @@ const FILES_TO_CACHE = [
   "./crs-icon-192.png",
   "./crs-icon-512.png",
   "./crs-icon.png",
-  "./BANNER.jpg",
-  "./bg-ebike.jpg"
+  "./BANNER.jpg"
 ];
 
 self.addEventListener("install", e => {
