@@ -991,7 +991,42 @@ body {
   .btn-db-add   { background:var(--coyote-red); color:#ffffff; }
   .btn-db-save  { background:var(--coyote-yellow); color:#111; }
 
-  /* BANNER IN ALTO */
+  
+  /* ===== BUILD 4.79 – Background image (home + app) ===== */
+  html, body{
+    height:100%;
+  }
+  body{
+    margin:0;
+    background: url("bg.jpg") center center / cover no-repeat fixed;
+  }
+  /* dark overlay for readability */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0.60) 100%);
+    pointer-events:none;
+    z-index:-1;
+  }
+  /* ensure app layers are transparent so background shows */
+  #home-view, #loading-screen, #auth-screen{
+    background: transparent !important;
+  }
+
+  /* Top logo */
+  #top-banner-wrap{
+    margin: 12px 0 10px 0 !important;
+    justify-content:center !important;
+  }
+  #top-banner{
+    max-width: 92% !important;
+    width: 520px;
+    height: auto !important;
+    filter: drop-shadow(0 10px 22px rgba(0,0,0,0.45));
+  }
+
+/* BANNER IN ALTO */
   #top-banner-wrap {
     width:100%;
     margin:0 0 16px 0;
@@ -6381,7 +6416,7 @@ body {
 
 
 <div id="top-banner-wrap" style="width:100%; display:flex; justify-content:center; margin-bottom:8px;">
-  <img id="top-banner" src="crs-logo.png" alt="CRS Score" style="max-width:90%; height:auto; display:block; margin:auto;">
+  <img id="top-banner" src="logo_crs.png" alt="CRS Score" style="max-width:92%; height:auto; display:block; margin:auto;">
 </div>
 
 <div id="menu-wrap" style="width:100%; display:flex; justify-content:center; margin-bottom:16px;">
@@ -6757,7 +6792,7 @@ body {
 <script>
 "use strict";
 
-const APP_VERSION = "4.78";
+const APP_VERSION = "4.79";
 const BUILD_DATE = "";
 const API_URL = "https://script.google.com/macros/s/AKfycbxon71F47wVkq1DFK7DBqQ2-j90ZTevoKOWEpE6h8DEbE5pW4eAl0GvC6gbTGXQp-_1sA/exec";
 

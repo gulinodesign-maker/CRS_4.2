@@ -4,8 +4,8 @@
   "description": "CRS Score – Race Control System",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#000000",
+  "background_color": "#0a0d15",
+  "theme_color": "#0a0d15",
   "orientation": "portrait",
   "icons": [
     {
