@@ -2029,7 +2029,7 @@ body {
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.83 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.84 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -2065,7 +2065,7 @@ body {
   justify-content:center;
 }
 
-/* ===== BUILD 4.83 – HOME login/logout pill under yellow card (like reference) ===== */
+/* ===== BUILD 4.84 – HOME login/logout pill under yellow card (like reference) ===== */
 #home-view{
   display:flex;
   flex-direction:column;
@@ -2103,7 +2103,7 @@ body {
 .home-footer-hidden{ display:none !important; }
 
 
-/* ===== BUILD 4.83 – HOME audio toggle under account pill ===== */
+/* ===== BUILD 4.84 – HOME audio toggle under account pill ===== */
 .home-audio-pill{
   width: min(340px, 86vw);
   border: none;
@@ -2119,7 +2119,7 @@ body {
 }
 
 
-/* ===== BUILD 4.83 – Audio icon button + red build label ===== */
+/* ===== BUILD 4.84 – Audio icon button + red build label ===== */
 .home-audio-pill{
   width: 44px;
   height: 44px;
@@ -2142,7 +2142,7 @@ body {
 }
 
 
-/* ===== BUILD 4.83 – Grouped home controls, lowered by 50px ===== */
+/* ===== BUILD 4.84 – Grouped home controls, lowered by 50px ===== */
 .home-controls-group{
   display:flex;
   flex-direction:column;
@@ -2152,7 +2152,7 @@ body {
 }
 
 
-/* ===== BUILD 4.83 – GLOBAL banner FIX ===== */
+/* ===== BUILD 4.84 – GLOBAL banner FIX ===== */
 #global-banner{
   position: sticky;
   top: 0;
@@ -2176,6 +2176,206 @@ body {
 /* spazio layout sotto banner */
 body{
   padding-top: calc(20px + 72px);
+}
+
+
+/* ===============================
+   LIQUID GLASS THEME – BUILD 4.84
+   =============================== */
+
+:root{
+  --lg-surface: rgba(255,255,255,0.10);
+  --lg-surface-2: rgba(255,255,255,0.16);
+  --lg-border: rgba(255,255,255,0.22);
+  --lg-border-strong: rgba(255,255,255,0.34);
+  --lg-shadow: 0 16px 50px rgba(0,0,0,0.45);
+  --lg-shadow-soft: 0 10px 28px rgba(0,0,0,0.30);
+  --lg-blur: 16px;
+  --lg-radius: 22px;
+  --lg-radius-pill: 999px;
+}
+
+/* Base background */
+body{
+  background: #000 url("bg-track.jpg") center / cover no-repeat fixed !important;
+}
+
+/* A generic "glass" surface */
+.lg-glass{
+  background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08));
+  border: 1px solid var(--lg-border);
+  border-top: 1px solid rgba(255,255,255,0.38);
+  border-left: 1px solid rgba(255,255,255,0.28);
+  border-radius: var(--lg-radius);
+  box-shadow: var(--lg-shadow);
+  backdrop-filter: blur(var(--lg-blur)) saturate(140%);
+  -webkit-backdrop-filter: blur(var(--lg-blur)) saturate(140%);
+}
+
+/* subtle inner highlight */
+.lg-glass::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius: inherit;
+  pointer-events:none;
+  background: radial-gradient(120% 80% at 30% 10%, rgba(255,255,255,0.22), rgba(255,255,255,0.00) 55%);
+  mix-blend-mode: screen;
+  opacity: 0.85;
+}
+
+/* Containers / cards */
+.container{
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.08)) !important;
+  border: 1px solid var(--lg-border) !important;
+  border-top-color: rgba(255,255,255,0.42) !important;
+  border-left-color: rgba(255,255,255,0.28) !important;
+  border-radius: var(--lg-radius) !important;
+  box-shadow: var(--lg-shadow) !important;
+  backdrop-filter: blur(var(--lg-blur)) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(var(--lg-blur)) saturate(140%) !important;
+}
+
+/* Home yellow box -> glass */
+.home-box{
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.10)) !important;
+  border: 1px solid var(--lg-border) !important;
+  border-top-color: rgba(255,255,255,0.46) !important;
+  border-left-color: rgba(255,255,255,0.30) !important;
+  box-shadow: var(--lg-shadow-soft) !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 4px)) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 4px)) saturate(150%) !important;
+}
+
+/* Ranking / panels */
+.ranking,
+.player-card,
+#test-inputs,
+.bp-history,
+.bp-item,
+.biker-modal,
+.account-modal,
+.auth-card{
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08)) !important;
+  border: 1px solid var(--lg-border) !important;
+  border-top-color: rgba(255,255,255,0.42) !important;
+  border-left-color: rgba(255,255,255,0.28) !important;
+  border-radius: var(--lg-radius) !important;
+  box-shadow: var(--lg-shadow-soft) !important;
+  backdrop-filter: blur(var(--lg-blur)) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(var(--lg-blur)) saturate(140%) !important;
+  color: #f8fafc !important;
+}
+
+/* Make text readable on glass */
+.player-card,
+#test-inputs,
+.bp-history,
+.bp-item,
+.biker-modal,
+.account-modal,
+.auth-card{
+  color: #0b1220 !important;
+}
+
+/* Buttons -> glass pill */
+.btn,
+.home-btn,
+.btn-small,
+.auth-button,
+.bp-back-btn,
+.bp-return-btn,
+.biker-modal-btn,
+.tsb-icon-btn,
+#home-logout-btn,
+#home-account-pill{
+  position: relative;
+  border: 1px solid var(--lg-border-strong) !important;
+  border-top-color: rgba(255,255,255,0.55) !important;
+  border-left-color: rgba(255,255,255,0.35) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.10)) !important;
+  color: #ffffff !important;
+  border-radius: var(--lg-radius-pill) !important;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.35) !important;
+  backdrop-filter: blur(var(--lg-blur)) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(var(--lg-blur)) saturate(150%) !important;
+}
+
+.btn:active,
+.home-btn:active,
+.btn-small:active,
+.auth-button:active,
+.bp-back-btn:active,
+.bp-return-btn:active,
+.biker-modal-btn:active,
+.tsb-icon-btn:active,
+#home-logout-btn:active,
+#home-account-pill:active{
+  transform: scale(0.985) !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.28) !important;
+}
+
+/* Accent variants (keep semantics but make glass) */
+#btn-db, .btn-db-save, .biker-modal-btn-primary{
+  color: #111827 !important;
+  background: linear-gradient(180deg, rgba(253,224,0,0.75), rgba(253,224,0,0.35)) !important;
+  border-color: rgba(253,224,0,0.55) !important;
+}
+#btn-select, #btn-gara, #calc-btn, #save-race-button, .btn-db-add, .auth-button{
+  background: linear-gradient(180deg, rgba(204,0,0,0.70), rgba(204,0,0,0.28)) !important;
+  border-color: rgba(255,255,255,0.30) !important;
+}
+#btn-reset, #test-reset-btn{
+  background: linear-gradient(180deg, rgba(148,163,184,0.50), rgba(148,163,184,0.20)) !important;
+}
+
+/* Inputs -> glass */
+input, select, textarea{
+  background: rgba(255,255,255,0.10) !important;
+  border: 1px solid var(--lg-border) !important;
+  border-top-color: rgba(255,255,255,0.38) !important;
+  border-left-color: rgba(255,255,255,0.26) !important;
+  border-radius: 16px !important;
+  backdrop-filter: blur(var(--lg-blur)) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(var(--lg-blur)) saturate(140%) !important;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.20) !important;
+}
+
+/* Overlays: darker but still glassy */
+#auth-overlay,
+#biker-modal-overlay,
+#account-overlay,
+#loading-popup-overlay,
+#bikers-loading-overlay{
+  background: rgba(0,0,0,0.62) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+/* Menu icon */
+#menu-icon .menu-line{
+  background: rgba(255,255,255,0.85) !important;
+}
+
+/* Pills / badges */
+#account-badge,
+.race-pill,
+.result-score,
+.bp-score{
+  background: rgba(255,255,255,0.12) !important;
+  border: 1px solid var(--lg-border) !important;
+  backdrop-filter: blur(var(--lg-blur)) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(var(--lg-blur)) saturate(150%) !important;
+  color: #fff !important;
+}
+
+
+/* ===== BUILD 4.84 – banner spacing tweak ===== */
+#global-banner{
+  margin-bottom: 22px !important;
 }
 
 </style>
@@ -6768,7 +6968,7 @@ body{
 <script>
 "use strict";
 
-const APP_VERSION = "4.83";
+const APP_VERSION = "4.84";
 const BUILD_DATE = "";
 const API_URL = "https://script.google.com/macros/s/AKfycbxon71F47wVkq1DFK7DBqQ2-j90ZTevoKOWEpE6h8DEbE5pW4eAl0GvC6gbTGXQp-_1sA/exec";
 
