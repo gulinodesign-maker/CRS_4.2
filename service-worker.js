@@ -1,4 +1,4 @@
-const CACHE_NAME = "CRS-4.80";
+const CACHE_NAME = "CRS-4.82";
 
 const PRECACHE = [
   "./",
@@ -20,16 +20,13 @@ self.addEventListener("install", e => {
 self.addEventListener("activate", e => {
   e.waitUntil(
     caches.keys().then(keys =>
-      Promise.all(keys.map(k => k !== CACHE_NAME && k.startsWith("CRS-") && caches.delete(k)))
+      Promise.all(keys.map(k => k.startsWith("CRS-") && k !== CACHE_NAME && caches.delete(k)))
     )
   );
   self.clients.claim();
 });
 
 self.addEventListener("fetch", e => {
-  const url = new URL(e.request.url);
-  if (url.pathname.startsWith("/api")) return;
-
   if (e.request.mode === "navigate") {
     e.respondWith(
       fetch(e.request, { cache: "no-store" })
@@ -42,6 +39,5 @@ self.addEventListener("fetch", e => {
     );
     return;
   }
-
   e.respondWith(caches.match(e.request).then(r => r || fetch(e.request)));
 });
