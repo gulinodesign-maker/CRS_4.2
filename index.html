@@ -2029,7 +2029,7 @@ body {
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.95 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.96 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -2065,7 +2065,7 @@ body {
   justify-content:center;
 }
 
-/* ===== BUILD 4.95 – HOME login/logout pill under yellow card (like reference) ===== */
+/* ===== BUILD 4.96 – HOME login/logout pill under yellow card (like reference) ===== */
 #home-view{
   display:flex;
   flex-direction:column;
@@ -2103,7 +2103,7 @@ body {
 .home-footer-hidden{ display:none !important; }
 
 
-/* ===== BUILD 4.95 – HOME audio toggle under account pill ===== */
+/* ===== BUILD 4.96 – HOME audio toggle under account pill ===== */
 .home-audio-pill{
   width: min(340px, 86vw);
   border: none;
@@ -2119,7 +2119,7 @@ body {
 }
 
 
-/* ===== BUILD 4.95 – Audio icon button + red build label ===== */
+/* ===== BUILD 4.96 – Audio icon button + red build label ===== */
 .home-audio-pill{
   width: 44px;
   height: 44px;
@@ -2142,7 +2142,7 @@ body {
 }
 
 
-/* ===== BUILD 4.95 – Grouped home controls, lowered by 50px ===== */
+/* ===== BUILD 4.96 – Grouped home controls, lowered by 50px ===== */
 .home-controls-group{
   display:flex;
   flex-direction:column;
@@ -2152,7 +2152,7 @@ body {
 }
 
 
-/* ===== BUILD 4.95 – GLOBAL banner FIX ===== */
+/* ===== BUILD 4.96 – GLOBAL banner FIX ===== */
 #global-banner{
   position: sticky;
   top: 0;
@@ -6323,7 +6323,7 @@ body{
 
 <style id="crs-banner-style">
 
-/* ===== BUILD 4.95 – GLOBAL banner ===== */
+/* ===== BUILD 4.96 – GLOBAL banner ===== */
 #global-banner{
   position: sticky;
   top: 0;
@@ -6346,7 +6346,7 @@ body{
 </style>
 <style id="crs-liquid-glass-style">
 /* ===============================
-   LIQUID GLASS THEME – BUILD 4.95
+   LIQUID GLASS THEME – BUILD 4.96
    (injected as separate <style>)
    =============================== */
 :root{
@@ -6442,7 +6442,7 @@ input, select, textarea{
 }
 
 
-/* ===== BUILD 4.95 – Glass calendar + performance panels ===== */
+/* ===== BUILD 4.96 – Glass calendar + performance panels ===== */
 
 /* Calendar day cells & header */
 #race-calendar,
@@ -6499,7 +6499,7 @@ input, select, textarea{
 }
 
 
-/* ===== BUILD 4.95 – Override inline backgrounds (Performance) ===== */
+/* ===== BUILD 4.96 – Override inline backgrounds (Performance) ===== */
 
 /* Main performance white panel (inline background) -> glass */
 #performance-chart,
@@ -6553,7 +6553,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.95 – Calendar readability (less glass) ===== */
+/* ===== BUILD 4.96 – Calendar readability (less glass) ===== */
 
 /* Make calendar panel more solid and readable */
 #race-calendar{
@@ -6618,7 +6618,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.95 – Glass charts & trend popup ===== */
+/* ===== BUILD 4.96 – Glass charts & trend popup ===== */
 
 /* Trend/graphs popup card -> glass */
 .bp-popup-card{
@@ -6694,7 +6694,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.95 – SVG chart glass (fix white background) ===== */
+/* ===== BUILD 4.96 – SVG chart glass (fix white background) ===== */
 .bp-popup-content{
   background: rgba(255,255,255,0.06) !important;
 }
@@ -6716,7 +6716,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.95 – Bikers Performance popups: FULL Liquid Glass ===== */
+/* ===== BUILD 4.96 – Bikers Performance popups: FULL Liquid Glass ===== */
 
 /* Overlay: frosted dark */
 #bp-popup-overlay{
@@ -6803,7 +6803,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.95 – FIX: bp popup uses CLASS, enforce glass ===== */
+/* ===== BUILD 4.96 – FIX: bp popup uses CLASS, enforce glass ===== */
 .bp-popup-overlay, #bp-popup-overlay{
   background: rgba(0,0,0,0.58) !important;
   backdrop-filter: blur(12px) saturate(120%) !important;
@@ -6856,7 +6856,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.95 – Force BP SVG chart background glass ===== */
+/* ===== BUILD 4.96 – Force BP SVG chart background glass ===== */
 #bp-popup-content svg rect{
   fill: rgba(255,255,255,0.08) !important;
   stroke: rgba(255,255,255,0.20) !important;
@@ -6864,7 +6864,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.95 – Charts: remove yellow fills, glass only ===== */
+/* ===== BUILD 4.96 – Charts: remove yellow fills, glass only ===== */
 #bp-popup-content svg path[fill^="url("],
 #bp-popup-content svg path[fill*="bpGrad"]{
   fill: rgba(255,255,255,0.06) !important;
@@ -6876,7 +6876,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.95 – ICON POPUPS (Bikers Performance stats & charts) in Liquid Glass ===== */
+/* ===== BUILD 4.96 – ICON POPUPS (Bikers Performance stats & charts) in Liquid Glass ===== */
 
 /* Overlay */
 #icon-popup-overlay{
@@ -6953,6 +6953,14 @@ input, select, textarea{
 }
 #icon-popup-content canvas{
   background: transparent !important;
+}
+
+
+
+/* ===== BUILD 4.96 – Chart numbers (axis) red + better alignment ===== */
+#bp-popup-content svg text,
+#performance-chart svg text{
+  fill: #CC0000 !important;
 }
 
 </style>
@@ -7405,7 +7413,7 @@ input, select, textarea{
 <script>
 "use strict";
 
-const APP_VERSION = "4.95";
+const APP_VERSION = "4.96";
 const BUILD_DATE = "";
 const API_URL = "https://script.google.com/macros/s/AKfycbxon71F47wVkq1DFK7DBqQ2-j90ZTevoKOWEpE6h8DEbE5pW4eAl0GvC6gbTGXQp-_1sA/exec";
 
@@ -9814,13 +9822,13 @@ function svgLineChart(points, width=360, height=160, padding=12) {
       <!-- grid horizontal + y labels -->
       ${yGrid.map(g => `
         <line x1="${padding}" y1="${g.y.toFixed(1)}" x2="${(width-padding)}" y2="${g.y.toFixed(1)}" stroke="#f1f5f9" stroke-width="1"></line>
-        <text x="${(padding-6)}" y="${(g.y+4).toFixed(1)}" text-anchor="end" font-size="11" fill="#6b7280">${g.yVal.toFixed(1)}</text>
+        <text x="${(padding-6)}" y="${g.y.toFixed(1)}" dy="0.35em" text-anchor="end" font-size="11" fill="#CC0000">${g.yVal.toFixed(1)}</text>
       `).join("")}
 
       <!-- grid vertical + x labels (1..N) -->
       ${xGrid.map(g => `
         <line x1="${g.x.toFixed(1)}" y1="${padding}" x2="${g.x.toFixed(1)}" y2="${(height-padding)}" stroke="#f1f5f9" stroke-width="1"></line>
-        <text x="${g.x.toFixed(1)}" y="${(height-6)}" text-anchor="middle" font-size="11" fill="#6b7280">${g.i+1}</text>
+        <text x="${g.x.toFixed(1)}" y="${(height-2)}" text-anchor="middle" font-size="11" fill="#CC0000">${g.i+1}</text>
       `).join("")}
 
       <!-- axes -->
@@ -10532,7 +10540,7 @@ document.addEventListener("keydown", (e) => {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
-      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.95");
+      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.96");
       if (reg && reg.update) reg.update().catch(() => {});
       reg.addEventListener("updatefound", () => {
         const nw = reg.installing;
