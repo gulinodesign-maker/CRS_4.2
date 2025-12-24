@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- PWA / Manifest -->
-  <link rel="manifest" href="manifest.json?v=4.114">
+  <link rel="manifest" href="manifest.json?v=4.118">
   <meta name="theme-color" content="#000000">
 
   <!-- iOS specifico (iPhone / iPad) -->
@@ -7285,7 +7285,7 @@ button.login-submit {
 .bikers-glass-empty-text{ margin-top: 4px; font-size: 13px; color: rgba(255,255,255,0.78); }
 
 .bikers-glass-bottom-space{ height: 14px; }
-/* ===== BUILD 4.117 – RACE: selezione bikers con lo stesso design della pagina Bikers ===== */
+/* ===== BUILD 4.118 – RACE: selezione bikers con lo stesso design della pagina Bikers ===== */
 #select-container{
   padding: 10px 14px 6px 14px;
   gap: 14px;
@@ -7746,10 +7746,17 @@ button.login-submit {
 
 </div>
 
+<div class="bikers-glass-header" id="race-actions-header" style="margin: 8px 0 6px;">
+  <div class="bikers-glass-titlewrap">
+    <div class="bikers-glass-title">Race</div>
+    <div class="bikers-glass-sub">Gestione gara</div>
+  </div>
+  <button class="btn-small btn-db-add bikers-glass-add" id="btn-gara">Inserisci percentuali</button>
+</div>
+
 <div class="buttons" id="main-buttons">
   <button class="btn" id="btn-db">Gestisci database</button>
   <button class="btn" id="btn-select">Bikers partecipanti</button>
-  <button class="btn" id="btn-gara">Inserisci percentuali</button>
   <button class="btn" id="calc-btn">Calcola classifica</button>
   <button class="btn" id="btn-reset">Reset</button>
   <button class="btn" id="save-race-button">Invia dati</button>
@@ -7758,7 +7765,7 @@ button.login-submit {
 <script>
 "use strict";
 
-const APP_VERSION = "4.103";
+const APP_VERSION = "4.118";
 const BUILD_DATE = "";
 const API_URL = "https://script.google.com/macros/s/AKfycbxon71F47wVkq1DFK7DBqQ2-j90ZTevoKOWEpE6h8DEbE5pW4eAl0GvC6gbTGXQp-_1sA/exec";
 
@@ -10955,7 +10962,7 @@ document.addEventListener("keydown", (e) => {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
-      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.116.0");
+      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.118.0");
       if (reg && reg.update) reg.update().catch(() => {});
       reg.addEventListener("updatefound", () => {
         const nw = reg.installing;
@@ -11883,7 +11890,7 @@ button.btn:active,
 
 <script id="build-inject">
 (() => {
-  const BUILD = "4.117";
+  const BUILD = "4.118";
   // Home label
   const hv = document.getElementById("home-version-label") || document.getElementById("app-version");
   if (hv) hv.textContent = BUILD;
