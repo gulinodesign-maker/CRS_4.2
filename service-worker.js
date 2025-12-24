@@ -1,4 +1,4 @@
-const CACHE_NAME = "CRS-4.105";
+const CACHE_NAME = "CRS-4.107";
 const FILES_TO_CACHE = [
   "./",
   "./index.html",
