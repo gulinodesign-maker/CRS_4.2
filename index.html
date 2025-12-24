@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- PWA / Manifest -->
-  <link rel="manifest" href="manifest.json?v=4.108">
+  <link rel="manifest" href="manifest.json?v=4.110">
   <meta name="theme-color" content="#000000">
 
   <!-- iOS specifico (iPhone / iPad) -->
@@ -2214,6 +2214,30 @@ body{
   paint-order: stroke;
   stroke: rgba(0,0,0,0.45);
   stroke-width: 1px;
+}
+
+
+/* ===== BUILD 4.110 – EXTRA THICK LIQUID GLASS EDGES ===== */
+:root{
+  --lg-edge-light: rgba(255,255,255,0.65);
+  --lg-edge-dark: rgba(0,0,0,0.28);
+}
+
+.btn,
+.home-btn,
+.btn-small,
+.auth-button,
+.bp-back-btn,
+.bp-return-btn,
+.biker-modal-btn,
+.tsb-icon-btn,
+#home-logout-btn,
+#home-account-pill{
+  border: 2.4px solid rgba(255,255,255,0.55) !important;
+  box-shadow:
+    inset 0 2px 0 var(--lg-edge-light),
+    inset 0 -3px 6px var(--lg-edge-dark),
+    0 16px 36px rgba(0,0,0,0.45) !important;
 }
 
 </style>
@@ -6391,12 +6415,15 @@ body{
   --lg-surface: rgba(255,255,255,0.10);
   --lg-surface-2: rgba(255,255,255,0.16);
   --lg-border: rgba(255,255,255,0.22);
-  --lg-border-strong: rgba(255,255,255,0.34);
+  --lg-border-strong: rgba(255,255,255,0.42);
   --lg-shadow: 0 16px 50px rgba(0,0,0,0.45);
   --lg-shadow-soft: 0 10px 28px rgba(0,0,0,0.30);
-  --lg-blur: 16px;
+  --lg-blur: 18px;
   --lg-radius: 22px;
   --lg-radius-pill: 999px;
+  --lg-button-depth: 0 14px 34px rgba(0,0,0,0.42);
+  --lg-button-inner: inset 0 1px 0 rgba(255,255,255,0.45),
+                     inset 0 -10px 18px rgba(0,0,0,0.18);
 }
 
 /* Glass base surfaces */
@@ -6431,17 +6458,42 @@ body{
 .tsb-icon-btn,
 #home-logout-btn,
 #home-account-pill{
-  border: 1px solid var(--lg-border-strong) !important;
-  border-top-color: rgba(255,255,255,0.55) !important;
-  border-left-color: rgba(255,255,255,0.35) !important;
-  background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.10)) !important;
-  color: #ffffff !important;
+    padding: 14px 18px !important;          /* BUILD 4.110 – thicker buttons */
+  min-height: 44px !important;
   border-radius: var(--lg-radius-pill) !important;
-  box-shadow: 0 10px 26px rgba(0,0,0,0.35) !important;
-  backdrop-filter: blur(var(--lg-blur)) saturate(150%) !important;
-  -webkit-backdrop-filter: blur(var(--lg-blur)) saturate(150%) !important;
+
+  background: linear-gradient(180deg, rgba(255,255,255,0.28), rgba(255,255,255,0.14)) !important;
+
+  border: 1.6px solid var(--lg-border-strong) !important;
+  border-top-color: rgba(255,255,255,0.58) !important;
+  border-left-color: rgba(255,255,255,0.38) !important;
+
+  box-shadow:
+    var(--lg-button-depth),
+    var(--lg-button-inner) !important;
+
+  backdrop-filter: blur(var(--lg-blur)) saturate(155%) !important;
+  -webkit-backdrop-filter: blur(var(--lg-blur)) saturate(155%) !important;
+  color: #ffffff !important;
 }
 
+
+/* BUILD 4.110 – press feedback (more physical) */
+.btn:active,
+.home-btn:active,
+.btn-small:active,
+.auth-button:active,
+.bp-back-btn:active,
+.bp-return-btn:active,
+.biker-modal-btn:active,
+.tsb-icon-btn:active,
+#home-logout-btn:active,
+#home-account-pill:active{
+  transform: translateY(1px) scale(0.985) !important;
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.35),
+    inset 0 2px 6px rgba(0,0,0,0.25) !important;
+}
 /* Accent variants */
 #btn-db, .btn-db-save, .biker-modal-btn-primary{
   color: #111827 !important;
@@ -10676,7 +10728,7 @@ document.addEventListener("keydown", (e) => {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
-      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.108.108");
+      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.110.109");
       if (reg && reg.update) reg.update().catch(() => {});
       reg.addEventListener("updatefound", () => {
         const nw = reg.installing;
@@ -11590,7 +11642,7 @@ button.btn:active,
 
 <script id="build-inject">
 (() => {
-  const BUILD = "4.108";
+  const BUILD = "4.110";
   // Home label
   const hv = document.getElementById("home-version-label") || document.getElementById("app-version");
   if (hv) hv.textContent = BUILD;
