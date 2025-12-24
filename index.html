@@ -1204,7 +1204,7 @@ body {
   }
 
   
-/* ===== BUILD 4.112 – CALENDARIO GARE: giorni con gara in ROSSO ===== */
+/* ===== BUILD 4.115 – CALENDARIO GARE: giorni con gara in ROSSO ===== */
 #race-calendar button.has-race{
   background: #cc0000 !important;
   color: #ffffff !important;
@@ -1946,7 +1946,7 @@ body {
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -1957,7 +1957,7 @@ body {
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -1985,7 +1985,7 @@ body {
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -2026,7 +2026,7 @@ body {
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -2042,7 +2042,7 @@ body {
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.100 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -2063,7 +2063,7 @@ body {
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -2078,7 +2078,7 @@ body {
   justify-content:center;
 }
 
-/* ===== BUILD 4.100 – HOME login/logout pill under yellow card (like reference) ===== */
+/* ===== BUILD 4.115 – HOME login/logout pill under yellow card (like reference) ===== */
 #home-view{
   display:flex;
   flex-direction:column;
@@ -2116,7 +2116,7 @@ body {
 .home-footer-hidden{ display:none !important; }
 
 
-/* ===== BUILD 4.100 – HOME audio toggle under account pill ===== */
+/* ===== BUILD 4.115 – HOME audio toggle under account pill ===== */
 .home-audio-pill{
   width: min(340px, 86vw);
   border: none;
@@ -2132,7 +2132,7 @@ body {
 }
 
 
-/* ===== BUILD 4.100 – Audio icon button + red build label ===== */
+/* ===== BUILD 4.115 – Audio icon button + red build label ===== */
 .home-audio-pill{
   width: 44px;
   height: 44px;
@@ -2155,7 +2155,7 @@ body {
 }
 
 
-/* ===== BUILD 4.100 – Grouped home controls, lowered by 50px ===== */
+/* ===== BUILD 4.115 – Grouped home controls, lowered by 50px ===== */
 .home-controls-group{
   display:flex;
   flex-direction:column;
@@ -2165,7 +2165,7 @@ body {
 }
 
 
-/* ===== BUILD 4.100 – GLOBAL banner FIX ===== */
+/* ===== BUILD 4.115 – GLOBAL banner FIX ===== */
 #global-banner{
   position: sticky;
   top: 0;
@@ -2192,7 +2192,7 @@ body{
 }
 
 
-/* ===== BUILD 4.100 – FIX grafici Bikers Performance ===== */
+/* ===== BUILD 4.115 – FIX grafici Bikers Performance ===== */
 .bp-performance-chart,
 .bp-performance-chart canvas{
   max-height: 220px !important;
@@ -2204,7 +2204,7 @@ body{
 }
 
 
-/* ===== BUILD 4.100 – FIX BP SVG charts (no taglio numeri iOS) ===== */
+/* ===== BUILD 4.115 – FIX BP SVG charts (no taglio numeri iOS) ===== */
 #bp-popup-content .bp-glass-svg,
 #icon-popup-content .bp-glass-svg{
   overflow: visible !important;
@@ -2215,6 +2215,146 @@ body{
   stroke: rgba(0,0,0,0.45);
   stroke-width: 1px;
 }
+
+
+  /* ===== LIQUID GLASS – RACE SELECT (Bikers) ===== */
+  /* Target: pagina di selezione bikers nella sezione Race */
+  #select-container {
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    padding: 10px 6px 4px 6px;
+    margin-top: 6px;
+  }
+
+  /* Card glass */
+  #select-container .participant-row {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-top-color: rgba(255,255,255,0.28);
+    border-left-color: rgba(255,255,255,0.22);
+    border-radius: 22px;
+    padding: 14px 14px;
+    margin-bottom: 0;
+    color: #fff;
+    box-shadow: 0 16px 38px rgba(0,0,0,0.35);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0);
+  }
+
+  /* Shine + vignette */
+  #select-container .participant-row::before {
+    content:"";
+    position:absolute;
+    inset:-1px;
+    background:
+      radial-gradient(1200px 220px at 18% 0%,
+        rgba(255,255,255,0.22),
+        rgba(255,255,255,0.08) 45%,
+        rgba(255,255,255,0.02) 70%,
+        rgba(0,0,0,0.0) 100%),
+      linear-gradient(135deg,
+        rgba(255,255,255,0.10),
+        rgba(255,255,255,0.00) 45%,
+        rgba(0,0,0,0.00));
+    pointer-events:none;
+    opacity: 0.95;
+  }
+
+  /* Subtle grain (cheap but effective) */
+  #select-container .participant-row::after {
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      radial-gradient(rgba(255,255,255,0.06) 1px, rgba(0,0,0,0) 1px);
+    background-size: 22px 22px;
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+    pointer-events:none;
+  }
+
+  /* Press */
+  #select-container .participant-row:active {
+    transform: translateY(1px) scale(0.99);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.30);
+  }
+
+  /* Selected: rim glow + accent bar */
+  #select-container .participant-row.selected {
+    border-color: rgba(250, 204, 21, 0.55);
+    box-shadow:
+      0 18px 46px rgba(0,0,0,0.40),
+      0 0 0 1px rgba(250,204,21,0.22),
+      0 0 22px rgba(250,204,21,0.18);
+  }
+  #select-container .participant-row.selected .participant-meta {
+    color: rgba(255,255,255,0.82);
+  }
+  #select-container .participant-row.selected::before {
+    opacity: 1;
+  }
+  #select-container .participant-row.selected .participant-main {
+    position: relative;
+    z-index: 1;
+  }
+  #select-container .participant-row.selected .participant-main::before {
+    content:"";
+    position:absolute;
+    left:-14px;
+    top:-10px;
+    bottom:-10px;
+    width: 6px;
+    border-radius: 12px;
+    background: linear-gradient(180deg,
+      rgba(248,113,113,0.92),
+      rgba(250,204,21,0.90));
+    box-shadow: 0 0 14px rgba(248,113,113,0.25);
+    opacity: 0.95;
+  }
+
+  /* Text */
+  #select-container .participant-name {
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 0.01em;
+    color: rgba(255,255,255,0.96);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+  }
+  #select-container .participant-meta {
+    font-size: 12px;
+    color: rgba(255,255,255,0.72);
+  }
+
+  /* Avatar glass badge */
+  #select-container .participant-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-top-color: rgba(255,255,255,0.34);
+    box-shadow:
+      0 10px 18px rgba(0,0,0,0.30),
+      inset 0 1px 0 rgba(255,255,255,0.18);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    color: rgba(255,255,255,0.95);
+    font-weight: 900;
+    font-size: 16px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+  }
+  #select-container .participant-row.selected .participant-avatar {
+    background: rgba(248,113,113,0.20);
+    border-color: rgba(248,113,113,0.38);
+    box-shadow:
+      0 10px 18px rgba(0,0,0,0.30),
+      0 0 18px rgba(248,113,113,0.22),
+      inset 0 1px 0 rgba(255,255,255,0.18);
+  }
 
 </style>
 
@@ -2242,7 +2382,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -2253,7 +2393,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -2281,7 +2421,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -2322,7 +2462,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -2338,7 +2478,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -2359,7 +2499,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -2396,7 +2536,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -2407,7 +2547,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -2435,7 +2575,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -2476,7 +2616,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -2492,7 +2632,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -2513,7 +2653,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -2550,7 +2690,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -2561,7 +2701,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -2589,7 +2729,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -2630,7 +2770,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -2646,7 +2786,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -2667,7 +2807,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -2720,7 +2860,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -2731,7 +2871,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -2759,7 +2899,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -2800,7 +2940,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -2816,7 +2956,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -2837,7 +2977,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -2900,7 +3040,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -2911,7 +3051,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -2939,7 +3079,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -2980,7 +3120,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -2996,7 +3136,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -3017,7 +3157,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -3051,7 +3191,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -3062,7 +3202,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -3090,7 +3230,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -3131,7 +3271,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -3147,7 +3287,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -3168,7 +3308,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -3203,7 +3343,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -3214,7 +3354,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -3242,7 +3382,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -3283,7 +3423,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -3299,7 +3439,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -3320,7 +3460,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -3435,7 +3575,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -3446,7 +3586,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -3474,7 +3614,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -3515,7 +3655,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -3531,7 +3671,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -3552,7 +3692,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -3585,7 +3725,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -3596,7 +3736,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -3624,7 +3764,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -3665,7 +3805,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -3681,7 +3821,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -3702,7 +3842,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -3733,7 +3873,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -3744,7 +3884,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -3772,7 +3912,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -3813,7 +3953,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -3829,7 +3969,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -3850,7 +3990,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -3889,7 +4029,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -3900,7 +4040,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -3928,7 +4068,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -3969,7 +4109,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -3985,7 +4125,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -4006,7 +4146,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -4051,7 +4191,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4062,7 +4202,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -4090,7 +4230,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -4131,7 +4271,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -4147,7 +4287,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -4168,7 +4308,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -4201,7 +4341,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4212,7 +4352,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -4240,7 +4380,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -4281,7 +4421,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -4297,7 +4437,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -4318,7 +4458,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -4349,7 +4489,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4360,7 +4500,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -4388,7 +4528,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -4429,7 +4569,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -4445,7 +4585,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -4466,7 +4606,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -4500,7 +4640,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4511,7 +4651,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -4539,7 +4679,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -4580,7 +4720,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -4596,7 +4736,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -4617,7 +4757,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -4665,7 +4805,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4676,7 +4816,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -4704,7 +4844,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -4745,7 +4885,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -4761,7 +4901,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -4782,7 +4922,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -4819,7 +4959,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4830,7 +4970,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -4858,7 +4998,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -4899,7 +5039,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -4915,7 +5055,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -4936,7 +5076,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -4981,7 +5121,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4992,7 +5132,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -5020,7 +5160,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -5061,7 +5201,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -5077,7 +5217,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -5098,7 +5238,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -5129,7 +5269,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5140,7 +5280,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -5168,7 +5308,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -5209,7 +5349,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -5225,7 +5365,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -5246,7 +5386,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -5281,7 +5421,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5292,7 +5432,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -5320,7 +5460,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -5361,7 +5501,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -5377,7 +5517,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -5398,7 +5538,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -5434,7 +5574,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5445,7 +5585,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -5473,7 +5613,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -5514,7 +5654,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -5530,7 +5670,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -5551,7 +5691,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -5583,7 +5723,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5594,7 +5734,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -5622,7 +5762,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -5663,7 +5803,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -5679,7 +5819,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -5700,7 +5840,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -5775,7 +5915,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5786,7 +5926,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -5814,7 +5954,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -5855,7 +5995,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -5871,7 +6011,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -5892,7 +6032,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -5937,7 +6077,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5948,7 +6088,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -5976,7 +6116,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -6017,7 +6157,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -6033,7 +6173,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -6054,7 +6194,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -6107,7 +6247,7 @@ body{
 }
 
 
-/* ===== BUILD 4.112 – Account pill reposition ===== */
+/* ===== BUILD 4.115 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -6118,7 +6258,7 @@ body{
 
 
 
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.115 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -6146,7 +6286,7 @@ body{
 }
 
 
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.115 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -6187,7 +6327,7 @@ body{
 
 
 
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.115 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -6203,7 +6343,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.115 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -6224,7 +6364,7 @@ body{
 }
 
 
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.115 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -6244,7 +6384,7 @@ body{
 
 <style id="crs-banner-style">
 
-/* ===== BUILD 4.100 – GLOBAL banner ===== */
+/* ===== BUILD 4.115 – GLOBAL banner ===== */
 #global-banner{
   position: sticky;
   top: 0;
@@ -6267,7 +6407,7 @@ body{
 </style>
 <style id="crs-liquid-glass-style">
 /* ===============================
-   LIQUID GLASS THEME – BUILD 4.100
+   LIQUID GLASS THEME – BUILD 4.115
    (injected as separate <style>)
    =============================== */
 :root{
@@ -6363,7 +6503,7 @@ input, select, textarea{
 }
 
 
-/* ===== BUILD 4.100 – Glass calendar + performance panels ===== */
+/* ===== BUILD 4.115 – Glass calendar + performance panels ===== */
 
 /* Calendar day cells & header */
 #race-calendar,
@@ -6420,7 +6560,7 @@ input, select, textarea{
 }
 
 
-/* ===== BUILD 4.100 – Override inline backgrounds (Performance) ===== */
+/* ===== BUILD 4.115 – Override inline backgrounds (Performance) ===== */
 
 /* Main performance white panel (inline background) -> glass */
 #performance-chart,
@@ -6474,7 +6614,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.100 – Calendar readability (less glass) ===== */
+/* ===== BUILD 4.115 – Calendar readability (less glass) ===== */
 
 /* Make calendar panel more solid and readable */
 #race-calendar{
@@ -6539,7 +6679,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.100 – Glass charts & trend popup ===== */
+/* ===== BUILD 4.115 – Glass charts & trend popup ===== */
 
 /* Trend/graphs popup card -> glass */
 .bp-popup-card{
@@ -6615,7 +6755,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.100 – SVG chart glass (fix white background) ===== */
+/* ===== BUILD 4.115 – SVG chart glass (fix white background) ===== */
 .bp-popup-content{
   background: rgba(255,255,255,0.06) !important;
 }
@@ -6637,7 +6777,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.100 – Bikers Performance popups: FULL Liquid Glass ===== */
+/* ===== BUILD 4.115 – Bikers Performance popups: FULL Liquid Glass ===== */
 
 /* Overlay: frosted dark */
 #bp-popup-overlay{
@@ -6724,7 +6864,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.100 – FIX: bp popup uses CLASS, enforce glass ===== */
+/* ===== BUILD 4.115 – FIX: bp popup uses CLASS, enforce glass ===== */
 .bp-popup-overlay, #bp-popup-overlay{
   background: rgba(0,0,0,0.58) !important;
   backdrop-filter: blur(12px) saturate(120%) !important;
@@ -6777,7 +6917,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.100 – Force BP SVG chart background glass ===== */
+/* ===== BUILD 4.115 – Force BP SVG chart background glass ===== */
 #bp-popup-content svg rect{
   fill: rgba(255,255,255,0.08) !important;
   stroke: rgba(255,255,255,0.20) !important;
@@ -6785,7 +6925,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.100 – Charts: remove yellow fills, glass only ===== */
+/* ===== BUILD 4.115 – Charts: remove yellow fills, glass only ===== */
 #bp-popup-content svg path[fill^="url("],
 #bp-popup-content svg path[fill*="bpGrad"]{
   fill: rgba(255,255,255,0.06) !important;
@@ -6797,7 +6937,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.100 – ICON POPUPS (Bikers Performance stats & charts) in Liquid Glass ===== */
+/* ===== BUILD 4.115 – ICON POPUPS (Bikers Performance stats & charts) in Liquid Glass ===== */
 
 /* Overlay */
 #icon-popup-overlay{
@@ -6878,7 +7018,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.100 – Chart numbers (axis) red + better alignment ===== */
+/* ===== BUILD 4.115 – Chart numbers (axis) red + better alignment ===== */
 #bp-popup-content svg text,
 #performance-chart svg text{
   fill: #CC0000 !important;
@@ -6887,7 +7027,7 @@ input, select, textarea{
 </style>
 
 <style id="bp-back-liquid-glass-red">
-/* ===== BUILD 4.103 – BIG back button: RED Liquid Glass (uniform, no white reflection) ===== */
+/* ===== BUILD 4.115 – BIG back button: RED Liquid Glass (uniform, no white reflection) ===== */
 #bp-return-bike-performance,
 .bp-return-btn,
 button#bp-return-bike-performance{
@@ -6921,7 +7061,7 @@ button#bp-return-bike-performance{
 }
 </style>
 <style id="lg-solid-pill-4-107">
-/* ===== BUILD 4.112 – PILL BUTTONS: SOLID Liquid Glass (NO grey/white gradients) ===== */
+/* ===== BUILD 4.115 – PILL BUTTONS: SOLID Liquid Glass (NO grey/white gradients) ===== */
 
 /* Base glass pills previously using linear-gradients */
 .auth-button,
@@ -7013,8 +7153,8 @@ button.login-submit {
 }
 </style>
 
-<style id="build-4.114-bikers-liquid-glass">
-/* ===== BUILD 4.114 – BIKERS (DB) Liquid Glass redesign ===== */
+<style id="build-4.115-bikers-liquid-glass">
+/* ===== BUILD 4.115 – BIKERS (DB) Liquid Glass redesign ===== */
 #db-container{
   background: rgba(255,255,255,0.06) !important;
   border: 1px solid rgba(255,255,255,0.16) !important;
@@ -10757,7 +10897,7 @@ document.addEventListener("keydown", (e) => {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
-      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.114.0");
+      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.115.0");
       if (reg && reg.update) reg.update().catch(() => {});
       reg.addEventListener("updatefound", () => {
         const nw = reg.installing;
@@ -11546,8 +11686,8 @@ function bpSetCompareControlsVisibility() {
 </div>
 
 
-<style id="build-4.106-pill-liquid-glass">
-/* ===== BUILD 4.112 – UNIFICA TASTI A PILLOLA (Liquid Glass, tinta unita) =====
+<style id="build-4.115-pill-liquid-glass">
+/* ===== BUILD 4.115 – UNIFICA TASTI A PILLOLA (Liquid Glass, tinta unita) =====
    Obiettivo: niente gradienti/shine interni. Un solo linguaggio: Liquid Glass.
 */
 :root{
@@ -11668,7 +11808,7 @@ button.btn:active,
   box-shadow: var(--lg-pill-shadow) !important;
 }
 
-/* ===== BUILD 4.114 – FIX: biker initials + add button solid red ===== */
+/* ===== BUILD 4.115 – FIX: biker initials + add button solid red ===== */
 .biker-initial{
   background: #d40000 !important;
   color: #ffffff !important;
@@ -11685,7 +11825,7 @@ button.btn:active,
 
 <script id="build-inject">
 (() => {
-  const BUILD = "4.114";
+  const BUILD = "4.115";
   // Home label
   const hv = document.getElementById("home-version-label") || document.getElementById("app-version");
   if (hv) hv.textContent = BUILD;
