@@ -1204,7 +1204,7 @@ body {
   }
 
   
-/* ===== BUILD 4.107 – CALENDARIO GARE: giorni con gara in ROSSO ===== */
+/* ===== BUILD 4.105 – CALENDARIO GARE: giorni con gara in ROSSO ===== */
 #race-calendar button.has-race{
   background: #cc0000 !important;
   color: #ffffff !important;
@@ -1945,7 +1945,7 @@ body {
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -2241,7 +2241,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -2395,7 +2395,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -2549,7 +2549,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -2719,7 +2719,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -2899,7 +2899,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -3050,7 +3050,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -3202,7 +3202,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -3368,7 +3368,14 @@ body{
 #bp-compare-go{
   background:var(--coyote-yellow);
   color:#111827;
-  opacity:0.45;
+  opacity:1;
+  filter:saturate(0.35) brightness(0.92);
+  pointer-events:none;
+}
+#bp-compare-go.enabled{
+  opacity:1;
+  filter:none;
+  pointer-events:auto;
 }
 #bp-compare-go.enabled{
   opacity:1;
@@ -3391,7 +3398,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -3523,6 +3530,21 @@ body{
   justify-content:center;
 }
 </style>
+</style>
+
+<style id="bp-icons-opaque-fix">
+/* BUILD 4.108 – BP icons must not inherit glass transparency */
+#bikers-performance-view .medal,
+#bikers-performance-view .result-score,
+#bikers-performance-view .bp-score,
+#bikers-performance-view .bp-race-score,
+#bikers-performance-view .bp-icon{
+  opacity: 1 !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
+</style>
+
 
 
 
@@ -3551,7 +3573,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -3701,7 +3723,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -3849,7 +3871,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4005,7 +4027,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4167,7 +4189,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4317,7 +4339,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4465,7 +4487,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4616,7 +4638,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4781,7 +4803,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4935,7 +4957,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5097,7 +5119,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5245,7 +5267,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5397,7 +5419,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5550,7 +5572,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5699,7 +5721,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5891,7 +5913,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -6053,7 +6075,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -6223,7 +6245,7 @@ body{
 }
 
 
-/* ===== BUILD 4.107 – Account pill reposition ===== */
+/* ===== BUILD 4.105 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -7003,7 +7025,7 @@ input, select, textarea{
 </style>
 
 <style id="bp-back-liquid-glass-red">
-/* ===== BUILD 4.103 – BIG back button: RED Liquid Glass (uniform, no white reflection) ===== */
+/* ===== BUILD 4.108 – BIG back button: RED Liquid Glass (uniform, no white reflection) ===== */
 #bp-return-bike-performance,
 .bp-return-btn,
 button#bp-return-bike-performance{
@@ -7036,65 +7058,6 @@ button#bp-return-bike-performance{
   display: none !important;
 }
 </style>
-<style id="lg-solid-pill-4-107">
-/* ===== BUILD 4.107 – PILL BUTTONS: SOLID Liquid Glass (NO grey/white gradients) ===== */
-
-/* Base glass pills previously using linear-gradients */
-.auth-button,
-.bp-back-btn,
-.bp-return-btn,
-.biker-modal-btn,
-.tsb-icon-btn{
-  background: rgba(255,255,255,0.12) !important;
-  background-image: none !important;
-  border: 1px solid rgba(255,255,255,0.20) !important;
-  -webkit-backdrop-filter: blur(12px) saturate(170%) !important;
-  backdrop-filter: blur(12px) saturate(170%) !important;
-  box-shadow:
-    0 12px 26px rgba(0,0,0,0.38),
-    inset 0 1px 0 rgba(255,255,255,0.06),
-    inset 0 -12px 22px rgba(0,0,0,0.14) !important;
-}
-
-/* Performance buttons (yellow/green) – force SOLID tint, no grey overlay */
-#performance-overall-btn{
-  background: rgba(253,224,0,0.92) !important; /* yellow */
-  background-image: none !important;
-  color: #111 !important;
-  border: 1px solid rgba(255,255,255,0.26) !important;
-  -webkit-backdrop-filter: blur(12px) saturate(170%) !important;
-  backdrop-filter: blur(12px) saturate(170%) !important;
-  box-shadow:
-    0 14px 28px rgba(0,0,0,0.38),
-    0 0 18px rgba(253,224,0,0.22),
-    inset 0 1px 0 rgba(255,255,255,0.06),
-    inset 0 -10px 20px rgba(0,0,0,0.12) !important;
-}
-
-#performance-race-btn{
-  background: rgba(22,163,74,0.92) !important; /* green */
-  background-image: none !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(255,255,255,0.26) !important;
-  -webkit-backdrop-filter: blur(12px) saturate(170%) !important;
-  backdrop-filter: blur(12px) saturate(170%) !important;
-  box-shadow:
-    0 14px 28px rgba(0,0,0,0.38),
-    0 0 18px rgba(22,163,74,0.22),
-    inset 0 1px 0 rgba(255,255,255,0.06),
-    inset 0 -10px 20px rgba(0,0,0,0.12) !important;
-}
-
-/* Hard disable any legacy shine layers */
-#performance-overall-btn::before,
-#performance-overall-btn::after,
-#performance-race-btn::before,
-#performance-race-btn::after{
-  content: none !important;
-  display: none !important;
-}
-</style>
-
 </head>
 
 <body>
@@ -7543,7 +7506,7 @@ button#bp-return-bike-performance{
 <script>
 "use strict";
 
-const APP_VERSION = "4.103";
+const APP_VERSION = "4.108";
 const BUILD_DATE = "";
 const API_URL = "https://script.google.com/macros/s/AKfycbxon71F47wVkq1DFK7DBqQ2-j90ZTevoKOWEpE6h8DEbE5pW4eAl0GvC6gbTGXQp-_1sA/exec";
 
@@ -10675,7 +10638,7 @@ document.addEventListener("keydown", (e) => {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
-      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.103");
+      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.108");
       if (reg && reg.update) reg.update().catch(() => {});
       reg.addEventListener("updatefound", () => {
         const nw = reg.installing;
@@ -11463,133 +11426,9 @@ function bpSetCompareControlsVisibility() {
   </div>
 </div>
 
-
-<style id="build-4.106-pill-liquid-glass">
-/* ===== BUILD 4.107 – UNIFICA TASTI A PILLOLA (Liquid Glass, tinta unita) =====
-   Obiettivo: niente gradienti/shine interni. Un solo linguaggio: Liquid Glass.
-*/
-:root{
-  --lg-pill-blur: 16px;
-  --lg-pill-sat: 160%;
-  --lg-pill-border: rgba(255,255,255,0.22);
-  --lg-pill-shadow: 0 10px 24px rgba(0,0,0,0.34);
-  --lg-pill-bg-rgb: 255,255,255;     /* default "vetro" */
-  --lg-pill-bg-a: 0.14;
-}
-
-/* Target "pillole" principali (bottoni + pill class) */
-button.btn,
-.btn,
-.home-btn,
-#home-logout-btn,
-#home-account-pill,
-#account-pill, .account-pill,
-.bp-return-btn,
-.bp-compare-btn,
-#bp-compare-toggle,
-#bp-compare-go,
-.test-data-pill,
-.race-pill,
-#performance-race-header .race-pill,
-#race-calendar button,
-.tsb-toggle-btn{
-  /* Tinta unita: niente gradienti */
-  background-image: none !important;
-  -webkit-appearance: none;
-  appearance: none;
-
-  /* Liquid Glass */
-  background-color: rgba(var(--lg-pill-bg-rgb), var(--lg-pill-bg-a)) !important;
-  -webkit-backdrop-filter: blur(var(--lg-pill-blur)) saturate(var(--lg-pill-sat));
-  backdrop-filter: blur(var(--lg-pill-blur)) saturate(var(--lg-pill-sat));
-
-  border: 1px solid var(--lg-pill-border) !important;
-  box-shadow: var(--lg-pill-shadow) !important;
-
-  /* No "shine" interno */
-  text-shadow: none !important;
-}
-
-/* Stati attivi coerenti */
-button.btn:active,
-.btn:active,
-.home-btn:active,
-#home-logout-btn:active,
-#home-account-pill:active,
-#account-pill:active, .account-pill:active,
-.bp-return-btn:active,
-.bp-compare-btn:active,
-#bp-compare-toggle:active,
-#bp-compare-go:active,
-#race-calendar button:active,
-.tsb-toggle-btn:active{
-  transform: translateY(1px) scale(0.99);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.28) !important;
-}
-
-/* Tinte "brand" (rosso/giallo/nero) sempre in vetro, senza gradienti */
-:root{
-  --lg-red-rgb: 204,0,0;
-  --lg-yellow-rgb: 253,224,0;
-  --lg-dark-rgb: 17,24,39;
-  --lg-slate-rgb: 148,163,184;
-}
-
-/* ROSSI */
-#home-logout-btn,
-#home-account-pill,
-#account-pill, .account-pill,
-.bp-return-btn,
-#race-calendar button.has-race{ 
-  --lg-pill-bg-rgb: var(--lg-red-rgb);
-  --lg-pill-bg-a: 0.32;
-  color: #fff !important;
-}
-
-/* GIALLI (azioni/confirm) */
-#bp-compare-go,
-#race-calendar button.selected{ 
-  --lg-pill-bg-rgb: var(--lg-yellow-rgb);
-  --lg-pill-bg-a: 0.30;
-  color: #111827 !important;
-}
-
-/* "NEUTRI" (toggle / pillole dati) */
-.tsb-toggle-btn,
-.test-data-pill,
-.race-pill,
-#race-calendar button{ 
-  --lg-pill-bg-rgb: var(--lg-slate-rgb);
-  --lg-pill-bg-a: 0.20;
-}
-
-/* Compare toggle "dark" quando non attivo */
-#bp-compare-toggle{ 
-  --lg-pill-bg-rgb: var(--lg-dark-rgb);
-  --lg-pill-bg-a: 0.28;
-  color: #fff !important;
-}
-
-/* Compare toggle attivo: rosso vetro */
-#bp-compare-toggle.active{ 
-  --lg-pill-bg-rgb: var(--lg-red-rgb);
-  --lg-pill-bg-a: 0.30;
-  color: #fff !important;
-}
-
-/* Evita che vecchie regole forzino bianco/grigio pieno */
-#test-view .test-data-pill,
-#test-view .ranking-header .race-pill,
-#performance-race-header .race-pill{
-  background: rgba(var(--lg-pill-bg-rgb), var(--lg-pill-bg-a)) !important;
-  border-color: var(--lg-pill-border) !important;
-  box-shadow: var(--lg-pill-shadow) !important;
-}
-</style>
-
 <script id="build-inject">
 (() => {
-  const BUILD = "4.107";
+  const BUILD = "4.108";
   // Home label
   const hv = document.getElementById("home-version-label") || document.getElementById("app-version");
   if (hv) hv.textContent = BUILD;
@@ -11600,147 +11439,3 @@ button.btn:active,
 </script>
 </body>
 </html>
- 
-  .bp-profile {
-    margin-top:12px;
-    background:#f9fafb;
-    border:1px solid #e5e7eb;
-    border-radius:16px;
-    padding:12px;
-    animation: fadeInUp 0.22s ease-out;
-  }
-  .bp-profile-top {
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:10px;
-  }
-  .bp-profile-back {
-    width:44px;
-    height:44px;
-    border-radius:999px;
-    border:none;
-    background:#111827;
-    color:#f9fafb;
-    font-size:20px;
-    font-weight:900;
-    cursor:pointer;
-    box-shadow:0 4px 10px rgba(0,0,0,0.18);
-  }
-  .bp-profile-back:active { transform:scale(0.97); box-shadow:none; }
-  .bp-profile-name {
-    flex:1;
-    font-weight:900;
-    color:var(--coyote-red);
-    font-size:16px;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-  }
-  .bp-icon-grid {
-    display:grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap:8px;
-  }
-  .bp-icon-btn {
-    border:1px solid #e5e7eb;
-    background:#ffffff;
-    border-radius:16px;
-    padding:10px 6px;
-    cursor:pointer;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:6px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.08);
-    transition:transform 0.06s ease, background 0.12s ease, box-shadow 0.12s ease;
-    min-height:86px;
-  }
-  .bp-icon-btn:hover { background:#f3f4f6; }
-  .bp-icon-btn:active { transform:scale(0.98); box-shadow:none; }
-  .bp-icon { font-size:26px; line-height:1; }
-  .bp-icon-label { font-size:11px; font-weight:800; color:#111827; text-transform:uppercase; letter-spacing:0.04em; }
-
-  .bp-profile-hint {
-    margin-top:10px;
-    text-align:center;
-    font-size:12px;
-    color:#6b7280;
-    font-weight:700;
-  }
-
-  .bp-popup-overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.65);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    z-index:10003;
-    padding:18px;
-  }
-  .bp-popup-card{
-    width:100%;
-    max-width:420px;
-    background:#f9fafb;
-    border-radius:18px;
-    box-shadow:0 18px 50px rgba(0,0,0,0.45);
-    overflow:hidden;
-  }
-  .bp-popup-header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:8px;
-    padding:12px 12px;
-    background:#111827;
-    color:#f9fafb;
-  }
-  .bp-popup-title{
-    font-weight:900;
-    font-size:14px;
-  }
-  .bp-popup-close{
-    width:36px;
-    height:36px;
-    border-radius:999px;
-    border:none;
-    background:rgba(255,255,255,0.12);
-    color:#f9fafb;
-    font-weight:900;
-    font-size:16px;
-    cursor:pointer;
-  }
-  .bp-popup-close:active{ transform:scale(0.97); }
-  .bp-popup-content{
-    padding:12px;
-    color:#111827;
-  }
-  .bp-kpi-row{
-    display:flex;
-    gap:6px;
-    margin-top:10px;
-    flex-wrap:nowrap;
-    justify-content:space-between;
-  }
-  .bp-kpi{
-    flex:1;
-    min-width:0;
-    background:var(--coyote-red);
-    border:1px solid rgba(0,0,0,0.08);
-    border-radius:999px;
-    padding:10px 8px;
-    text-align:center;
-    box-shadow:0 4px 12px rgba(204,0,0,0.25);
-  }
-  .bp-kpi-label{ font-size:10px; color:#ffffff; font-weight:900; text-transform:uppercase; letter-spacing:0.06em; opacity:0.95;}
-  .bp-kpi-val{ font-size:18px; font-weight:900; color:#ffffff; margin-top:4px; }
-  .bp-mini{
-    font-size:12px;
-    color:#374151;
-    font-weight:700;
-  }
-
-
- 
