@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- PWA / Manifest -->
-  <link rel="manifest" href="manifest.json?v=4.113">
+  <link rel="manifest" href="manifest.json?v=4.114">
   <meta name="theme-color" content="#000000">
 
   <!-- iOS specifico (iPhone / iPad) -->
@@ -7013,8 +7013,8 @@ button.login-submit {
 }
 </style>
 
-<style id="build-4.113-bikers-liquid-glass">
-/* ===== BUILD 4.113 – BIKERS (DB) Liquid Glass redesign ===== */
+<style id="build-4.114-bikers-liquid-glass">
+/* ===== BUILD 4.114 – BIKERS (DB) Liquid Glass redesign ===== */
 #db-container{
   background: rgba(255,255,255,0.06) !important;
   border: 1px solid rgba(255,255,255,0.16) !important;
@@ -10757,7 +10757,7 @@ document.addEventListener("keydown", (e) => {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
-      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.113.0");
+      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.114.0");
       if (reg && reg.update) reg.update().catch(() => {});
       reg.addEventListener("updatefound", () => {
         const nw = reg.installing;
@@ -11667,11 +11667,25 @@ button.btn:active,
   border-color: var(--lg-pill-border) !important;
   box-shadow: var(--lg-pill-shadow) !important;
 }
+
+/* ===== BUILD 4.114 – FIX: biker initials + add button solid red ===== */
+.biker-initial{
+  background: #d40000 !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.35), 0 10px 20px rgba(0,0,0,0.25) !important;
+}
+.btn-db-add{
+  background: #d40000 !important;
+  border: none !important;
+  color: #ffffff !important;
+}
+
 </style>
 
 <script id="build-inject">
 (() => {
-  const BUILD = "4.113";
+  const BUILD = "4.114";
   // Home label
   const hv = document.getElementById("home-version-label") || document.getElementById("app-version");
   if (hv) hv.textContent = BUILD;
