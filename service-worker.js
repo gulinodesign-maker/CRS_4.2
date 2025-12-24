@@ -1,4 +1,4 @@
-const CACHE_NAME = "CRS-4.104";
+const CACHE_NAME = "CRS-4.105";
 const FILES_TO_CACHE = [
   "./",
   "./index.html",
@@ -6,8 +6,7 @@ const FILES_TO_CACHE = [
   "./crs-icon-192.png",
   "./crs-icon-512.png",
   "./crs-icon.png",
-  "./bg-track.jpg"
-
+  "./bg-track.jpg",
   "./crs-banner.png"
 ];
 
