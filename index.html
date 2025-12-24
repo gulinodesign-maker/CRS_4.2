@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- PWA / Manifest -->
-  <link rel="manifest" href="manifest.json?v=4.112">
+  <link rel="manifest" href="manifest.json?v=4.113">
   <meta name="theme-color" content="#000000">
 
   <!-- iOS specifico (iPhone / iPad) -->
@@ -7012,6 +7012,148 @@ button.login-submit {
   transform: scale(0.98);
 }
 </style>
+
+<style id="build-4.113-bikers-liquid-glass">
+/* ===== BUILD 4.113 – BIKERS (DB) Liquid Glass redesign ===== */
+#db-container{
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid rgba(255,255,255,0.16) !important;
+  border-top-color: rgba(255,255,255,0.26) !important;
+  border-left-color: rgba(255,255,255,0.20) !important;
+  border-radius: 26px !important;
+  padding: 16px !important;
+  box-shadow: 0 14px 38px rgba(0,0,0,0.38) !important;
+  backdrop-filter: blur(18px) saturate(155%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(155%) !important;
+}
+
+.bikers-glass-header{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom: 14px;
+}
+.bikers-glass-titlewrap{ flex:1; min-width:0; }
+.bikers-glass-title{
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  color: #fff;
+  line-height: 1.05;
+}
+.bikers-glass-sub{
+  margin-top: 4px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.78);
+}
+
+.bikers-glass-add{
+  white-space: nowrap;
+  padding: 10px 14px !important;
+  border-radius: 999px !important;
+}
+
+.biker-list-glass{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top: 6px;
+}
+
+.biker-list-item-glass{
+  width:100%;
+  text-align:left;
+  padding: 12px 12px;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-top-color: rgba(255,255,255,0.28);
+  border-left-color: rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.30);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  cursor:pointer;
+  transition: transform 0.08s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+.biker-list-item-glass:active{
+  transform: translateY(1px) scale(0.99);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.26);
+}
+
+.biker-item-left{ display:flex; align-items:center; gap:12px; min-width:0; }
+.biker-item-text{ display:flex; flex-direction:column; gap:2px; min-width:0; }
+.biker-name-label{
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  color: #fff;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.biker-meta{
+  font-size: 12px;
+  color: rgba(255,255,255,0.74);
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.biker-initial-glass{
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 16px;
+  font-weight: 900;
+  color: #fff;
+  background: rgba(204,0,0,0.26);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.18);
+  flex: 0 0 auto;
+}
+
+.biker-chevron{
+  font-size: 22px;
+  line-height: 1;
+  opacity: 0.9;
+  margin-left: 6px;
+}
+
+.bikers-glass-empty{
+  margin-top: 10px;
+  padding: 18px 14px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.16);
+  color: rgba(255,255,255,0.92);
+  text-align:center;
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.30);
+}
+.bikers-glass-empty-ico{ font-size: 30px; margin-bottom: 8px; }
+.bikers-glass-empty-title{ font-weight: 900; font-size: 16px; }
+.bikers-glass-empty-text{ margin-top: 4px; font-size: 13px; color: rgba(255,255,255,0.78); }
+
+.bikers-glass-bottom-space{ height: 14px; }
+
+@media (max-width: 360px){
+  #db-container{ padding: 14px !important; border-radius: 22px !important; }
+  .bikers-glass-title{ font-size: 20px; }
+  .biker-list-item-glass{ padding: 11px 11px; border-radius: 20px; }
+  .biker-initial-glass{ width: 36px; height: 36px; border-radius: 13px; }
+}
+</style>
+
 </head>
 
 <body>
@@ -8522,52 +8664,75 @@ async function renderDBView() {
 
   dbContainer.innerHTML = "";
 
+  // Header (Liquid Glass)
+  const header = document.createElement("div");
+  header.className = "bikers-glass-header";
+
+  const titleWrap = document.createElement("div");
+  titleWrap.className = "bikers-glass-titlewrap";
+  titleWrap.innerHTML = `
+    <div class="bikers-glass-title">Bikers</div>
+    <div class="bikers-glass-sub">Database profili (Wh · kg biker · kg bici)</div>
+  `;
+
+  const addTop = document.createElement("button");
+  addTop.type = "button";
+  addTop.className = "btn-small btn-db-add bikers-glass-add";
+  addTop.textContent = "Nuovo biker";
+  addTop.onclick = () => openBikerModal(null);
+
+  header.appendChild(titleWrap);
+  header.appendChild(addTop);
+  dbContainer.appendChild(header);
+
   const bikers = await loadBikers(true);
 
   if (!bikers || bikers.length === 0) {
-    const emptyMsg = document.createElement("div");
-    emptyMsg.className = "biker-list-empty";
-    emptyMsg.textContent = "Nessun biker presente. Premi \"Nuovo biker\" per aggiungerne uno.";
-    dbContainer.appendChild(emptyMsg);
-  } else {
-    const list = document.createElement("div");
-    list.className = "biker-list";
-
-    bikers.forEach((biker, index) => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "biker-list-item";
-
-      const initialSpan = document.createElement("span");
-      initialSpan.className = "biker-initial";
-      const initial = (biker.name || "").trim().charAt(0) || "?";
-      initialSpan.textContent = initial.toUpperCase();
-
-      const nameSpan = document.createElement("span");
-      nameSpan.className = "biker-name-label";
-      nameSpan.textContent = biker.name || ("Biker " + (index + 1));
-
-      btn.appendChild(initialSpan);
-      btn.appendChild(nameSpan);
-
-      btn.onclick = () => openBikerModal(index);
-
-      list.appendChild(btn);
-    });
-
-    dbContainer.appendChild(list);
+    const empty = document.createElement("div");
+    empty.className = "bikers-glass-empty";
+    empty.innerHTML = `
+      <div class="bikers-glass-empty-ico">🏁</div>
+      <div class="bikers-glass-empty-title">Nessun biker presente</div>
+      <div class="bikers-glass-empty-text">Premi <b>Nuovo biker</b> per aggiungerne uno.</div>
+    `;
+    dbContainer.appendChild(empty);
+    return;
   }
 
-  const row = document.createElement("div");
-  row.className = "db-buttons-inline";
+  const list = document.createElement("div");
+  list.className = "biker-list biker-list-glass";
 
-  const add = document.createElement("button");
-  add.className = "btn-small btn-db-add";
-  add.textContent = "Nuovo biker";
-  add.onclick = () => openBikerModal(null);
+  bikers.forEach((biker, index) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "biker-list-item biker-list-item-glass";
 
-  row.appendChild(add);
-  dbContainer.appendChild(row);
+    const initial = ((biker.name || "").trim().charAt(0)) || "?";
+    const batteryWh   = biker.batteryWh ?? biker.battery ?? "";
+    const riderWeight = biker.riderKg   ?? biker.weight  ?? "";
+    const bikeWeight  = biker.bikeKg    ?? "";
+
+    btn.innerHTML = `
+      <div class="biker-item-left">
+        <span class="biker-initial biker-initial-glass">${initial.toUpperCase()}</span>
+        <div class="biker-item-text">
+          <div class="biker-name-label">${biker.name || ("Biker " + (index + 1))}</div>
+          <div class="biker-meta">${batteryWh} Wh · ${riderWeight} kg biker · ${bikeWeight} kg bici</div>
+        </div>
+      </div>
+      <span class="biker-chevron">›</span>
+    `;
+
+    btn.onclick = () => openBikerModal(index);
+    list.appendChild(btn);
+  });
+
+  dbContainer.appendChild(list);
+
+  // Bottom spacer (keeps layout comfy on iPhone)
+  const spacer = document.createElement("div");
+  spacer.className = "bikers-glass-bottom-space";
+  dbContainer.appendChild(spacer);
 }
 
 function createDBCard(b) {
@@ -10592,7 +10757,7 @@ document.addEventListener("keydown", (e) => {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
-      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.112.108");
+      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.113.0");
       if (reg && reg.update) reg.update().catch(() => {});
       reg.addEventListener("updatefound", () => {
         const nw = reg.installing;
@@ -11506,7 +11671,7 @@ button.btn:active,
 
 <script id="build-inject">
 (() => {
-  const BUILD = "4.112";
+  const BUILD = "4.113";
   // Home label
   const hv = document.getElementById("home-version-label") || document.getElementById("app-version");
   if (hv) hv.textContent = BUILD;
