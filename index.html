@@ -2187,7 +2187,7 @@ body{
 }
 
 .bp-performance-chart{
-  padding: 12px 16px 20px 24px !important;
+  padding: 12px 16px 20px 36px !important;
 }
 
 
@@ -7438,7 +7438,7 @@ input, select, textarea{
 <script>
 "use strict";
 
-const APP_VERSION = "4.100";
+const APP_VERSION = "4.101";
 const BUILD_DATE = "";
 const API_URL = "https://script.google.com/macros/s/AKfycbxon71F47wVkq1DFK7DBqQ2-j90ZTevoKOWEpE6h8DEbE5pW4eAl0GvC6gbTGXQp-_1sA/exec";
 
@@ -9834,7 +9834,7 @@ function svgLineChart(points, width=360, height=160, padding=12) {
   }
 
   return `
-    <svg class="bp-glass-svg" viewBox="${-26} ${-12} ${width+52} ${height+34}" width="100%" height="${height}" role="img" aria-label="Grafico andamento score">
+    <svg class="bp-glass-svg" viewBox="${-46} ${-12} ${width+92} ${height+34}" width="100%" height="${height}" role="img" aria-label="Grafico andamento score">
       <defs>
         <linearGradient id="bpGrad" x1="0" x2="0" y1="0" y2="1">
           <stop offset="0%" stop-color="rgba(255,255,255,0.10)" stop-opacity="0.35"></stop>
@@ -9847,13 +9847,13 @@ function svgLineChart(points, width=360, height=160, padding=12) {
       <!-- grid horizontal + y labels -->
       ${yGrid.map(g => `
         <line x1="${padding}" y1="${g.y.toFixed(1)}" x2="${(width-padding)}" y2="${g.y.toFixed(1)}" stroke="#f1f5f9" stroke-width="1"></line>
-        <text x="${(padding-8)}" y="${(g.y+2).toFixed(1)}" dy="0.35em" text-anchor="end" font-size="10" fill="#CC0000">${g.yVal.toFixed(1)}</text>
+        <text x="${(padding-18)}" y="${(g.y+2).toFixed(1)}" dy="0.35em" text-anchor="end" font-size="13" fill="#CC0000">${g.yVal.toFixed(1)}</text>
       `).join("")}
 
       <!-- grid vertical + x labels (1..N) -->
       ${xGrid.map(g => `
         <line x1="${g.x.toFixed(1)}" y1="${padding}" x2="${g.x.toFixed(1)}" y2="${(height-padding)}" stroke="#f1f5f9" stroke-width="1"></line>
-        <text x="${g.x.toFixed(1)}" y="${(height-10)}" text-anchor="middle" font-size="10" fill="#CC0000">${g.i+1}</text>
+        <text x="${g.x.toFixed(1)}" y="${(height-10)}" text-anchor="middle" font-size="12" fill="#CC0000">${g.i+1}</text>
       `).join("")}
 
       <!-- axes -->
@@ -10565,7 +10565,7 @@ document.addEventListener("keydown", (e) => {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
-      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.100");
+      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.101");
       if (reg && reg.update) reg.update().catch(() => {});
       reg.addEventListener("updatefound", () => {
         const nw = reg.installing;
