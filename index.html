@@ -2029,7 +2029,7 @@ body {
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.89 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.95 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -2065,7 +2065,7 @@ body {
   justify-content:center;
 }
 
-/* ===== BUILD 4.89 – HOME login/logout pill under yellow card (like reference) ===== */
+/* ===== BUILD 4.95 – HOME login/logout pill under yellow card (like reference) ===== */
 #home-view{
   display:flex;
   flex-direction:column;
@@ -2103,7 +2103,7 @@ body {
 .home-footer-hidden{ display:none !important; }
 
 
-/* ===== BUILD 4.89 – HOME audio toggle under account pill ===== */
+/* ===== BUILD 4.95 – HOME audio toggle under account pill ===== */
 .home-audio-pill{
   width: min(340px, 86vw);
   border: none;
@@ -2119,7 +2119,7 @@ body {
 }
 
 
-/* ===== BUILD 4.89 – Audio icon button + red build label ===== */
+/* ===== BUILD 4.95 – Audio icon button + red build label ===== */
 .home-audio-pill{
   width: 44px;
   height: 44px;
@@ -2142,7 +2142,7 @@ body {
 }
 
 
-/* ===== BUILD 4.89 – Grouped home controls, lowered by 50px ===== */
+/* ===== BUILD 4.95 – Grouped home controls, lowered by 50px ===== */
 .home-controls-group{
   display:flex;
   flex-direction:column;
@@ -2152,7 +2152,7 @@ body {
 }
 
 
-/* ===== BUILD 4.89 – GLOBAL banner FIX ===== */
+/* ===== BUILD 4.95 – GLOBAL banner FIX ===== */
 #global-banner{
   position: sticky;
   top: 0;
@@ -6323,7 +6323,7 @@ body{
 
 <style id="crs-banner-style">
 
-/* ===== BUILD 4.89 – GLOBAL banner ===== */
+/* ===== BUILD 4.95 – GLOBAL banner ===== */
 #global-banner{
   position: sticky;
   top: 0;
@@ -6346,7 +6346,7 @@ body{
 </style>
 <style id="crs-liquid-glass-style">
 /* ===============================
-   LIQUID GLASS THEME – BUILD 4.89
+   LIQUID GLASS THEME – BUILD 4.95
    (injected as separate <style>)
    =============================== */
 :root{
@@ -6442,7 +6442,7 @@ input, select, textarea{
 }
 
 
-/* ===== BUILD 4.89 – Glass calendar + performance panels ===== */
+/* ===== BUILD 4.95 – Glass calendar + performance panels ===== */
 
 /* Calendar day cells & header */
 #race-calendar,
@@ -6499,7 +6499,7 @@ input, select, textarea{
 }
 
 
-/* ===== BUILD 4.89 – Override inline backgrounds (Performance) ===== */
+/* ===== BUILD 4.95 – Override inline backgrounds (Performance) ===== */
 
 /* Main performance white panel (inline background) -> glass */
 #performance-chart,
@@ -6553,7 +6553,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.89 – Calendar readability (less glass) ===== */
+/* ===== BUILD 4.95 – Calendar readability (less glass) ===== */
 
 /* Make calendar panel more solid and readable */
 #race-calendar{
@@ -6614,6 +6614,345 @@ input, select, textarea{
 #race-calendar .x,
 #race-calendar .dismiss{
   background: rgba(255,255,255,0.75) !important;
+}
+
+
+
+/* ===== BUILD 4.95 – Glass charts & trend popup ===== */
+
+/* Trend/graphs popup card -> glass */
+.bp-popup-card{
+  background: rgba(255,255,255,0.14) !important;
+  border: 1px solid rgba(255,255,255,0.28) !important;
+  border-top-color: rgba(255,255,255,0.46) !important;
+  border-left-color: rgba(255,255,255,0.30) !important;
+  border-radius: var(--lg-radius) !important;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.45) !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 8px)) saturate(155%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 8px)) saturate(155%) !important;
+  overflow: hidden !important;
+}
+
+/* Header: slightly darker glass for contrast */
+.bp-popup-header{
+  background: rgba(15,23,42,0.42) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.18) !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 6px)) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 6px)) saturate(140%) !important;
+}
+
+/* Title and close button readable */
+.bp-popup-title{
+  color: #ffffff !important;
+}
+.bp-popup-close{
+  background: rgba(255,255,255,0.14) !important;
+  border: 1px solid rgba(255,255,255,0.22) !important;
+  color: #ffffff !important;
+  backdrop-filter: blur(var(--lg-blur)) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(var(--lg-blur)) saturate(150%) !important;
+}
+
+/* Popup content area glass */
+.bp-popup-content{
+  background: rgba(255,255,255,0.08) !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 6px)) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 6px)) saturate(145%) !important;
+}
+
+/* Any chart canvas inside popups: transparent */
+.bp-popup-content canvas,
+#performance-chart canvas,
+#performance-view canvas,
+#race-calendar canvas{
+  background: transparent !important;
+}
+
+/* If charts are inside containers/divs */
+.bp-popup-content .chart,
+.bp-popup-content .chart-wrap,
+.bp-popup-content .chart-container,
+.bp-popup-content .canvas-wrap{
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  border-radius: 18px !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 4px)) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 4px)) saturate(140%) !important;
+}
+
+/* Make any remaining light panels in profile/performance glassy */
+.bp-profile,
+.bp-profile-card,
+.bp-panel,
+.bp-section,
+.bp-card{
+  background: rgba(255,255,255,0.10) !important;
+  border: 1px solid rgba(255,255,255,0.22) !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 6px)) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 6px)) saturate(150%) !important;
+}
+
+
+
+/* ===== BUILD 4.95 – SVG chart glass (fix white background) ===== */
+.bp-popup-content{
+  background: rgba(255,255,255,0.06) !important;
+}
+
+.bp-popup-content .bp-glass-svg{
+  background: transparent !important;
+  border-radius: 18px !important;
+}
+
+.bp-popup-content .bp-glass-svg rect{
+  fill: rgba(255,255,255,0.08) !important;
+  stroke: rgba(255,255,255,0.20) !important;
+}
+
+/* Make any accidental inline backgrounds inside popup transparent */
+#bp-popup-content [style*="background"]{
+  background: rgba(255,255,255,0.08) !important;
+}
+
+
+
+/* ===== BUILD 4.95 – Bikers Performance popups: FULL Liquid Glass ===== */
+
+/* Overlay: frosted dark */
+#bp-popup-overlay{
+  background: rgba(0,0,0,0.58) !important;
+  backdrop-filter: blur(12px) saturate(120%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(120%) !important;
+}
+
+/* Card: glass */
+#bp-popup-overlay .bp-popup-card{
+  background: rgba(255,255,255,0.12) !important;
+  border: 1px solid rgba(255,255,255,0.26) !important;
+  border-top-color: rgba(255,255,255,0.44) !important;
+  border-left-color: rgba(255,255,255,0.30) !important;
+  border-radius: var(--lg-radius) !important;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.45) !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 8px)) saturate(155%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 8px)) saturate(155%) !important;
+  overflow: hidden !important;
+}
+
+/* Header: glass dark for contrast */
+#bp-popup-overlay .bp-popup-header{
+  background: rgba(15,23,42,0.38) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.16) !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 6px)) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 6px)) saturate(140%) !important;
+}
+#bp-popup-overlay .bp-popup-title{ color:#fff !important; }
+#bp-popup-overlay .bp-popup-close{
+  background: rgba(255,255,255,0.14) !important;
+  border: 1px solid rgba(255,255,255,0.22) !important;
+  color: #ffffff !important;
+  border-radius: 999px !important;
+  backdrop-filter: blur(var(--lg-blur)) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(var(--lg-blur)) saturate(150%) !important;
+}
+
+/* Content area: light glass */
+#bp-popup-overlay .bp-popup-content{
+  background: rgba(255,255,255,0.06) !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 6px)) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 6px)) saturate(145%) !important;
+}
+
+/* Override any INLINE white panels inside popup content (stats blocks) */
+#bp-popup-content [style*="background"],
+#bp-popup-content [style*="background-color"]{
+  background: rgba(255,255,255,0.10) !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  border-radius: 18px !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 4px)) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 4px)) saturate(150%) !important;
+}
+
+/* Common inner blocks (robust selectors) */
+#bp-popup-content > div,
+#bp-popup-content .card,
+#bp-popup-content .panel,
+#bp-popup-content .box,
+#bp-popup-content .stat,
+#bp-popup-content .stats,
+#bp-popup-content .kpi,
+#bp-popup-content .grid,
+#bp-popup-content .row{
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid rgba(255,255,255,0.16) !important;
+  border-radius: 18px !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 4px)) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 4px)) saturate(145%) !important;
+}
+
+/* Charts (SVG): force glass background rect + transparent svg */
+#bp-popup-content svg{
+  background: transparent !important;
+}
+#bp-popup-content svg rect{
+  fill: rgba(255,255,255,0.08) !important;
+  stroke: rgba(255,255,255,0.20) !important;
+}
+
+/* Charts (canvas): transparent */
+#bp-popup-content canvas{ background: transparent !important; }
+
+
+
+/* ===== BUILD 4.95 – FIX: bp popup uses CLASS, enforce glass ===== */
+.bp-popup-overlay, #bp-popup-overlay{
+  background: rgba(0,0,0,0.58) !important;
+  backdrop-filter: blur(12px) saturate(120%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(120%) !important;
+}
+
+.bp-popup-overlay .bp-popup-card, #bp-popup-overlay .bp-popup-card{
+  background: rgba(255,255,255,0.12) !important;
+  border: 1px solid rgba(255,255,255,0.26) !important;
+  border-top-color: rgba(255,255,255,0.44) !important;
+  border-left-color: rgba(255,255,255,0.30) !important;
+  border-radius: var(--lg-radius) !important;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.45) !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 8px)) saturate(155%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 8px)) saturate(155%) !important;
+  overflow: hidden !important;
+}
+
+.bp-popup-overlay .bp-popup-header, #bp-popup-overlay .bp-popup-header{
+  background: rgba(15,23,42,0.38) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.16) !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 6px)) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 6px)) saturate(140%) !important;
+}
+.bp-popup-overlay .bp-popup-title, #bp-popup-overlay .bp-popup-title{ color:#fff !important; }
+.bp-popup-overlay .bp-popup-close, #bp-popup-overlay .bp-popup-close{
+  background: rgba(255,255,255,0.14) !important;
+  border: 1px solid rgba(255,255,255,0.22) !important;
+  color: #ffffff !important;
+  border-radius: 999px !important;
+  backdrop-filter: blur(var(--lg-blur)) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(var(--lg-blur)) saturate(150%) !important;
+}
+
+.bp-popup-overlay .bp-popup-content, #bp-popup-overlay .bp-popup-content, #bp-popup-content{
+  background: rgba(255,255,255,0.06) !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 6px)) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 6px)) saturate(145%) !important;
+}
+
+/* Kill opaque/yellow inline backgrounds inside BP popups */
+#bp-popup-content [style*="background"],
+#bp-popup-content [style*="background-color"]{
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  border-radius: 18px !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 4px)) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 4px)) saturate(150%) !important;
+}
+
+
+
+/* ===== BUILD 4.95 – Force BP SVG chart background glass ===== */
+#bp-popup-content svg rect{
+  fill: rgba(255,255,255,0.08) !important;
+  stroke: rgba(255,255,255,0.20) !important;
+}
+
+
+
+/* ===== BUILD 4.95 – Charts: remove yellow fills, glass only ===== */
+#bp-popup-content svg path[fill^="url("],
+#bp-popup-content svg path[fill*="bpGrad"]{
+  fill: rgba(255,255,255,0.06) !important;
+}
+#bp-popup-content svg .area,
+#bp-popup-content svg .fill-area{
+  fill: rgba(255,255,255,0.06) !important;
+}
+
+
+
+/* ===== BUILD 4.95 – ICON POPUPS (Bikers Performance stats & charts) in Liquid Glass ===== */
+
+/* Overlay */
+#icon-popup-overlay{
+  background: rgba(0,0,0,0.58) !important;
+  backdrop-filter: blur(12px) saturate(120%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(120%) !important;
+}
+
+/* Popup card */
+#icon-popup-overlay .icon-popup{
+  background: rgba(255,255,255,0.12) !important;
+  border: 1px solid rgba(255,255,255,0.26) !important;
+  border-top-color: rgba(255,255,255,0.44) !important;
+  border-left-color: rgba(255,255,255,0.30) !important;
+  border-radius: var(--lg-radius) !important;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.45) !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 8px)) saturate(155%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 8px)) saturate(155%) !important;
+}
+
+/* Header */
+#icon-popup-overlay .icon-popup-header{
+  background: rgba(15,23,42,0.38) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.16) !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 6px)) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 6px)) saturate(140%) !important;
+}
+#icon-popup-overlay #icon-popup-title{
+  color: #ffffff !important;
+}
+
+/* Close button */
+#icon-popup-overlay .icon-popup-close{
+  background: rgba(255,255,255,0.14) !important;
+  border: 1px solid rgba(255,255,255,0.22) !important;
+  color: #ffffff !important;
+  border-radius: 999px !important;
+  backdrop-filter: blur(var(--lg-blur)) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(var(--lg-blur)) saturate(150%) !important;
+}
+
+/* Content area */
+#icon-popup-overlay #icon-popup-content,
+#icon-popup-overlay .icon-popup-body{
+  background: rgba(255,255,255,0.06) !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 6px)) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 6px)) saturate(145%) !important;
+  color: #ffffff !important;
+}
+
+/* Kill opaque inline panels (the "giallino" blocks) inside icon popup content */
+#icon-popup-content [style*="background"],
+#icon-popup-content [style*="background-color"]{
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  border-radius: 18px !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 4px)) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 4px)) saturate(150%) !important;
+}
+
+/* Charts in icon popups: force glass */
+#icon-popup-content svg{
+  background: transparent !important;
+}
+#icon-popup-content svg rect{
+  fill: rgba(255,255,255,0.08) !important;
+  stroke: rgba(255,255,255,0.20) !important;
+}
+#icon-popup-content svg path[fill^="url("],
+#icon-popup-content svg path[fill*="bpGrad"],
+#icon-popup-content svg .area,
+#icon-popup-content svg .fill-area{
+  fill: rgba(255,255,255,0.06) !important;
+}
+#icon-popup-content canvas{
+  background: transparent !important;
 }
 
 </style>
@@ -7066,7 +7405,7 @@ input, select, textarea{
 <script>
 "use strict";
 
-const APP_VERSION = "4.89";
+const APP_VERSION = "4.95";
 const BUILD_DATE = "";
 const API_URL = "https://script.google.com/macros/s/AKfycbxon71F47wVkq1DFK7DBqQ2-j90ZTevoKOWEpE6h8DEbE5pW4eAl0GvC6gbTGXQp-_1sA/exec";
 
@@ -9462,15 +9801,15 @@ function svgLineChart(points, width=360, height=160, padding=12) {
   }
 
   return `
-    <svg viewBox="0 0 ${width} ${height}" width="100%" height="${height}" role="img" aria-label="Grafico andamento score">
+    <svg class="bp-glass-svg" viewBox="0 0 ${width} ${height}" width="100%" height="${height}" role="img" aria-label="Grafico andamento score">
       <defs>
         <linearGradient id="bpGrad" x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0%" stop-color="#FDE000" stop-opacity="0.35"></stop>
-          <stop offset="100%" stop-color="#FDE000" stop-opacity="0"></stop>
+          <stop offset="0%" stop-color="rgba(255,255,255,0.10)" stop-opacity="0.35"></stop>
+          <stop offset="100%" stop-color="rgba(255,255,255,0.10)" stop-opacity="0"></stop>
         </linearGradient>
       </defs>
 
-      <rect x="0" y="0" width="${width}" height="${height}" rx="14" ry="14" fill="#ffffff" stroke="#e5e7eb"></rect>
+      <rect x="0" y="0" width="${width}" height="${height}" rx="14" stroke-width="1" ry="14" stroke-width="1" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.20)" stroke-width="1"></rect>
 
       <!-- grid horizontal + y labels -->
       ${yGrid.map(g => `
@@ -9489,7 +9828,7 @@ function svgLineChart(points, width=360, height=160, padding=12) {
       <line x1="${padding}" y1="${height-padding}" x2="${width-padding}" y2="${height-padding}" stroke="#e5e7eb"></line>
 
       <!-- area -->
-      <polygon points="${poly} ${width-padding},${height-padding} ${padding},${height-padding}" fill="url(#bpGrad)"></polygon>
+      <polygon points="${poly} ${width-padding},${height-padding} ${padding},${height-padding}" fill="rgba(255,255,255,0.06)"></polygon>
 
       <!-- line -->
       <polyline points="${poly}" fill="none" stroke="#CC0000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></polyline>
@@ -10193,7 +10532,7 @@ document.addEventListener("keydown", (e) => {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
-      const reg = await navigator.serviceWorker.register("service-worker.js");
+      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.95");
       if (reg && reg.update) reg.update().catch(() => {});
       reg.addEventListener("updatefound", () => {
         const nw = reg.installing;
