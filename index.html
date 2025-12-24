@@ -6990,6 +6990,40 @@ input, select, textarea{
 
 </style>
 
+<style id="bp-back-liquid-glass-red">
+/* ===== BUILD 4.103 – BIG back button: RED Liquid Glass (uniform, no white reflection) ===== */
+#bp-return-bike-performance,
+.bp-return-btn,
+button#bp-return-bike-performance{
+  background: rgba(204,0,0,0.88) !important;       /* uniform red */
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+
+  /* liquid glass feel, but homogeneous */
+  -webkit-backdrop-filter: blur(12px) saturate(170%) !important;
+  backdrop-filter: blur(12px) saturate(170%) !important;
+
+  box-shadow:
+    0 14px 28px rgba(0,0,0,0.38),
+    0 0 16px rgba(255,0,0,0.32),
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    inset 0 -10px 20px rgba(0,0,0,0.12) !important;
+
+  opacity: 1 !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.5px !important;
+  position: relative !important;
+}
+
+/* hard-disable any legacy highlights/reflections */
+#bp-return-bike-performance::before,
+#bp-return-bike-performance::after,
+.bp-return-btn::before,
+.bp-return-btn::after{
+  content: none !important;
+  display: none !important;
+}
+</style>
 </head>
 
 <body>
@@ -7438,7 +7472,7 @@ input, select, textarea{
 <script>
 "use strict";
 
-const APP_VERSION = "4.101";
+const APP_VERSION = "4.103";
 const BUILD_DATE = "";
 const API_URL = "https://script.google.com/macros/s/AKfycbxon71F47wVkq1DFK7DBqQ2-j90ZTevoKOWEpE6h8DEbE5pW4eAl0GvC6gbTGXQp-_1sA/exec";
 
@@ -10565,7 +10599,7 @@ document.addEventListener("keydown", (e) => {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
-      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.101");
+      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.103");
       if (reg && reg.update) reg.update().catch(() => {});
       reg.addEventListener("updatefound", () => {
         const nw = reg.installing;
@@ -11353,6 +11387,17 @@ function bpSetCompareControlsVisibility() {
   </div>
 </div>
 
+<script id="build-inject">
+(() => {
+  const BUILD = "4.103";
+  // Home label
+  const hv = document.getElementById("home-version-label") || document.getElementById("app-version");
+  if (hv) hv.textContent = BUILD;
+  // Legacy nodes
+  const av = document.getElementById("app-version");
+  if (av) av.textContent = BUILD;
+})();
+</script>
 </body>
 </html>
  
