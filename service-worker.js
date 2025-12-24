@@ -1,4 +1,4 @@
-const CACHE_NAME = "CRS-4.103";
+const CACHE_NAME = "CRS-4.66";
 const FILES_TO_CACHE = [
   "./",
   "./index.html",
@@ -8,7 +8,7 @@ const FILES_TO_CACHE = [
   "./crs-icon.png",
   "./bg-track.jpg"
 
-  "./crs-banner.jpg"
+  "./crs-banner.png"
 ];
 
 self.addEventListener("message", (event) => {
