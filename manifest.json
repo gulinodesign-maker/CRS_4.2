@@ -2,7 +2,7 @@
   "name": "CRS Score",
   "short_name": "CRS",
   "description": "CRS Score – Race Control System",
-  "start_url": "./?v=4.110",
+  "start_url": "./?v=4.109",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- PWA / Manifest -->
-  <link rel="manifest" href="manifest.json?v=4.110">
+  <link rel="manifest" href="manifest.json?v=4.109">
   <meta name="theme-color" content="#000000">
 
   <!-- iOS specifico (iPhone / iPad) -->
@@ -1204,7 +1204,7 @@ body {
   }
 
   
-/* ===== BUILD 4.108 – CALENDARIO GARE: giorni con gara in ROSSO ===== */
+/* ===== BUILD 4.109 – CALENDARIO GARE: giorni con gara in ROSSO ===== */
 #race-calendar button.has-race{
   background: #cc0000 !important;
   color: #ffffff !important;
@@ -1946,7 +1946,7 @@ body {
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -2216,30 +2216,6 @@ body{
   stroke-width: 1px;
 }
 
-
-/* ===== BUILD 4.110 – EXTRA THICK LIQUID GLASS EDGES ===== */
-:root{
-  --lg-edge-light: rgba(255,255,255,0.65);
-  --lg-edge-dark: rgba(0,0,0,0.28);
-}
-
-.btn,
-.home-btn,
-.btn-small,
-.auth-button,
-.bp-back-btn,
-.bp-return-btn,
-.biker-modal-btn,
-.tsb-icon-btn,
-#home-logout-btn,
-#home-account-pill{
-  border: 2.4px solid rgba(255,255,255,0.55) !important;
-  box-shadow:
-    inset 0 2px 0 var(--lg-edge-light),
-    inset 0 -3px 6px var(--lg-edge-dark),
-    0 16px 36px rgba(0,0,0,0.45) !important;
-}
-
 </style>
 
 
@@ -2266,7 +2242,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -2420,7 +2396,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -2574,7 +2550,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -2744,7 +2720,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -2924,7 +2900,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -3075,7 +3051,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -3227,7 +3203,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -3363,41 +3339,57 @@ body{
 
 
 <style id="bp-compare-css">
-/* Bike performance – Compare mode controls */
+/* Bike performance – Compare mode controls (FIX vivid buttons on iOS) */
 #bp-compare-controls{
   display:flex;
-  gap:10px;
+  gap:12px;
   justify-content:center;
   align-items:center;
   margin: 6px 0 10px;
   flex-wrap:wrap;
 }
+
 .bp-compare-btn{
   border:none;
   border-radius:999px;
-  padding:10px 14px;
+  padding:12px 18px;
   font-weight:900;
   font-size:14px;
   cursor:pointer;
-  box-shadow:0 4px 12px rgba(0,0,0,0.18);
+  box-shadow:0 6px 16px rgba(0,0,0,0.22);
+  opacity:1 !important;
+  filter:none !important;
+
+  /* IMPORTANT: keep buttons solid (no glass wash) */
+  background: #111827 !important;
+  color:#fff !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
 }
+
+/* RED (toggle) */
 #bp-compare-toggle{
-  background:#111827;
-  color:#fff;
-  border:1px solid rgba(0,0,0,0.12);
+  background: rgba(204,0,0,0.92) !important;
+  color:#fff !important;
+  border-color: rgba(255,255,255,0.16) !important;
 }
 #bp-compare-toggle.active{
-  background:var(--coyote-red);
-  color:#fff;
+  background: rgba(204,0,0,1) !important;
+  box-shadow:0 8px 18px rgba(0,0,0,0.26);
 }
+
+/* YELLOW (go) */
 #bp-compare-go{
-  background:var(--coyote-yellow);
-  color:#111827;
-  opacity:0.45;
+  background: rgba(253,224,0,0.92) !important;
+  color:#111827 !important;
+  border-color: rgba(0,0,0,0.10) !important;
+  opacity:0.65 !important; /* disabled but still vivid */
 }
 #bp-compare-go.enabled{
-  opacity:1;
+  opacity:1 !important;
 }
+
 /* Selected biker row when compareMode ON */
 .bp-item.bp-selected{
   background:#0f172a !important;
@@ -3413,139 +3405,6 @@ body{
 .bp-rank-block,
 .bp-rank-pos {
   margin-bottom: 30px !important;
-}
-
-
-/* ===== BUILD 4.108 – Account pill reposition ===== */
-#account-pill, .account-pill {
-  position: fixed !important;
-  bottom: 84px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  z-index: 9999 !important;
-}
-
-
-
-/* ===== BUILD 4.68 – HOME account pill inside yellow card ===== */
-#home-account-pill{
-  position: relative !important;
-  left: auto !important;
-  top: auto !important;
-  bottom: auto !important;
-  transform: none !important;
-
-  margin: 12px auto 0 auto !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 10px !important;
-
-  padding: 8px 14px !important;
-  border-radius: 999px !important;
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.25) !important;
-}
-
-/* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
-/* ===== BUILD 4.69 – HOME account pill sotto Bikers nel riquadro giallo ===== */
-.home-account-pill-wrapper{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 12px;
-}
-
-#home-account-pill{
-  position: relative !important;
-  inset: auto !important;
-  left: auto !important;
-  top: auto !important;
-  bottom: auto !important;
-  transform: none !important;
-  z-index: 10 !important;
-
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 10px !important;
-
-  padding: 10px 14px !important;
-  border-radius: 999px !important;
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-  user-select: none !important;
-  cursor: pointer !important;
-}
-
-/* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
-#home-account-pill:empty{ display:none !important; }
-
-
-
-/* ===== BUILD 4.71 – HOME account button same size as others (white bg, red text) ===== */
-#home-account-pill{
-  /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
-  background: #ffffff !important;
-  color: var(--coyote-red, #e00) !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.18) !important;
-}
-
-/* se vuoi un bordo leggero per staccare dal giallo */
-#home-account-pill{
-  border: 2px solid rgba(0,0,0,0.08) !important;
-}
-
-#home-account-pill:empty{ display:none !important; }
-
-
-/* ===== BUILD 4.73 – HOME account button IDENTICO agli altri ===== */
-#home-account-pill{
-  width: 100% !important;          /* identico agli altri */
-  height: auto !important;
-  padding: 14px 16px !important;   /* uguale agli home-btn */
-  border-radius: 999px !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important; /* TESTO PERFETTAMENTE CENTRATO */
-
-  background: #ffffff !important;  /* BIANCO */
-  color: #d40000 !important;       /* ROSSO */
-  font-size: 20px !important;
-  font-weight: 700 !important;
-
-  box-shadow: 0 8px 18px rgba(0,0,0,0.25) !important;
-  border: none !important;
-}
-
-
-/* ===== BUILD 4.73 – HOME account buttons under yellow card ===== */
-.home-account-pill-wrapper{
-  position:relative;
-  margin-top:16px;
-  display:flex;
-  justify-content:center;
-}
-
-
-.home-account-pill-wrapper{
-  margin-top:20px;
-  display:flex;
-  justify-content:center;
 }
 </style>
 
@@ -3576,7 +3435,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -3726,7 +3585,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -3874,7 +3733,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4030,7 +3889,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4192,7 +4051,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4342,7 +4201,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4490,7 +4349,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4641,7 +4500,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4806,7 +4665,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4960,7 +4819,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5122,7 +4981,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5270,7 +5129,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5422,7 +5281,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5575,7 +5434,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5724,7 +5583,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5916,7 +5775,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -6078,7 +5937,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -6248,7 +6107,7 @@ body{
 }
 
 
-/* ===== BUILD 4.108 – Account pill reposition ===== */
+/* ===== BUILD 4.109 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -6415,15 +6274,12 @@ body{
   --lg-surface: rgba(255,255,255,0.10);
   --lg-surface-2: rgba(255,255,255,0.16);
   --lg-border: rgba(255,255,255,0.22);
-  --lg-border-strong: rgba(255,255,255,0.42);
+  --lg-border-strong: rgba(255,255,255,0.34);
   --lg-shadow: 0 16px 50px rgba(0,0,0,0.45);
   --lg-shadow-soft: 0 10px 28px rgba(0,0,0,0.30);
-  --lg-blur: 18px;
+  --lg-blur: 16px;
   --lg-radius: 22px;
   --lg-radius-pill: 999px;
-  --lg-button-depth: 0 14px 34px rgba(0,0,0,0.42);
-  --lg-button-inner: inset 0 1px 0 rgba(255,255,255,0.45),
-                     inset 0 -10px 18px rgba(0,0,0,0.18);
 }
 
 /* Glass base surfaces */
@@ -6458,42 +6314,17 @@ body{
 .tsb-icon-btn,
 #home-logout-btn,
 #home-account-pill{
-    padding: 14px 18px !important;          /* BUILD 4.110 – thicker buttons */
-  min-height: 44px !important;
-  border-radius: var(--lg-radius-pill) !important;
-
-  background: linear-gradient(180deg, rgba(255,255,255,0.28), rgba(255,255,255,0.14)) !important;
-
-  border: 1.6px solid var(--lg-border-strong) !important;
-  border-top-color: rgba(255,255,255,0.58) !important;
-  border-left-color: rgba(255,255,255,0.38) !important;
-
-  box-shadow:
-    var(--lg-button-depth),
-    var(--lg-button-inner) !important;
-
-  backdrop-filter: blur(var(--lg-blur)) saturate(155%) !important;
-  -webkit-backdrop-filter: blur(var(--lg-blur)) saturate(155%) !important;
+  border: 1px solid var(--lg-border-strong) !important;
+  border-top-color: rgba(255,255,255,0.55) !important;
+  border-left-color: rgba(255,255,255,0.35) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.10)) !important;
   color: #ffffff !important;
+  border-radius: var(--lg-radius-pill) !important;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.35) !important;
+  backdrop-filter: blur(var(--lg-blur)) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(var(--lg-blur)) saturate(150%) !important;
 }
 
-
-/* BUILD 4.110 – press feedback (more physical) */
-.btn:active,
-.home-btn:active,
-.btn-small:active,
-.auth-button:active,
-.bp-back-btn:active,
-.bp-return-btn:active,
-.biker-modal-btn:active,
-.tsb-icon-btn:active,
-#home-logout-btn:active,
-#home-account-pill:active{
-  transform: translateY(1px) scale(0.985) !important;
-  box-shadow:
-    0 6px 18px rgba(0,0,0,0.35),
-    inset 0 2px 6px rgba(0,0,0,0.25) !important;
-}
 /* Accent variants */
 #btn-db, .btn-db-save, .biker-modal-btn-primary{
   color: #111827 !important;
@@ -7090,7 +6921,7 @@ button#bp-return-bike-performance{
 }
 </style>
 <style id="lg-solid-pill-4-107">
-/* ===== BUILD 4.108 – PILL BUTTONS: SOLID Liquid Glass (NO grey/white gradients) ===== */
+/* ===== BUILD 4.109 – PILL BUTTONS: SOLID Liquid Glass (NO grey/white gradients) ===== */
 
 /* Base glass pills previously using linear-gradients */
 .auth-button,
@@ -10728,7 +10559,7 @@ document.addEventListener("keydown", (e) => {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
-      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.110.109");
+      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.109.108");
       if (reg && reg.update) reg.update().catch(() => {});
       reg.addEventListener("updatefound", () => {
         const nw = reg.installing;
@@ -11518,7 +11349,7 @@ function bpSetCompareControlsVisibility() {
 
 
 <style id="build-4.106-pill-liquid-glass">
-/* ===== BUILD 4.108 – UNIFICA TASTI A PILLOLA (Liquid Glass, tinta unita) =====
+/* ===== BUILD 4.109 – UNIFICA TASTI A PILLOLA (Liquid Glass, tinta unita) =====
    Obiettivo: niente gradienti/shine interni. Un solo linguaggio: Liquid Glass.
 */
 :root{
@@ -11642,7 +11473,7 @@ button.btn:active,
 
 <script id="build-inject">
 (() => {
-  const BUILD = "4.110";
+  const BUILD = "4.109";
   // Home label
   const hv = document.getElementById("home-version-label") || document.getElementById("app-version");
   if (hv) hv.textContent = BUILD;
