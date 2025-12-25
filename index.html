@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- PWA / Manifest -->
-  <link rel="manifest" href="manifest.json?v=4.114">
+  <link rel="manifest" href="manifest.json?v=4.119">
   <meta name="theme-color" content="#000000">
 
   <!-- iOS specifico (iPhone / iPad) -->
@@ -7758,7 +7758,7 @@ button.login-submit {
 <script>
 "use strict";
 
-const APP_VERSION = "4.103";
+const APP_VERSION = "4.119";
 const BUILD_DATE = "";
 const API_URL = "https://script.google.com/macros/s/AKfycbxon71F47wVkq1DFK7DBqQ2-j90ZTevoKOWEpE6h8DEbE5pW4eAl0GvC6gbTGXQp-_1sA/exec";
 
@@ -10955,7 +10955,7 @@ document.addEventListener("keydown", (e) => {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
-      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.116.0");
+      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.119");
       if (reg && reg.update) reg.update().catch(() => {});
       reg.addEventListener("updatefound", () => {
         const nw = reg.installing;
@@ -11881,9 +11881,197 @@ button.btn:active,
 
 </style>
 
+<style id="crs-liquid-glass-overrides">
+/* ===============================
+   LIQUID GLASS OVERRIDES – BUILD 4.119
+   - tasti più spessi
+   - bordo vetroso più spesso
+   - maggiore “distorsione” percepita del background
+   =============================== */
+
+:root{
+  --lg-blur: 22px;                 /* più blur = più distorsione percepita */
+  --lg-saturate: 175%;
+  --lg-contrast: 118%;
+  --lg-border: rgba(255,255,255,0.28);
+  --lg-border-strong: rgba(255,255,255,0.44);
+  --lg-border-w: 2px;
+  --lg-border-w-strong: 3px;
+  --lg-refraction-opacity: 0.85;
+  --lg-refraction-scale: 1.18;
+}
+
+/* Base: qualsiasi superficie “glass” deve usare blur + saturate più forti */
+.container,
+.home-box,
+.ranking,
+.player-card,
+#test-inputs,
+.bp-history,
+.bp-item,
+.biker-modal,
+.account-modal,
+.auth-card,
+.participant-row,
+.icon-popup,
+#tech-status-bar{
+  backdrop-filter: blur(var(--lg-blur)) saturate(var(--lg-saturate)) contrast(var(--lg-contrast)) !important;
+  -webkit-backdrop-filter: blur(var(--lg-blur)) saturate(var(--lg-saturate)) contrast(var(--lg-contrast)) !important;
+  border-width: var(--lg-border-w) !important;
+  border-color: var(--lg-border) !important;
+  box-shadow: 0 18px 54px rgba(0,0,0,0.46) !important;
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+/* “Refraction layer” (finta distorsione): micro-lenti + gloss */
+.container::before,
+.home-box::before,
+.ranking::before,
+.player-card::before,
+#test-inputs::before,
+.bp-history::before,
+.bp-item::before,
+.biker-modal::before,
+.account-modal::before,
+.auth-card::before,
+.participant-row::before,
+.icon-popup::before,
+#tech-status-bar::before{
+  content:"";
+  position:absolute;
+  inset:-22px;
+  pointer-events:none;
+  /* eredita l’immagine di sfondo della pagina e la “sporca” */
+  background: inherit;
+  background-attachment: fixed;
+  filter: blur(18px) saturate(190%) contrast(120%);
+  transform: scale(var(--lg-refraction-scale)) rotate(0.001deg);
+  opacity: var(--lg-refraction-opacity);
+  mix-blend-mode: screen;
+  /* micro-lenti */
+  mask-image: radial-gradient(circle at 20% 10%, rgba(0,0,0,0.95) 0 22%, rgba(0,0,0,0.15) 48%, transparent 74%),
+              radial-gradient(circle at 80% 35%, rgba(0,0,0,0.95) 0 18%, rgba(0,0,0,0.18) 46%, transparent 72%),
+              radial-gradient(circle at 35% 85%, rgba(0,0,0,0.95) 0 20%, rgba(0,0,0,0.18) 45%, transparent 72%);
+  -webkit-mask-image: radial-gradient(circle at 20% 10%, rgba(0,0,0,0.95) 0 22%, rgba(0,0,0,0.15) 48%, transparent 74%),
+                      radial-gradient(circle at 80% 35%, rgba(0,0,0,0.95) 0 18%, rgba(0,0,0,0.18) 46%, transparent 72%),
+                      radial-gradient(circle at 35% 85%, rgba(0,0,0,0.95) 0 20%, rgba(0,0,0,0.18) 45%, transparent 72%);
+}
+
+/* bordo vetroso più spesso con ring interno */
+.container::after,
+.home-box::after,
+.ranking::after,
+.player-card::after,
+#test-inputs::after,
+.bp-history::after,
+.bp-item::after,
+.biker-modal::after,
+.account-modal::after,
+.auth-card::after,
+.participant-row::after,
+.icon-popup::after,
+#tech-status-bar::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border-radius: inherit;
+  box-shadow:
+    inset 0 0 0 var(--lg-border-w-strong) rgba(255,255,255,0.16),
+    inset 0 0 0 calc(var(--lg-border-w-strong) + 1px) rgba(255,255,255,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.40);
+}
+
+/* ===============================
+   BUTTONS / PILLS — più spessore + bordo vetroso più spesso
+   =============================== */
+
+/* target principale (tutti i tasti) */
+button,
+.home-btn,
+.auth-button,
+.auth-toggle-btn,
+.tsb-icon-btn,
+.bp-return-btn,
+#bp-return-bike-performance,
+#test-calc-btn,
+#test-reset-btn{
+  position: relative !important;
+  overflow: hidden !important;
+  transform: translateZ(0);
+  min-height: 52px !important;
+  padding: 14px 18px !important; /* più “spessore” */
+  border-radius: 999px !important;
+  border: var(--lg-border-w-strong) solid rgba(255,255,255,0.26) !important;
+  background: rgba(255,255,255,0.12) !important;
+  backdrop-filter: blur(calc(var(--lg-blur) + 4px)) saturate(185%) contrast(120%) !important;
+  -webkit-backdrop-filter: blur(calc(var(--lg-blur) + 4px)) saturate(185%) contrast(120%) !important;
+  box-shadow:
+    0 16px 40px rgba(0,0,0,0.38),
+    inset 0 1px 0 rgba(255,255,255,0.42) !important;
+}
+
+/* layer “refraction” sui tasti */
+button::before,
+.home-btn::before,
+.auth-button::before,
+.auth-toggle-btn::before,
+.tsb-icon-btn::before,
+.bp-return-btn::before,
+#bp-return-bike-performance::before,
+#test-calc-btn::before,
+#test-reset-btn::before{
+  content:"";
+  position:absolute;
+  inset:-18px;
+  pointer-events:none;
+  background: inherit;
+  background-attachment: fixed;
+  filter: blur(16px) saturate(200%) contrast(125%);
+  transform: scale(1.22) rotate(0.001deg);
+  opacity: 0.85;
+  mix-blend-mode: screen;
+  -webkit-mask-image: radial-gradient(circle at 30% 35%, rgba(0,0,0,0.90) 0 26%, rgba(0,0,0,0.18) 54%, transparent 78%);
+          mask-image: radial-gradient(circle at 30% 35%, rgba(0,0,0,0.90) 0 26%, rgba(0,0,0,0.18) 54%, transparent 78%);
+}
+
+/* ring interno più spesso */
+button::after,
+.home-btn::after,
+.auth-button::after,
+.auth-toggle-btn::after,
+.tsb-icon-btn::after,
+.bp-return-btn::after,
+#bp-return-bike-performance::after,
+#test-calc-btn::after,
+#test-reset-btn::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius: inherit;
+  pointer-events:none;
+  box-shadow:
+    inset 0 0 0 3px rgba(255,255,255,0.14),
+    inset 0 0 0 4px rgba(255,255,255,0.06),
+    inset 0 2px 0 rgba(255,255,255,0.34);
+}
+
+/* active: sensazione “pressione” più netta */
+button:active,
+.home-btn:active,
+.auth-button:active,
+.auth-toggle-btn:active,
+.tsb-icon-btn:active{
+  transform: translateZ(0) scale(0.985) !important;
+  filter: brightness(1.04);
+}
+</style>
+
 <script id="build-inject">
 (() => {
-  const BUILD = "4.117";
+    const BUILD = "4.119";
   // Home label
   const hv = document.getElementById("home-version-label") || document.getElementById("app-version");
   if (hv) hv.textContent = BUILD;
