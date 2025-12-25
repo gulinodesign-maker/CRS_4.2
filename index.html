@@ -8267,6 +8267,8 @@ button.login-submit {
 #race-percent-header .race-actions-top .btn.race-nav-btn:active{
   background:#9f0000 !important;
 }
+/* FIX: remove stray ': · :' dots in iOS (percent header subtitle) */
+#race-percent-header .bikers-glass-sub{ display:none !important; }
 .sr-only{
   position:absolute !important;
   width:1px !important;
@@ -8410,7 +8412,15 @@ button.login-submit {
 #btn-select::before{ content:"⟵"; font-size:32px; line-height:1; color:#fff; }
 #calc-btn::before { content:"⟶"; font-size:32px; line-height:1; color:#fff; }
 </style>
+
+<style id="race-colon-css-4-130">
+#btn-select::after,
+#calc-btn::after{
+  content: none !important;
+}
+</style>
 </head>
+
 
 
 
@@ -8863,7 +8873,7 @@ button.login-submit {
 <script>
 "use strict";
 
-const APP_VERSION = "4.103";
+const APP_VERSION = "4.104";
 const BUILD_DATE = "";
 const API_URL = "https://script.google.com/macros/s/AKfycbxon71F47wVkq1DFK7DBqQ2-j90ZTevoKOWEpE6h8DEbE5pW4eAl0GvC6gbTGXQp-_1sA/exec";
 
@@ -12132,7 +12142,7 @@ document.addEventListener("keydown", (e) => {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
-      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.122.0");
+      const reg = await navigator.serviceWorker.register(`service-worker.js?v=${APP_VERSION}`);
       if (reg && reg.update) reg.update().catch(() => {});
       reg.addEventListener("updatefound", () => {
         const nw = reg.installing;
@@ -13126,6 +13136,32 @@ button.btn:active,
   // Also on visibility / focus (PWA)
   window.addEventListener('focus', sanitizeNavButtons);
   document.addEventListener('visibilitychange', sanitizeNavButtons);
+})();
+</script>
+
+
+<script id="race-colon-killer-4-130">
+(function(){
+  function killColons(el){
+    if (!el) return;
+    el.childNodes.forEach(n=>{
+      if (n.nodeType===3 && n.textContent.trim()===':') n.remove();
+    });
+    // also check immediate siblings
+    if (el.nextSibling && el.nextSibling.nodeType===3 && el.nextSibling.textContent.trim()===':'){
+      el.nextSibling.remove();
+    }
+    if (el.previousSibling && el.previousSibling.nodeType===3 && el.previousSibling.textContent.trim()===':'){
+      el.previousSibling.remove();
+    }
+  }
+  function run(){
+    killColons(document.getElementById('btn-select'));
+    killColons(document.getElementById('calc-btn'));
+  }
+  run();
+  document.addEventListener('click', ()=>setTimeout(run,0), true);
+  document.addEventListener('visibilitychange', run);
 })();
 </script>
 
