@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- PWA / Manifest -->
-  <link rel="manifest" href="manifest.json?v=4.117">
+  <link rel="manifest" href="manifest.json?v=4.122">
   <meta name="theme-color" content="#000000">
 
   <!-- iOS specifico (iPhone / iPad) -->
@@ -1204,7 +1204,7 @@ body {
   }
 
   
-/* ===== BUILD 4.117 – CALENDARIO GARE: giorni con gara in ROSSO ===== */
+/* ===== BUILD 4.120 – CALENDARIO GARE: giorni con gara in ROSSO ===== */
 #race-calendar button.has-race{
   background: #cc0000 !important;
   color: #ffffff !important;
@@ -1946,7 +1946,7 @@ body {
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -1957,7 +1957,7 @@ body {
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -1985,7 +1985,7 @@ body {
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -2026,7 +2026,7 @@ body {
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -2042,7 +2042,7 @@ body {
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -2063,7 +2063,7 @@ body {
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -2078,7 +2078,7 @@ body {
   justify-content:center;
 }
 
-/* ===== BUILD 4.117 – HOME login/logout pill under yellow card (like reference) ===== */
+/* ===== BUILD 4.120 – HOME login/logout pill under yellow card (like reference) ===== */
 #home-view{
   display:flex;
   flex-direction:column;
@@ -2116,7 +2116,7 @@ body {
 .home-footer-hidden{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME audio toggle under account pill ===== */
+/* ===== BUILD 4.120 – HOME audio toggle under account pill ===== */
 .home-audio-pill{
   width: min(340px, 86vw);
   border: none;
@@ -2132,7 +2132,7 @@ body {
 }
 
 
-/* ===== BUILD 4.117 – Audio icon button + red build label ===== */
+/* ===== BUILD 4.120 – Audio icon button + red build label ===== */
 .home-audio-pill{
   width: 44px;
   height: 44px;
@@ -2155,7 +2155,7 @@ body {
 }
 
 
-/* ===== BUILD 4.117 – Grouped home controls, lowered by 50px ===== */
+/* ===== BUILD 4.120 – Grouped home controls, lowered by 50px ===== */
 .home-controls-group{
   display:flex;
   flex-direction:column;
@@ -2165,7 +2165,7 @@ body {
 }
 
 
-/* ===== BUILD 4.117 – GLOBAL banner FIX ===== */
+/* ===== BUILD 4.120 – GLOBAL banner FIX ===== */
 #global-banner{
   position: sticky;
   top: 0;
@@ -2192,7 +2192,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – FIX grafici Bikers Performance ===== */
+/* ===== BUILD 4.120 – FIX grafici Bikers Performance ===== */
 .bp-performance-chart,
 .bp-performance-chart canvas{
   max-height: 220px !important;
@@ -2204,7 +2204,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – FIX BP SVG charts (no taglio numeri iOS) ===== */
+/* ===== BUILD 4.120 – FIX BP SVG charts (no taglio numeri iOS) ===== */
 #bp-popup-content .bp-glass-svg,
 #icon-popup-content .bp-glass-svg{
   overflow: visible !important;
@@ -2369,6 +2369,20 @@ body{
   background:#9f0000 !important;
 }
 
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
+}
+
 </style>
 
 
@@ -2395,7 +2409,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -2406,7 +2420,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -2434,7 +2448,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -2475,7 +2489,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -2491,7 +2505,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -2512,7 +2526,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -2537,6 +2551,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -2562,7 +2590,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -2573,7 +2601,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -2601,7 +2629,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -2642,7 +2670,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -2658,7 +2686,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -2679,7 +2707,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -2704,6 +2732,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -2729,7 +2771,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -2740,7 +2782,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -2768,7 +2810,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -2809,7 +2851,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -2825,7 +2867,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -2846,7 +2888,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -2871,6 +2913,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -2912,7 +2968,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -2923,7 +2979,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -2951,7 +3007,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -2992,7 +3048,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -3008,7 +3064,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -3029,7 +3085,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -3054,6 +3110,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -3105,7 +3175,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -3116,7 +3186,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -3144,7 +3214,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -3185,7 +3255,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -3201,7 +3271,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -3222,7 +3292,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -3247,6 +3317,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -3269,7 +3353,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -3280,7 +3364,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -3308,7 +3392,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -3349,7 +3433,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -3365,7 +3449,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -3386,7 +3470,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -3411,6 +3495,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -3434,7 +3532,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -3445,7 +3543,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -3473,7 +3571,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -3514,7 +3612,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -3530,7 +3628,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -3551,7 +3649,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -3576,6 +3674,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -3663,6 +3775,20 @@ body{
   background:#9f0000 !important;
 }
 
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
+}
+
 </style>
 
 
@@ -3692,7 +3818,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -3703,7 +3829,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -3731,7 +3857,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -3772,7 +3898,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -3788,7 +3914,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -3809,7 +3935,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -3834,6 +3960,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -3855,7 +3995,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -3866,7 +4006,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -3894,7 +4034,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -3935,7 +4075,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -3951,7 +4091,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -3972,7 +4112,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -3997,6 +4137,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -4016,7 +4170,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4027,7 +4181,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -4055,7 +4209,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -4096,7 +4250,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -4112,7 +4266,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -4133,7 +4287,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -4158,6 +4312,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -4185,7 +4353,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4196,7 +4364,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -4224,7 +4392,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -4265,7 +4433,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -4281,7 +4449,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -4302,7 +4470,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -4327,6 +4495,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -4360,7 +4542,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4371,7 +4553,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -4399,7 +4581,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -4440,7 +4622,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -4456,7 +4638,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -4477,7 +4659,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -4502,6 +4684,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -4523,7 +4719,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4534,7 +4730,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -4562,7 +4758,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -4603,7 +4799,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -4619,7 +4815,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -4640,7 +4836,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -4665,6 +4861,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -4684,7 +4894,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4695,7 +4905,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -4723,7 +4933,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -4764,7 +4974,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -4780,7 +4990,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -4801,7 +5011,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -4826,6 +5036,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -4848,7 +5072,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -4859,7 +5083,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -4887,7 +5111,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -4928,7 +5152,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -4944,7 +5168,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -4965,7 +5189,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -4990,6 +5214,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -5026,7 +5264,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5037,7 +5275,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -5065,7 +5303,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -5106,7 +5344,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -5122,7 +5360,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -5143,7 +5381,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -5168,6 +5406,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -5193,7 +5445,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5204,7 +5456,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -5232,7 +5484,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -5273,7 +5525,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -5289,7 +5541,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -5310,7 +5562,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -5335,6 +5587,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -5368,7 +5634,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5379,7 +5645,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -5407,7 +5673,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -5448,7 +5714,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -5464,7 +5730,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -5485,7 +5751,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -5510,6 +5776,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -5529,7 +5809,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5540,7 +5820,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -5568,7 +5848,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -5609,7 +5889,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -5625,7 +5905,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -5646,7 +5926,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -5671,6 +5951,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -5694,7 +5988,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5705,7 +5999,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -5733,7 +6027,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -5774,7 +6068,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -5790,7 +6084,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -5811,7 +6105,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -5836,6 +6130,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -5860,7 +6168,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -5871,7 +6179,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -5899,7 +6207,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -5940,7 +6248,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -5956,7 +6264,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -5977,7 +6285,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -6002,6 +6310,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -6022,7 +6344,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -6033,7 +6355,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -6061,7 +6383,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -6102,7 +6424,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -6118,7 +6440,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -6139,7 +6461,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -6164,6 +6486,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -6227,7 +6563,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -6238,7 +6574,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -6266,7 +6602,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -6307,7 +6643,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -6323,7 +6659,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -6344,7 +6680,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -6369,6 +6705,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -6402,7 +6752,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -6413,7 +6763,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -6441,7 +6791,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -6482,7 +6832,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -6498,7 +6848,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -6519,7 +6869,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -6544,6 +6894,20 @@ body{
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -6585,7 +6949,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – Account pill reposition ===== */
+/* ===== BUILD 4.120 – Account pill reposition ===== */
 #account-pill, .account-pill {
   position: fixed !important;
   bottom: 84px !important;
@@ -6596,7 +6960,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account pill inside yellow card ===== */
+/* ===== BUILD 4.120 – HOME account pill inside yellow card ===== */
 #home-account-pill{
   position: relative !important;
   left: auto !important;
@@ -6624,7 +6988,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account pill sotto Bikers nel riquadro giallo ===== */
+/* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
   display: flex;
@@ -6665,7 +7029,7 @@ body{
 
 
 
-/* ===== BUILD 4.117 – HOME account button same size as others (white bg, red text) ===== */
+/* ===== BUILD 4.120 – HOME account button same size as others (white bg, red text) ===== */
 #home-account-pill{
   /* eredita tutto da button{} e .home-btn (width:100%, padding, radius, ecc.) */
   background: #ffffff !important;
@@ -6681,7 +7045,7 @@ body{
 #home-account-pill:empty{ display:none !important; }
 
 
-/* ===== BUILD 4.117 – HOME account button IDENTICO agli altri ===== */
+/* ===== BUILD 4.120 – HOME account button IDENTICO agli altri ===== */
 #home-account-pill{
   width: 100% !important;          /* identico agli altri */
   height: auto !important;
@@ -6702,7 +7066,7 @@ body{
 }
 
 
-/* ===== BUILD 4.117 – HOME account buttons under yellow card ===== */
+/* ===== BUILD 4.120 – HOME account buttons under yellow card ===== */
 .home-account-pill-wrapper{
   position:relative;
   margin-top:16px;
@@ -6729,13 +7093,27 @@ body{
   background:#9f0000 !important;
 }
 
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
+}
+
 </style>
 
 
 
 <style id="crs-banner-style">
 
-/* ===== BUILD 4.117 – GLOBAL banner ===== */
+/* ===== BUILD 4.120 – GLOBAL banner ===== */
 #global-banner{
   position: sticky;
   top: 0;
@@ -6768,10 +7146,24 @@ body{
   background:#9f0000 !important;
 }
 
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
+}
+
 </style>
 <style id="crs-liquid-glass-style">
 /* ===============================
-   LIQUID GLASS THEME – BUILD 4.117
+   LIQUID GLASS THEME – BUILD 4.120
    (injected as separate <style>)
    =============================== */
 :root{
@@ -6867,7 +7259,7 @@ input, select, textarea{
 }
 
 
-/* ===== BUILD 4.117 – Glass calendar + performance panels ===== */
+/* ===== BUILD 4.120 – Glass calendar + performance panels ===== */
 
 /* Calendar day cells & header */
 #race-calendar,
@@ -6924,7 +7316,7 @@ input, select, textarea{
 }
 
 
-/* ===== BUILD 4.117 – Override inline backgrounds (Performance) ===== */
+/* ===== BUILD 4.120 – Override inline backgrounds (Performance) ===== */
 
 /* Main performance white panel (inline background) -> glass */
 #performance-chart,
@@ -6978,7 +7370,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.117 – Calendar readability (less glass) ===== */
+/* ===== BUILD 4.120 – Calendar readability (less glass) ===== */
 
 /* Make calendar panel more solid and readable */
 #race-calendar{
@@ -7043,7 +7435,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.117 – Glass charts & trend popup ===== */
+/* ===== BUILD 4.120 – Glass charts & trend popup ===== */
 
 /* Trend/graphs popup card -> glass */
 .bp-popup-card{
@@ -7119,7 +7511,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.117 – SVG chart glass (fix white background) ===== */
+/* ===== BUILD 4.120 – SVG chart glass (fix white background) ===== */
 .bp-popup-content{
   background: rgba(255,255,255,0.06) !important;
 }
@@ -7141,7 +7533,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.117 – Bikers Performance popups: FULL Liquid Glass ===== */
+/* ===== BUILD 4.120 – Bikers Performance popups: FULL Liquid Glass ===== */
 
 /* Overlay: frosted dark */
 #bp-popup-overlay{
@@ -7228,7 +7620,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.117 – FIX: bp popup uses CLASS, enforce glass ===== */
+/* ===== BUILD 4.120 – FIX: bp popup uses CLASS, enforce glass ===== */
 .bp-popup-overlay, #bp-popup-overlay{
   background: rgba(0,0,0,0.58) !important;
   backdrop-filter: blur(12px) saturate(120%) !important;
@@ -7281,7 +7673,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.117 – Force BP SVG chart background glass ===== */
+/* ===== BUILD 4.120 – Force BP SVG chart background glass ===== */
 #bp-popup-content svg rect{
   fill: rgba(255,255,255,0.08) !important;
   stroke: rgba(255,255,255,0.20) !important;
@@ -7289,7 +7681,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.117 – Charts: remove yellow fills, glass only ===== */
+/* ===== BUILD 4.120 – Charts: remove yellow fills, glass only ===== */
 #bp-popup-content svg path[fill^="url("],
 #bp-popup-content svg path[fill*="bpGrad"]{
   fill: rgba(255,255,255,0.06) !important;
@@ -7301,7 +7693,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.117 – ICON POPUPS (Bikers Performance stats & charts) in Liquid Glass ===== */
+/* ===== BUILD 4.120 – ICON POPUPS (Bikers Performance stats & charts) in Liquid Glass ===== */
 
 /* Overlay */
 #icon-popup-overlay{
@@ -7382,7 +7774,7 @@ input, select, textarea{
 
 
 
-/* ===== BUILD 4.117 – Chart numbers (axis) red + better alignment ===== */
+/* ===== BUILD 4.120 – Chart numbers (axis) red + better alignment ===== */
 #bp-popup-content svg text,
 #performance-chart svg text{
   fill: #CC0000 !important;
@@ -7401,10 +7793,24 @@ input, select, textarea{
   background:#9f0000 !important;
 }
 
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
+}
+
 </style>
 
 <style id="bp-back-liquid-glass-red">
-/* ===== BUILD 4.117 – BIG back button: RED Liquid Glass (uniform, no white reflection) ===== */
+/* ===== BUILD 4.120 – BIG back button: RED Liquid Glass (uniform, no white reflection) ===== */
 #bp-return-bike-performance,
 .bp-return-btn,
 button#bp-return-bike-performance{
@@ -7449,9 +7855,23 @@ button#bp-return-bike-performance{
   background:#9f0000 !important;
 }
 
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
+}
+
 </style>
 <style id="lg-solid-pill-4-107">
-/* ===== BUILD 4.117 – PILL BUTTONS: SOLID Liquid Glass (NO grey/white gradients) ===== */
+/* ===== BUILD 4.120 – PILL BUTTONS: SOLID Liquid Glass (NO grey/white gradients) ===== */
 
 /* Base glass pills previously using linear-gradients */
 .auth-button,
@@ -7520,6 +7940,20 @@ button#bp-return-bike-performance{
   background:#9f0000 !important;
 }
 
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
+}
+
 </style>
 
 <style id="login-red-btn">
@@ -7548,6 +7982,20 @@ button.login-submit {
 }
 #btn-gara:active{
   background:#9f0000 !important;
+}
+
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
 }
 
 </style>
@@ -7580,10 +8028,24 @@ button.login-submit {
   background:#9f0000 !important;
 }
 
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
+}
+
 </style>
 
 <style id="build-4.116-bikers-liquid-glass">
-/* ===== BUILD 4.117 – BIKERS (DB) Liquid Glass redesign ===== */
+/* ===== BUILD 4.120 – BIKERS (DB) Liquid Glass redesign ===== */
 #db-container{
   background: rgba(255,255,255,0.06) !important;
   border: 1px solid rgba(255,255,255,0.16) !important;
@@ -7714,7 +8176,7 @@ button.login-submit {
 .bikers-glass-empty-text{ margin-top: 4px; font-size: 13px; color: rgba(255,255,255,0.78); }
 
 .bikers-glass-bottom-space{ height: 14px; }
-/* ===== BUILD 4.117 – RACE: selezione bikers con lo stesso design della pagina Bikers ===== */
+/* ===== BUILD 4.120 – RACE: selezione bikers con lo stesso design della pagina Bikers ===== */
 #select-container{
   padding: 10px 14px 6px 14px;
   gap: 14px;
@@ -7750,11 +8212,76 @@ button.login-submit {
   background:#9f0000 !important;
 }
 
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
+}
+
 </style>
 
 
+<style id="race-percent-top-actions">
+/* ===== BUILD 4.122 – RACE percent: azioni back/forward in alto (icone rosse) ===== */
+#race-percent-header.bikers-glass-header{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+#race-percent-header .bikers-glass-titlewrap{ flex:1; min-width:0; }
+#race-percent-header .race-actions-top{
+  margin-left:auto;
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+/* Pulsanti NAV: rossi pieni, senza sfumature */
+#race-percent-header .race-actions-top .btn.race-nav-btn{
+  background:#CC0000 !important;
+  background-image:none !important;
+  box-shadow:none !important;
+  border:none !important;
+  color:#fff !important;
+
+  width:46px !important;
+  height:46px !important;
+  padding:0 !important;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  border-radius:999px !important;
+  font-size:22px !important;
+  font-weight:900 !important;
+  line-height:1 !important;
+}
+#race-percent-header .race-actions-top .btn.race-nav-btn:active{
+  background:#9f0000 !important;
+}
+.sr-only{
+  position:absolute !important;
+  width:1px !important;
+  height:1px !important;
+  padding:0 !important;
+  margin:-1px !important;
+  overflow:hidden !important;
+  clip:rect(0,0,0,0) !important;
+  white-space:nowrap !important;
+  border:0 !important;
+}
+</style>
+
 <style id="build-4.118-race-button-fix">
-/* ===== BUILD 4.117 – RACE: pulsante "Inserisci percentuali" dentro la maschera, in alto a destra ===== */
+/* ===== BUILD 4.120 – RACE: pulsante "Inserisci percentuali" dentro la maschera, in alto a destra ===== */
 .race-btn-in-mask{
   margin-left:auto !important;
   width:auto !important;
@@ -7781,9 +8308,114 @@ button.login-submit {
   background:#9f0000 !important;
 }
 
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
+}
+
 </style>
 
+
+<style id="race-minimal-ui-4-124">
+/* Hide instructional text in percent view */
+.percent-view p,
+.percent-view .hint,
+.percent-view .instruction,
+.percent-view .label {
+  display:none !important;
+}
+
+/* Center big back/forward pills */
+.race-actions-top{
+  width:100%;
+  justify-content:center !important;
+}
+.race-actions-top .pill-btn{
+  min-height:56px !important;
+  min-width:56px !important;
+  padding:18px 22px !important;
+  font-size:28px !important;
+}
+</style>
+
+<style id="race-clean-header-4-125">
+/* Ensure no header text in percent view */
+.percent-view h1,
+.percent-view h2,
+.percent-view .view-title,
+.percent-view .race-title,
+.percent-view .race-label{
+  display:none !important;
+}
+</style>
+
+<style id="race-icon-only-4-126">
+/* Force icon-only buttons in percent view */
+.percent-view button{
+  font-size:28px !important;
+}
+.percent-view button span,
+.percent-view button .btn-label,
+.percent-view button .text{
+  display:none !important;
+}
+</style>
+
+<style id="race-force-icon-only-4-127">
+/* Force icon-only navigation buttons */
+#btn-select, #calc-btn{
+  font-size:32px !important;
+}
+#btn-select * , #calc-btn *{
+  display:none !important;
+}
+#btn-select::before{
+  content:"⟵";
+}
+#calc-btn::before{
+  content:"⟶";
+}
+</style>
+
+<style id="race-nav-wide-pills-4-129">
+/* Wider pills (same top position), icon-only */
+#btn-select, #calc-btn{
+  min-width: 110px !important;
+  padding: 18px 34px !important;
+  border-radius: 999px !important;
+  background: #c30000 !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Hide any inner content if JS re-adds it */
+#btn-select *, #calc-btn *{
+  display:none !important;
+}
+
+/* Force the two icons */
+#btn-select::before{ content:"⟵"; font-size:32px; line-height:1; color:#fff; }
+#calc-btn::before { content:"⟶"; font-size:32px; line-height:1; color:#fff; }
+</style>
 </head>
+
+
+
+
+
 
 <body>
 
@@ -9140,6 +9772,53 @@ async function saveBikersToServer(bikers) {
   }
 }
 
+/* RACE – dock buttons into percent header */
+function dockPercentButtons(inPercent) {
+  try{
+    const header = document.getElementById("race-percent-header");
+    const actions = header ? header.querySelector(".race-actions-top") : null;
+
+    // Move back to main-buttons
+    if (!inPercent || !actions) {
+      if (mainButtons && btnSelect && btnSelect.parentElement !== mainButtons) mainButtons.appendChild(btnSelect);
+      if (mainButtons && calcBtn && calcBtn.parentElement !== mainButtons) mainButtons.appendChild(calcBtn);
+      
+      // restore labels when leaving percent
+      if (btnSelect) {
+        btnSelect.classList.remove("race-nav-btn");
+        btnSelect.textContent = "Bikers partecipanti";
+        btnSelect.removeAttribute("aria-label");
+        btnSelect.title = "";
+      }
+      if (calcBtn) {
+        calcBtn.classList.remove("race-nav-btn");
+        calcBtn.textContent = "Calcola classifica";
+        calcBtn.removeAttribute("aria-label");
+        calcBtn.title = "";
+      }
+      return;
+    }
+
+    // Move into header actions
+    if (btnSelect && btnSelect.parentElement !== actions) actions.appendChild(btnSelect);
+    if (calcBtn && calcBtn.parentElement !== actions) actions.appendChild(calcBtn);
+
+    // Labels/icons in percent (NAV)
+    if (btnSelect) {
+      btnSelect.classList.add("race-nav-btn");
+      btnSelect.innerHTML = '⟵<span class="sr-only"></span>';
+      btnSelect.setAttribute("aria-label","");
+      btnSelect.title = "";
+    }
+    if (calcBtn) {
+      calcBtn.classList.add("race-nav-btn");
+      calcBtn.innerHTML = '⟶<span class="sr-only"></span>';
+      calcBtn.setAttribute("aria-label","");
+      calcBtn.title = "";
+    }
+  }catch(e){}
+}
+
 /* BOTTONI VIEW */
 function updateButtonsForView(mode) {
   if (mode === "home") {
@@ -9179,17 +9858,8 @@ function updateButtonsForView(mode) {
       btnGara.style.padding = "24px"; // altezza doppia
     }
   } else if (mode === "percent") {
-    mainButtons.style.flexDirection = "row";
-    mainButtons.style.justifyContent = "space-between";
-    btnSelect.style.display = "block";
-    calcBtn.style.display = "block";
-    calcBtn.textContent = "Conferma dati";
-    btnSelect.style.background = "#FDE000"; btnSelect.style.color = "#111";
-    btnSelect.style.flex = "1"; calcBtn.style.flex = "1";
-    btnSelect.style.marginRight = "4px"; calcBtn.style.marginLeft = "4px";
-    // bottoni più alti
-    btnSelect.style.padding = "24px";
-    calcBtn.style.padding = "24px";
+    mainButtons.style.display = "none";
+    dockPercentButtons(true);
   } else if (mode === "raceinfo") {
     calcBtn.style.display = "block";
     calcBtn.style.padding = "24px"; // tasto alto il doppio
@@ -9256,6 +9926,7 @@ function showView(mode) {
   setActiveSection(rankingBox,         mode === "results");
 
   updateButtonsForView(mode);
+  dockPercentButtons(mode === "percent");
 
   // Confronto bikers: crea/mostra controlli solo nella vista Bike Performance
   try{
@@ -9630,10 +10301,37 @@ async function buildGaraFromSelection() {
   }
   const bikers = await loadBikers();
   clearPlayersUI();
-  let any = false;
+  // Header con nomi partecipanti + azioni in alto (percent view)
+  const raceHeader = document.createElement("div");
+  raceHeader.className = "bikers-glass-header";
+  raceHeader.id = "race-percent-header";
+
+  const titleWrap = document.createElement("div");
+  titleWrap.className = "bikers-glass-titlewrap";
+  titleWrap.innerHTML = `
+    <div class="bikers-glass-title"></div>
+    <div class="bikers-glass-sub">:  · : </div>
+  `;
+
+  const actionsTop = document.createElement("div");
+  actionsTop.className = "race-actions-top";
+
+  raceHeader.appendChild(titleWrap);
+  raceHeader.appendChild(actionsTop);
+  playersContainer.appendChild(raceHeader);
+let any = false;
   Object.keys(selectedIndices).forEach(i => {
     if (selectedIndices[i]) {
       createGaraCard(bikers[i]);
+      try{
+        if (raceNamesRow) {
+          const pill = document.createElement("div");
+          pill.className = "race-pill";
+          pill.innerHTML = `<div class=\"race-pill-value\">${bikers[i].name}</div>`;
+          raceNamesRow.appendChild(pill);
+        }
+      }catch(e){}
+
       any = true;
     }
   });
@@ -11434,7 +12132,7 @@ document.addEventListener("keydown", (e) => {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
-      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.117.0");
+      const reg = await navigator.serviceWorker.register("service-worker.js?v=4.122.0");
       if (reg && reg.update) reg.update().catch(() => {});
       reg.addEventListener("updatefound", () => {
         const nw = reg.installing;
@@ -12224,7 +12922,7 @@ function bpSetCompareControlsVisibility() {
 
 
 <style id="build-4.116-pill-liquid-glass">
-/* ===== BUILD 4.117 – UNIFICA TASTI A PILLOLA (Liquid Glass, tinta unita) =====
+/* ===== BUILD 4.120 – UNIFICA TASTI A PILLOLA (Liquid Glass, tinta unita) =====
    Obiettivo: niente gradienti/shine interni. Un solo linguaggio: Liquid Glass.
 */
 :root{
@@ -12345,7 +13043,7 @@ button.btn:active,
   box-shadow: var(--lg-pill-shadow) !important;
 }
 
-/* ===== BUILD 4.117 – FIX: biker initials + add button solid red ===== */
+/* ===== BUILD 4.120 – FIX: biker initials + add button solid red ===== */
 .biker-initial{
   background: #d40000 !important;
   color: #ffffff !important;
@@ -12371,11 +13069,25 @@ button.btn:active,
   background:#9f0000 !important;
 }
 
+
+/* === SAFE UI TWEAKS 4.120 === */
+#btn-gara{
+  top:-20px !important; /* alzato di altri 10px */
+}
+
+/* testo "Race" accanto al pulsante */
+.race-header .race-title,
+.race-header .race-label,
+#race-title{
+  font-size:200% !important; /* raddoppiato */
+  line-height:1.1;
+}
+
 </style>
 
 <script id="build-inject">
 (() => {
-  const BUILD = "4.118";
+  const BUILD = "4.122";
   // Home label
   const hv = document.getElementById("home-version-label") || document.getElementById("app-version");
   if (hv) hv.textContent = BUILD;
@@ -12384,5 +13096,38 @@ button.btn:active,
   if (av) av.textContent = BUILD;
 })();
 </script>
+
+<script id="race-nav-sanitizer-4-129">
+(function(){
+  function sanitizeNavButtons(){
+    var back = document.getElementById('btn-select');
+    var next = document.getElementById('calc-btn');
+    if (back){
+      // remove any text like ":" or labels
+      back.textContent = '';
+      back.setAttribute('aria-label','Indietro');
+      back.setAttribute('title','');
+    }
+    if (next){
+      next.textContent = '';
+      next.setAttribute('aria-label','Avanti');
+      next.setAttribute('title','');
+    }
+  }
+
+  // Run now and also after view switches
+  sanitizeNavButtons();
+  document.addEventListener('click', function(e){
+    // after navigation, give the DOM a tick and sanitize again
+    setTimeout(sanitizeNavButtons, 0);
+    setTimeout(sanitizeNavButtons, 50);
+  }, true);
+
+  // Also on visibility / focus (PWA)
+  window.addEventListener('focus', sanitizeNavButtons);
+  document.addEventListener('visibilitychange', sanitizeNavButtons);
+})();
+</script>
+
 </body>
 </html>
