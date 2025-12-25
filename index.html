@@ -7310,6 +7310,24 @@ button.login-submit {
 }
 </style>
 
+
+<style id="build-4.118-race-button-fix">
+/* ===== BUILD 4.118 – RACE: pulsante "Inserisci percentuali" dentro la maschera, in alto a destra ===== */
+.race-btn-in-mask{
+  margin-left:auto !important;
+  width:auto !important;
+  max-width:none !important;
+  padding:10px 14px !important;
+  font-size:14px !important;
+  border-radius:999px !important;
+  white-space:nowrap !important;
+}
+/* quando il bottone è dentro l'header bikers-glass, allinea correttamente */
+.bikers-glass-header .race-btn-in-mask{
+  align-self:center;
+}
+</style>
+
 </head>
 
 <body>
@@ -8849,7 +8867,7 @@ async function renderDBView() {
     empty.innerHTML = `
       <div class="bikers-glass-empty-ico">🏁</div>
       <div class="bikers-glass-empty-title">Nessun biker presente</div>
-      <div class="bikers-glass-empty-text">Premi <b>Nuovo biker</b> per aggiungerne uno.</div>
+      <div class="bikers-glass-empty-text"></div>
     `;
     dbContainer.appendChild(empty);
     return;
@@ -9065,10 +9083,16 @@ async function renderSelectView() {
   titleWrap.className = "bikers-glass-titlewrap";
   titleWrap.innerHTML = `
     <div class="bikers-glass-title">Race</div>
-    <div class="bikers-glass-sub">Seleziona i bikers partecipanti (Wh · kg biker · kg bici)</div>
-  `;
+`;
 
   header.appendChild(titleWrap);
+  // ACTION: sposta il pulsante "Inserisci percentuali" dentro la maschera (in alto a destra)
+  if (btnGara) {
+    btnGara.classList.add("race-btn-in-mask");
+    // se era nei bottoni principali, si stacca e viene inglobato qui
+    header.appendChild(btnGara);
+  }
+
   selectContainer.appendChild(header);
 
   const bikers = await loadBikers();
@@ -11883,7 +11907,7 @@ button.btn:active,
 
 <script id="build-inject">
 (() => {
-  const BUILD = "4.117";
+  const BUILD = "4.118";
   // Home label
   const hv = document.getElementById("home-version-label") || document.getElementById("app-version");
   if (hv) hv.textContent = BUILD;
