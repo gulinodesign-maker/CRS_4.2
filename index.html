@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- PWA / Manifest -->
-  <link rel="manifest" href="manifest.json?v=4.141">
+  <link rel="manifest" href="manifest.json?v=4.140">
   <meta name="theme-color" content="#000000">
 
   <!-- iOS specifico (iPhone / iPad) -->
@@ -9109,7 +9109,7 @@ body.results-mode #save-race-button{
 <script>
 "use strict";
 
-const APP_VERSION = "4.141";
+const APP_VERSION = "4.140";
 const BUILD_DATE = "";
 const API_URL = "https://script.google.com/macros/s/AKfycbxon71F47wVkq1DFK7DBqQ2-j90ZTevoKOWEpE6h8DEbE5pW4eAl0GvC6gbTGXQp-_1sA/exec";
 
@@ -10032,13 +10032,6 @@ function updateButtonsForView(mode) {
     mainButtons.style.display = "none";
     return;
   }
-
-  if (mode === "select") {
-    // Selezione bikers: niente pulsanti in basso (evita doppie pillole rosse)
-    mainButtons.style.display = "none";
-    return;
-  }
-
 
   mainButtons.style.display = "flex";
   mainButtons.style.flexDirection = "column";
