@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- PWA / Manifest -->
-  <link rel="manifest" href="manifest.json?v=4.130">
+  <link rel="manifest" href="manifest.json?v=4.136">
   <meta name="theme-color" content="#000000">
 
   <!-- iOS specifico (iPhone / iPad) -->
@@ -8395,8 +8395,8 @@ button.login-submit {
 </style>
 
 
-<style id="build-4.130-race-nav-rebuild">
-/* ===== BUILD 4.130 — RACE percent: NAV pills rebuilt from scratch ===== */
+<style id="build-4.136-race-nav-rebuild">
+/* ===== BUILD 4.136 — RACE percent: NAV pills rebuilt from scratch ===== */
 #race-percent-header.bikers-glass-header{
   display:flex !important;
   flex-direction:column !important;
@@ -8443,6 +8443,162 @@ button.login-submit {
   display:block !important;
   color:#fff !important;
   transform: translateY(-1px) !important; /* optical centering */
+}
+</style>
+
+
+<style id="build-4.136-info-header-pills">
+/* ===== BUILD 4.136 — INFO GARA: copy approved header/pills design ===== */
+#race-info-header {
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  gap:10px !important;
+}
+#race-info-header .bikers-glass-titlewrap {
+  width:100% !important;
+  text-align:center !important;
+}
+#race-info-header .bikers-glass-title {
+  font-weight:800 !important;
+  font-size:32px !important;
+  color:#fff !important;
+  text-align:center !important;
+  margin: 6px 0 2px 0 !important;
+}
+#race-info-header .race-actions-top {
+  width:100% !important;
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  margin:0 !important;
+}
+#race-info-header .race-nav-pills {
+  display:flex !important;
+  gap:14px !important;
+  justify-content:center !important;
+  align-items:center !important;
+}
+#race-info-header .race-pill-btn {
+  width:84px !important;
+  height:52px !important;
+  border-radius:999px !important;
+  background:#c30000 !important;
+  border:none !important;
+  padding:0 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  box-shadow:none !important;
+}
+#race-info-header .race-pill-btn:active { background:#9f0000 !important; }
+#race-info-header .race-pill-icon {
+  width:34px !important;
+  height:34px !important;
+  display:block !important;
+  color:#fff !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Hide original big bottom nav buttons inside INFO view, but keep them in DOM for .click() */
+#info-view #btn-select, #info-view #calc-btn {
+  position: fixed !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+}
+</style>
+
+
+<style id="build-4.136-raceinfo-header-pills">
+/* ===== BUILD 4.136 — RACEINFO: copy approved title+pills design ===== */
+#race-info-container #raceinfo-header{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  gap:10px !important;
+  margin-bottom: 6px !important;
+}
+#race-info-container #raceinfo-header .bikers-glass-titlewrap{
+  width:100% !important;
+  text-align:center !important;
+}
+#race-info-container #raceinfo-header .bikers-glass-title{
+  font-weight:800 !important;
+  font-size:32px !important;
+  color:#fff !important;
+  text-align:center !important;
+  margin: 6px 0 2px 0 !important;
+}
+#race-info-container #raceinfo-header .race-actions-top{
+  width:100% !important;
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  margin:0 !important;
+}
+#race-info-container #raceinfo-header .race-nav-pills{
+  display:flex !important;
+  gap:14px !important;
+  justify-content:center !important;
+  align-items:center !important;
+}
+#race-info-container #raceinfo-header .race-pill-btn{
+  width:84px !important;
+  height:52px !important;
+  border-radius:999px !important;
+  background:#c30000 !important;
+  border:none !important;
+  padding:0 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  box-shadow:none !important;
+}
+#race-info-container #raceinfo-header .race-pill-btn:active { background:#9f0000 !important; }
+#race-info-container #raceinfo-header .race-pill-icon{
+  width:34px !important;
+  height:34px !important;
+  display:block !important;
+  color:#fff !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Hide original big bottom nav buttons only while in raceinfo mode */
+body.raceinfo-mode #btn-select, body.raceinfo-mode #calc-btn{
+  position: fixed !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+}
+</style>
+
+
+<style id="build-4.136-raceinfo-nav">
+#race-info-container > .race-nav-pills{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  margin: 6px 0 12px 0;
+}
+#race-info-container .race-pill-btn{
+  width:84px;
+  height:52px;
+  border-radius:999px;
+  background:#c30000;
+  border:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+#race-info-container .race-pill-icon{
+  width:34px;
+  height:34px;
+  color:#fff;
 }
 </style>
 
@@ -8900,7 +9056,7 @@ button.login-submit {
 <script>
 "use strict";
 
-const APP_VERSION = "4.130";
+const APP_VERSION = "4.136";
 const BUILD_DATE = "";
 const API_URL = "https://script.google.com/macros/s/AKfycbxon71F47wVkq1DFK7DBqQ2-j90ZTevoKOWEpE6h8DEbE5pW4eAl0GvC6gbTGXQp-_1sA/exec";
 
@@ -9854,6 +10010,7 @@ function updateButtonsForView(mode) {
     mainButtons.style.display = "none";
     dockPercentButtons(true);
   } else if (mode === "raceinfo") {
+    __ensureRaceInfoNav();
     calcBtn.style.display = "block";
     calcBtn.style.padding = "24px"; // tasto alto il doppio
   } else if (mode === "results") {
@@ -9904,8 +10061,9 @@ function setActiveSection(elem, shouldShow, useFlex = false) {
 function showView(mode) {
   currentView = mode;
 
-  if (mode === "home") document.body.classList.add("home-mode");
-  else document.body.classList.remove("home-mode");
+  // View-specific body classes (safe toggles)
+  document.body.classList.toggle("home-mode", mode === "home");
+  document.body.classList.toggle("raceinfo-mode", mode === "raceinfo");
 
   if (homeView) homeView.style.display = (mode === "home") ? "flex" : "none";
 
@@ -12755,6 +12913,155 @@ function __wirePercentNavPills(){
 
 function __initPercentNav(){
   __wirePercentNavPills();
+}
+
+
+/* ===== INFO GARA — header title + NAV pills (build 4.136) ===== */
+function __ensureInfoHeaderUi(){
+  const hdr = document.getElementById("race-info-header");
+  if (!hdr) return;
+
+  // Ensure title exists and matches the approved style
+  let title = hdr.querySelector(".bikers-glass-title");
+  if (!title){
+    // Try to find an existing titlewrap or create it
+    let wrap = hdr.querySelector(".bikers-glass-titlewrap");
+    if (!wrap){
+      wrap = document.createElement("div");
+      wrap.className = "bikers-glass-titlewrap";
+      hdr.insertBefore(wrap, hdr.firstChild);
+    }
+    title = document.createElement("div");
+    title.className = "bikers-glass-title";
+    wrap.appendChild(title);
+  }
+  title.textContent = "Inserisci dati gara";
+
+  // Create actionsTop container
+  let actionsTop = hdr.querySelector(".race-actions-top");
+  if (!actionsTop){
+    actionsTop = document.createElement("div");
+    actionsTop.className = "race-actions-top";
+    // Put actions right under titlewrap if possible
+    const tw = hdr.querySelector(".bikers-glass-titlewrap");
+    if (tw && tw.nextSibling) hdr.insertBefore(actionsTop, tw.nextSibling);
+    else hdr.appendChild(actionsTop);
+  }
+
+  // Avoid duplicates
+  if (hdr.querySelector("#info-nav-prev") || hdr.querySelector("#info-nav-next")) return;
+
+  const navWrap = document.createElement("div");
+  navWrap.className = "race-nav-pills";
+
+  const prev = document.createElement("button");
+  prev.type = "button";
+  prev.className = "race-pill-btn";
+  prev.id = "info-nav-prev";
+  prev.setAttribute("aria-label","Pagina precedente");
+  prev.innerHTML = '<svg class="race-pill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6 L9 12 L15 18" fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  const next = document.createElement("button");
+  next.type = "button";
+  next.className = "race-pill-btn";
+  next.id = "info-nav-next";
+  next.setAttribute("aria-label","Pagina successiva");
+  next.innerHTML = '<svg class="race-pill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6 L15 12 L9 18" fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  navWrap.appendChild(prev);
+  navWrap.appendChild(next);
+  actionsTop.appendChild(navWrap);
+
+  // Wire to real app navigation buttons (same as percent page fix)
+  prev.onclick = () => { const b = document.getElementById("btn-select"); if (b) b.click(); };
+  next.onclick = () => { const b = document.getElementById("calc-btn"); if (b) b.click(); };
+}
+
+
+/* ===== RACEINFO — header title + NAV pills (build 4.136) ===== */
+function __ensureRaceInfoHeaderUi(){
+  const cont = document.getElementById("race-info-container");
+  if (!cont) return;
+
+  // Avoid duplicates
+  if (cont.querySelector("#raceinfo-nav-prev") || cont.querySelector("#raceinfo-nav-next")) return;
+
+  // Create header wrapper
+  const hdr = document.createElement("div");
+  hdr.id = "raceinfo-header";
+  hdr.className = "bikers-glass-header";
+
+  const titleWrap = document.createElement("div");
+  titleWrap.className = "bikers-glass-titlewrap";
+
+  const title = document.createElement("div");
+  title.className = "bikers-glass-title";
+  title.textContent = "Inserisci dati gara";
+
+  titleWrap.appendChild(title);
+
+  const actionsTop = document.createElement("div");
+  actionsTop.className = "race-actions-top";
+
+  const navWrap = document.createElement("div");
+  navWrap.className = "race-nav-pills";
+
+  const prev = document.createElement("button");
+  prev.type = "button";
+  prev.className = "race-pill-btn";
+  prev.id = "raceinfo-nav-prev";
+  prev.setAttribute("aria-label","Pagina precedente");
+  prev.innerHTML = '<svg class="race-pill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6 L9 12 L15 18" fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  const next = document.createElement("button");
+  next.type = "button";
+  next.className = "race-pill-btn";
+  next.id = "raceinfo-nav-next";
+  next.setAttribute("aria-label","Pagina successiva");
+  next.innerHTML = '<svg class="race-pill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6 L15 12 L9 18" fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  navWrap.appendChild(prev);
+  navWrap.appendChild(next);
+  actionsTop.appendChild(navWrap);
+
+  hdr.appendChild(titleWrap);
+  hdr.appendChild(actionsTop);
+
+  // Insert header at top of container
+  cont.insertBefore(hdr, cont.firstChild);
+
+  // Wire to real app navigation buttons
+  prev.onclick = () => { const b = document.getElementById("btn-select"); if (b) b.click(); };
+  next.onclick = () => { const b = document.getElementById("calc-btn"); if (b) b.click(); };
+}
+
+
+/* ===== RACEINFO NAV pills (build 4.136) ===== */
+function __ensureRaceInfoNav(){
+  const cont = document.getElementById("race-info-container");
+  if (!cont) return;
+
+  // Avoid duplicates
+  if (cont.querySelector(".race-nav-pills")) return;
+
+  const navWrap = document.createElement("div");
+  navWrap.className = "race-nav-pills";
+
+  const prev = document.createElement("button");
+  prev.className = "race-pill-btn";
+  prev.innerHTML = '<svg class="race-pill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6 L9 12 L15 18" fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  prev.onclick = () => { const b = document.getElementById("btn-select"); if (b) b.click(); };
+
+  const next = document.createElement("button");
+  next.className = "race-pill-btn";
+  next.innerHTML = '<svg class="race-pill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6 L15 12 L9 18" fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  next.onclick = () => { const b = document.getElementById("calc-btn"); if (b) b.click(); };
+
+  navWrap.appendChild(prev);
+  navWrap.appendChild(next);
+
+  // insert at top
+  cont.insertBefore(navWrap, cont.firstChild);
 }
 
 </script>
