@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- PWA / Manifest -->
-  <link rel="manifest" href="manifest.json?v=4.143">
+  <link rel="manifest" href="manifest.json?v=CRS_4.145">
   <meta name="theme-color" content="#000000">
 
   <!-- iOS specifico (iPhone / iPad) -->
@@ -26,7 +26,19 @@
 
   * { box-sizing:border-box; }
 
-  /* iOS Safari fix: evita "barra bianca" causata da 100vh (viewport statico) */
+  
+
+  /* ANIMAZIONI BASE (deduplicate) */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInSoft {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+/* iOS Safari fix: evita "barra bianca" causata da 100vh (viewport statico) */
   html, body {
     min-height: 100dvh;
   }
@@ -57,14 +69,10 @@
     padding: 12px;
   }
   /* ANIMAZIONI LEGGERE COERENTI */
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(8px); }
-    to   { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
   }
 
-  @keyframes fadeInSoft {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  to   { opacity: 1; }
   }
 
   .fade-in-up {
@@ -88,11 +96,7 @@
     font-size: 18px;
     padding: 10px 14px;
   }
-  #home-account-pill {
-    font-size: 18px;
-    padding: 6px 12px;
-  }
-  .btn {
+.btn {
     font-size: 18px;
     padding: 10px 12px;
   }
@@ -966,8 +970,7 @@ body {
 
   #btn-db     { background:var(--coyote-yellow); color:#111; }
   #btn-select { background:var(--coyote-red); color:#fff; }
-  #btn-gara   { background:var(--coyote-red); color:#fff; }
-  #calc-btn   { background:var(--coyote-red); color:#fff; }
+#calc-btn   { background:var(--coyote-red); color:#fff; }
   #btn-reset  { background:#6b7280; color:#fff; }
   #save-race-button { background:var(--coyote-red); color:#fff; }
 
@@ -1033,22 +1036,7 @@ body {
     margin-bottom:16px;
   }
 
-  #home-account-pill {
-    background:var(--coyote-red);
-    color:#ffffff;
-    padding:8px 16px;
-    border-radius:999px;
-    font-weight:700;
-    font-size:20px;
-    margin-bottom:8px;
-    max-width:80%;
-    text-align:center;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-  }
-
-  .home-box {
+.home-box {
     margin-top: 40px;
     background:var(--coyote-yellow);
     border-radius:30px;
@@ -1553,8 +1541,7 @@ body {
   }
 
   #main-buttons { margin-top:100px; }
-  #home-account-pill { margin-top:100px; }
-  #app-version { margin-top:100px; }
+#app-version { margin-top:100px; }
 
   /* BIKERS PERFORMANCE VIEW */
   #bikers-performance-view {
@@ -1919,13 +1906,6 @@ body {
 
 
 /* HOME – forza pill account invisibile (nera su nero) */
-#home-view #home-account-pill {
-  background: #000000 !important;
-  color: #000000 !important;
-  box-shadow: none !important;
-}
-
-
 /* HOME – regola strutturale: se HOME è visibile, nascondi SEMPRE la container (evita "pillola/card" bianca) */
 #home-view:not([style*="display: none"]) + .container,
 #home-view:not([style*="display:none"]) + .container {
@@ -1978,13 +1958,6 @@ body {
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -2016,12 +1989,6 @@ body {
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -2441,13 +2408,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -2479,12 +2439,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -2622,13 +2576,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -2660,12 +2607,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -2803,13 +2744,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -2841,12 +2775,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -3000,13 +2928,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -3038,12 +2959,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -3207,13 +3122,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -3245,12 +3153,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -3385,13 +3287,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -3423,12 +3318,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -3564,13 +3453,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -3602,12 +3484,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -3850,13 +3726,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -3888,12 +3757,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -4027,13 +3890,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -4065,12 +3921,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -4202,13 +4052,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -4240,12 +4083,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -4385,13 +4222,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -4423,12 +4253,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -4574,13 +4398,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -4612,12 +4429,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -4751,13 +4562,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -4789,12 +4593,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -4926,13 +4724,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -4964,12 +4755,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -5104,13 +4889,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -5142,12 +4920,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -5296,13 +5068,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -5334,12 +5099,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -5477,13 +5236,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -5515,12 +5267,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -5666,13 +5412,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -5704,12 +5443,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -5841,13 +5574,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -5879,12 +5605,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -6020,13 +5740,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -6058,12 +5771,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -6200,13 +5907,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -6238,12 +5938,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -6376,13 +6070,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -6414,12 +6101,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -6595,13 +6276,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -6633,12 +6307,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -6784,13 +6452,6 @@ body{
 }
 
 /* wrapper inside yellow home card */
-.home-yellow-card .home-account-pill-wrapper{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 /* ===== BUILD 4.120 – HOME account pill sotto Bikers nel riquadro giallo ===== */
 .home-account-pill-wrapper{
   width: 100%;
@@ -6822,12 +6483,6 @@ body{
 }
 
 /* Override definitivo contro vecchie regole "nero su nero" */
-#home-view #home-account-pill{
-  background: var(--coyote-red, #e00) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.28) !important;
-}
-
 #home-account-pill:empty{ display:none !important; }
 
 
@@ -8658,7 +8313,7 @@ body.results-mode #save-race-button{
 
 
 <style id="hide-bottom-bars">
-/* BUILD CRS_4.144 – remove bottom red tabs */
+/* BUILD CRS_4.145 – remove bottom red tabs */
 #main-buttons,
 .main-buttons,
 #calc-btn,
@@ -8801,7 +8456,7 @@ body.results-mode #save-race-button{
       </div>
 
       <div class="tsb-right">
-        <div id="version-label">CRS_4.144</div>
+        <div id="version-label">CRS_4.145</div>
       </div>
     </div>
   </div>
