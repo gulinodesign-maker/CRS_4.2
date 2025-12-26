@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- PWA / Manifest -->
-  <link rel="manifest" href="manifest.json?v=4.122">
+  <link rel="manifest" href="manifest.json?v=4.123">
   <meta name="theme-color" content="#000000">
 
   <!-- iOS specifico (iPhone / iPad) -->
@@ -8413,6 +8413,23 @@ button.login-submit {
 #calc-btn::before { content:"⟶"; font-size:32px; line-height:1; color:#fff; }
 </style>
 
+<style id="race-nav-arrows-bold-4-123">
+/* ===== BUILD 4.123 – RACE nav arrows: thicker + perfectly centered ===== */
+#btn-select::before,
+#calc-btn::before{
+  display:block !important;
+  font-weight:900 !important;
+  line-height:1 !important;
+  /* Faux-bold for iOS glyphs */
+  text-shadow:
+    -0.7px 0 currentColor,
+     0.7px 0 currentColor,
+     0 0.7px currentColor,
+     0 -0.7px currentColor;
+  transform: translateY(0.5px); /* optical centering in pill */
+}
+</style>
+
 <style id="race-colon-css-4-130">
 #btn-select::after,
 #calc-btn::after{
@@ -8873,7 +8890,7 @@ button.login-submit {
 <script>
 "use strict";
 
-const APP_VERSION = "4.104";
+const APP_VERSION = "4.123";
 const BUILD_DATE = "";
 const API_URL = "https://script.google.com/macros/s/AKfycbxon71F47wVkq1DFK7DBqQ2-j90ZTevoKOWEpE6h8DEbE5pW4eAl0GvC6gbTGXQp-_1sA/exec";
 
@@ -13097,7 +13114,7 @@ button.btn:active,
 
 <script id="build-inject">
 (() => {
-  const BUILD = "4.122";
+  const BUILD = "4.123";
   // Home label
   const hv = document.getElementById("home-version-label") || document.getElementById("app-version");
   if (hv) hv.textContent = BUILD;
