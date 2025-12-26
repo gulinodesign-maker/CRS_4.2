@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- PWA / Manifest -->
-  <link rel="manifest" href="manifest.json?v=4.142">
+  <link rel="manifest" href="manifest.json?v=4.143">
   <meta name="theme-color" content="#000000">
 
   <!-- iOS specifico (iPhone / iPad) -->
@@ -8656,7 +8656,20 @@ body.results-mode #save-race-button{
 }
 </style>
 
+
+<style id="hide-bottom-bars">
+/* BUILD CRS_4.144 – remove bottom red tabs */
+#main-buttons,
+.main-buttons,
+#calc-btn,
+#btn-calc,
+#bottom-bar,
+.bottom-bar {
+  display: none !important;
+}
+</style>
 </head>
+
 
 
 
@@ -8788,7 +8801,7 @@ body.results-mode #save-race-button{
       </div>
 
       <div class="tsb-right">
-        <div id="version-label"></div>
+        <div id="version-label">CRS_4.144</div>
       </div>
     </div>
   </div>
@@ -9109,7 +9122,7 @@ body.results-mode #save-race-button{
 <script>
 "use strict";
 
-const APP_VERSION = "4.142";
+const APP_VERSION = "4.143";
 const BUILD_DATE = "";
 const API_URL = "https://script.google.com/macros/s/AKfycbxon71F47wVkq1DFK7DBqQ2-j90ZTevoKOWEpE6h8DEbE5pW4eAl0GvC6gbTGXQp-_1sA/exec";
 
@@ -10137,7 +10150,7 @@ function showView(mode) {
   setActiveSection(performanceContainer, mode === "performance");
   setActiveSection(bikersPerformanceView, mode === "bikersPerformance");
 
-  // Build 4.142: ensure "Inserisci percentuali" never disappears after Back
+  // Build 4.143: ensure "Inserisci percentuali" never disappears after Back
   if (mode === "select") setTimeout(__ensureRacePercentButtonVisible, 0);
 
   setActiveSection(testView,           mode === "test");
@@ -10155,7 +10168,7 @@ function showView(mode) {
   }catch(e){}
 }
 
-/* ===== BUILD 4.142 — RACE: hard-restore "Inserisci percentuali" button on back ===== */
+/* ===== BUILD 4.143 — RACE: hard-restore "Inserisci percentuali" button on back ===== */
 function __ensureRacePercentButtonVisible(){
   try{
     const cont = document.getElementById("select-container");
@@ -10464,7 +10477,7 @@ async function renderSelectView() {
     btnGara.classList.add("race-btn-in-mask");
     // se era nei bottoni principali, si stacca e viene inglobato qui
     header.appendChild(btnGara);
-    // FIX 4.142: se rientri dalla pagina percentuali, updateButtonsForView() può aver lasciato btnGara nascosto.
+    // FIX 4.143: se rientri dalla pagina percentuali, updateButtonsForView() può aver lasciato btnGara nascosto.
     // Qui lo forziamo sempre visibile nella pagina Race (select view).
     btnGara.style.display = "inline-flex";
     btnGara.style.opacity = "1";
