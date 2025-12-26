@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- PWA / Manifest -->
-  <link rel="manifest" href="manifest.json?v=4.123">
+  <link rel="manifest" href="manifest.json?v=4.130">
   <meta name="theme-color" content="#000000">
 
   <!-- iOS specifico (iPhone / iPad) -->
@@ -8327,67 +8327,6 @@ button.login-submit {
 </style>
 
 
-<style id="race-minimal-ui-4-124">
-/* Hide instructional text in percent view */
-.percent-view p,
-.percent-view .hint,
-.percent-view .instruction,
-.percent-view .label {
-  display:none !important;
-}
-
-/* Center big back/forward pills */
-.race-actions-top{
-  width:100%;
-  justify-content:center !important;
-}
-.race-actions-top .pill-btn{
-  min-height:56px !important;
-  min-width:56px !important;
-  padding:18px 22px !important;
-  font-size:28px !important;
-}
-</style>
-
-<style id="race-clean-header-4-125">
-/* Ensure no header text in percent view */
-.percent-view h1,
-.percent-view h2,
-.percent-view .view-title,
-.percent-view .race-title,
-.percent-view .race-label{
-  display:none !important;
-}
-</style>
-
-<style id="race-icon-only-4-126">
-/* Force icon-only buttons in percent view */
-.percent-view button{
-  font-size:28px !important;
-}
-.percent-view button span,
-.percent-view button .btn-label,
-.percent-view button .text{
-  display:none !important;
-}
-</style>
-
-<style id="race-force-icon-only-4-127">
-/* Force icon-only navigation buttons */
-#btn-select, #calc-btn{
-  font-size:32px !important;
-}
-#btn-select * , #calc-btn *{
-  display:none !important;
-}
-#btn-select::before{
-  content:"⟵";
-}
-#calc-btn::before{
-  content:"⟶";
-}
-</style>
-
 <style id="race-nav-wide-pills-4-129">
 /* Wider pills (same top position), icon-only */
 #btn-select, #calc-btn{
@@ -8404,30 +8343,7 @@ button.login-submit {
 }
 
 /* Hide any inner content if JS re-adds it */
-#btn-select *, #calc-btn *{
-  display:none !important;
-}
-
 /* Force the two icons */
-#btn-select::before{ content:"⟵"; font-size:32px; line-height:1; color:#fff; }
-#calc-btn::before { content:"⟶"; font-size:32px; line-height:1; color:#fff; }
-</style>
-
-<style id="race-nav-arrows-bold-4-123">
-/* ===== BUILD 4.123 – RACE nav arrows: thicker + perfectly centered ===== */
-#btn-select::before,
-#calc-btn::before{
-  display:block !important;
-  font-weight:900 !important;
-  line-height:1 !important;
-  /* Faux-bold for iOS glyphs */
-  text-shadow:
-    -0.7px 0 currentColor,
-     0.7px 0 currentColor,
-     0 0.7px currentColor,
-     0 -0.7px currentColor;
-  transform: translateY(0.5px); /* optical centering in pill */
-}
 </style>
 
 <style id="race-colon-css-4-130">
@@ -8436,6 +8352,100 @@ button.login-submit {
   content: none !important;
 }
 </style>
+
+<style id="race-nav-arrows-definitive-4-127">
+/* === BUILD 4.127 — RACE percent NAV arrows: thick SVG + true centering (iOS-safe) === */
+.percent-view #btn-select.race-nav-btn,
+.percent-view #calc-btn.race-nav-btn{
+  min-height:56px !important;
+  min-width:56px !important;
+  padding: 14px 18px !important;
+  border-radius:999px !important;
+  background:#c30000 !important;
+  background-image:none !important;
+  border:none !important;
+  box-shadow:none !important;
+
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  line-height:0 !important; /* kill baseline issues */
+  font-size:0 !important;   /* ensure text doesn't affect layout */
+}
+
+/* kill any previous pseudo-arrow rules */
+.percent-view #btn-select.race-nav-btn::before,
+.percent-view #btn-select.race-nav-btn::after,
+.percent-view #calc-btn.race-nav-btn::before,
+.percent-view #calc-btn.race-nav-btn::after{
+  content:none !important;
+  display:none !important;
+}
+
+/* SVG sizing + optical centering */
+.percent-view #btn-select.race-nav-btn .race-nav-svg,
+.percent-view #calc-btn.race-nav-btn .race-nav-svg{
+  width:34px !important;
+  height:34px !important;
+  display:block !important;
+  color:#fff !important;
+  transform: translateY(-2px) !important; /* optical centering on iOS */
+}
+</style>
+
+
+<style id="build-4.130-race-nav-rebuild">
+/* ===== BUILD 4.130 — RACE percent: NAV pills rebuilt from scratch ===== */
+#race-percent-header.bikers-glass-header{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  gap:10px !important;
+}
+#race-percent-header .bikers-glass-titlewrap{
+  width:100% !important;
+  text-align:center !important;
+}
+#race-percent-header .race-actions-top{
+  width:100% !important;
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  margin:0 !important;
+}
+#race-percent-header .race-nav-pills{
+  display:flex !important;
+  gap:14px !important;
+  justify-content:center !important;
+  align-items:center !important;
+}
+#race-percent-header .race-pill-btn{
+  width:84px !important;
+  height:52px !important;
+  border-radius:999px !important;
+  background:#c30000 !important;
+  border:none !important;
+  padding:0 !important;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  box-shadow:none !important;
+}
+#race-percent-header .race-pill-btn:active{
+  background:#9f0000 !important;
+}
+#race-percent-header .race-pill-icon{
+  width:34px !important;
+  height:34px !important;
+  display:block !important;
+  color:#fff !important;
+  transform: translateY(-1px) !important; /* optical centering */
+}
+</style>
+
 </head>
 
 
@@ -8890,7 +8900,7 @@ button.login-submit {
 <script>
 "use strict";
 
-const APP_VERSION = "4.123";
+const APP_VERSION = "4.130";
 const BUILD_DATE = "";
 const API_URL = "https://script.google.com/macros/s/AKfycbxon71F47wVkq1DFK7DBqQ2-j90ZTevoKOWEpE6h8DEbE5pW4eAl0GvC6gbTGXQp-_1sA/exec";
 
@@ -9799,52 +9809,8 @@ async function saveBikersToServer(bikers) {
   }
 }
 
-/* RACE – dock buttons into percent header */
-function dockPercentButtons(inPercent) {
-  try{
-    const header = document.getElementById("race-percent-header");
-    const actions = header ? header.querySelector(".race-actions-top") : null;
-
-    // Move back to main-buttons
-    if (!inPercent || !actions) {
-      if (mainButtons && btnSelect && btnSelect.parentElement !== mainButtons) mainButtons.appendChild(btnSelect);
-      if (mainButtons && calcBtn && calcBtn.parentElement !== mainButtons) mainButtons.appendChild(calcBtn);
-      
-      // restore labels when leaving percent
-      if (btnSelect) {
-        btnSelect.classList.remove("race-nav-btn");
-        btnSelect.textContent = "Bikers partecipanti";
-        btnSelect.removeAttribute("aria-label");
-        btnSelect.title = "";
-      }
-      if (calcBtn) {
-        calcBtn.classList.remove("race-nav-btn");
-        calcBtn.textContent = "Calcola classifica";
-        calcBtn.removeAttribute("aria-label");
-        calcBtn.title = "";
-      }
-      return;
-    }
-
-    // Move into header actions
-    if (btnSelect && btnSelect.parentElement !== actions) actions.appendChild(btnSelect);
-    if (calcBtn && calcBtn.parentElement !== actions) actions.appendChild(calcBtn);
-
-    // Labels/icons in percent (NAV)
-    if (btnSelect) {
-      btnSelect.classList.add("race-nav-btn");
-      btnSelect.innerHTML = '⟵<span class="sr-only"></span>';
-      btnSelect.setAttribute("aria-label","");
-      btnSelect.title = "";
-    }
-    if (calcBtn) {
-      calcBtn.classList.add("race-nav-btn");
-      calcBtn.innerHTML = '⟶<span class="sr-only"></span>';
-      calcBtn.setAttribute("aria-label","");
-      calcBtn.title = "";
-    }
-  }catch(e){}
-}
+/* RACE – dock buttons into percent header (DISABLED: rebuilt as dedicated pills) */
+function dockPercentButtons(){ /* no-op */ return; }
 
 /* BOTTONI VIEW */
 function updateButtonsForView(mode) {
@@ -10336,12 +10302,35 @@ async function buildGaraFromSelection() {
   const titleWrap = document.createElement("div");
   titleWrap.className = "bikers-glass-titlewrap";
   titleWrap.innerHTML = `
-    <div class="bikers-glass-title"></div>
+    <div class="bikers-glass-title">Inserisci percentuali</div>
     <div class="bikers-glass-sub">:  · : </div>
   `;
 
   const actionsTop = document.createElement("div");
   actionsTop.className = "race-actions-top";
+
+  // ===== Dedicated NAV pills (recreated clean) =====
+  const navWrap = document.createElement("div");
+  navWrap.className = "race-nav-pills";
+
+  const navPrev = document.createElement("button");
+  navPrev.type = "button";
+  navPrev.className = "race-pill-btn";
+  navPrev.id = "race-nav-prev";
+  navPrev.setAttribute("aria-label","Precedente");
+  navPrev.innerHTML = '<svg class="race-pill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6 L9 12 L15 18" fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  const navNext = document.createElement("button");
+  navNext.type = "button";
+  navNext.className = "race-pill-btn";
+  navNext.id = "race-nav-next";
+  navNext.setAttribute("aria-label","Successivo");
+  navNext.innerHTML = '<svg class="race-pill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6 L15 12 L9 18" fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  navWrap.appendChild(navPrev);
+  navWrap.appendChild(navNext);
+  actionsTop.appendChild(navWrap);
+
 
   raceHeader.appendChild(titleWrap);
   raceHeader.appendChild(actionsTop);
@@ -10367,6 +10356,7 @@ let any = false;
     return;
   }
   showView("percent");
+  __initPercentNav();
 }
 
 function createGaraCard(b) {
@@ -12743,6 +12733,30 @@ if (!window.__bpShowViewPatched) {
   };
 })();
 
+
+
+
+/* ===== Percent NAV logic (APP navigation) ===== */
+function __wirePercentNavPills(){
+  const prev = document.getElementById("race-nav-prev");
+  const next = document.getElementById("race-nav-next");
+  if (!prev || !next) return;
+
+  prev.onclick = () => {
+    const b = document.getElementById("btn-select");
+    if (b) b.click();
+  };
+
+  next.onclick = () => {
+    const b = document.getElementById("calc-btn");
+    if (b) b.click();
+  };
+}
+
+function __initPercentNav(){
+  __wirePercentNavPills();
+}
+
 </script>
 
 
@@ -13114,7 +13128,7 @@ button.btn:active,
 
 <script id="build-inject">
 (() => {
-  const BUILD = "4.123";
+  const BUILD = "4.122";
   // Home label
   const hv = document.getElementById("home-version-label") || document.getElementById("app-version");
   if (hv) hv.textContent = BUILD;
