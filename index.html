@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- PWA / Manifest -->
-  <link rel="manifest" href="manifest.json?v=4.136">
+  <link rel="manifest" href="manifest.json?v=4.139">
   <meta name="theme-color" content="#000000">
 
   <!-- iOS specifico (iPhone / iPad) -->
@@ -8395,8 +8395,8 @@ button.login-submit {
 </style>
 
 
-<style id="build-4.136-race-nav-rebuild">
-/* ===== BUILD 4.136 — RACE percent: NAV pills rebuilt from scratch ===== */
+<style id="build-4.139-race-nav-rebuild">
+/* ===== BUILD 4.139 — RACE percent: NAV pills rebuilt from scratch ===== */
 #race-percent-header.bikers-glass-header{
   display:flex !important;
   flex-direction:column !important;
@@ -8447,8 +8447,8 @@ button.login-submit {
 </style>
 
 
-<style id="build-4.136-info-header-pills">
-/* ===== BUILD 4.136 — INFO GARA: copy approved header/pills design ===== */
+<style id="build-4.139-info-header-pills">
+/* ===== BUILD 4.139 — INFO GARA: copy approved header/pills design ===== */
 #race-info-header {
   display:flex !important;
   flex-direction:column !important;
@@ -8512,8 +8512,8 @@ button.login-submit {
 </style>
 
 
-<style id="build-4.136-raceinfo-header-pills">
-/* ===== BUILD 4.136 — RACEINFO: copy approved title+pills design ===== */
+<style id="build-4.139-raceinfo-header-pills">
+/* ===== BUILD 4.139 — RACEINFO: copy approved title+pills design ===== */
 #race-info-container #raceinfo-header{
   display:flex !important;
   flex-direction:column !important;
@@ -8578,7 +8578,7 @@ body.raceinfo-mode #btn-select, body.raceinfo-mode #calc-btn{
 </style>
 
 
-<style id="build-4.136-raceinfo-nav">
+<style id="build-4.139-raceinfo-nav">
 #race-info-container > .race-nav-pills{
   display:flex;
   justify-content:center;
@@ -8602,6 +8602,81 @@ body.raceinfo-mode #btn-select, body.raceinfo-mode #calc-btn{
 }
 </style>
 
+
+<style id="build-4.139-results-buttons">
+/* BUILD 4.139: Classifica -> solo Reset + Invia dati, centrati in basso */
+body.results-mode #main-buttons{
+  justify-content:center !important;
+  gap:14px !important;
+  align-items:center !important;
+}
+body.results-mode #main-buttons .btn{
+  max-width: 260px;
+}
+</style>
+
+
+<style id="build-4.139-home-build-badge">
+/* BUILD 4.139: show build number in Home (no date) */
+#home-build.home-build-badge{
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+body:not(.home-mode) #home-build.home-build-badge{
+  display:none !important;
+}
+</style>
+
+
+<style id="build-4.139-results-clean-buttons">
+/* BUILD 4.139: Classifica (results) — lascia SOLO Reset + Invia dati, in basso e centrati */
+body.results-mode #btn-db,
+body.results-mode #btn-select,
+body.results-mode #btn-gara,
+body.results-mode #calc-btn{
+  display:none !important;
+  visibility:hidden !important;
+}
+
+/* barra bottoni: fissa in basso, centrata */
+body.results-mode #main-buttons{
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 14px !important;
+  width: 100% !important;
+  padding: 0 16px !important;
+  display:flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 16px !important;
+  z-index: 9999 !important;
+}
+
+/* solo i due bottoni */
+body.results-mode #btn-reset,
+body.results-mode #save-race-button{
+  display:block !important;
+  flex: 0 0 auto !important;
+  width: 160px !important;
+  height: 64px !important;
+  border-radius: 999px !important;
+  padding: 0 !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+}
+</style>
+
 </head>
 
 
@@ -8611,6 +8686,7 @@ body.raceinfo-mode #btn-select, body.raceinfo-mode #calc-btn{
 
 
 <body>
+<div id="home-build" class="home-build-badge">4.139</div>
 
 <!-- CRS SCORE GLOBAL BANNER -->
 <div id="global-banner">
@@ -9056,7 +9132,7 @@ body.raceinfo-mode #btn-select, body.raceinfo-mode #calc-btn{
 <script>
 "use strict";
 
-const APP_VERSION = "4.136";
+const APP_VERSION = "4.139";
 const BUILD_DATE = "";
 const API_URL = "https://script.google.com/macros/s/AKfycbxon71F47wVkq1DFK7DBqQ2-j90ZTevoKOWEpE6h8DEbE5pW4eAl0GvC6gbTGXQp-_1sA/exec";
 
@@ -10016,14 +10092,16 @@ function updateButtonsForView(mode) {
   } else if (mode === "results") {
     // Bottoni risultati: affiancati, più alti e a pillola
     mainButtons.style.flexDirection = "row";
-    mainButtons.style.justifyContent = "space-between";
+    mainButtons.style.justifyContent = "center";
+    mainButtons.style.gap = "14px";
+    mainButtons.style.alignItems = "center";
 
     if (btnReset) {
       btnReset.style.display = "block";
       btnReset.style.background = "#FDE000";
       btnReset.style.color = "#111";
       btnReset.style.flex = "1";
-      btnReset.style.marginRight = "6px";
+      btnReset.style.marginRight = "0";
       btnReset.style.borderRadius = "999px"; // pillola
       btnReset.style.padding = "24px";      // altezza doppia
       btnReset.style.fontSize = "20px";     // testo più grande
@@ -10033,7 +10111,7 @@ function updateButtonsForView(mode) {
       saveRaceButton.style.background = "#CC0000";
       saveRaceButton.style.color = "#fff";
       saveRaceButton.style.flex = "1";
-      saveRaceButton.style.marginLeft = "6px";
+      saveRaceButton.style.marginLeft = "0";
       saveRaceButton.style.borderRadius = "999px"; // pillola
       saveRaceButton.style.padding = "24px";      // altezza doppia
       saveRaceButton.style.fontSize = "20px";     // testo più grande
@@ -10064,6 +10142,7 @@ function showView(mode) {
   // View-specific body classes (safe toggles)
   document.body.classList.toggle("home-mode", mode === "home");
   document.body.classList.toggle("raceinfo-mode", mode === "raceinfo");
+  document.body.classList.toggle("results-mode", mode === "results");
 
   if (homeView) homeView.style.display = (mode === "home") ? "flex" : "none";
 
@@ -12916,7 +12995,7 @@ function __initPercentNav(){
 }
 
 
-/* ===== INFO GARA — header title + NAV pills (build 4.136) ===== */
+/* ===== INFO GARA — header title + NAV pills (build 4.139) ===== */
 function __ensureInfoHeaderUi(){
   const hdr = document.getElementById("race-info-header");
   if (!hdr) return;
@@ -12978,7 +13057,7 @@ function __ensureInfoHeaderUi(){
 }
 
 
-/* ===== RACEINFO — header title + NAV pills (build 4.136) ===== */
+/* ===== RACEINFO — header title + NAV pills (build 4.139) ===== */
 function __ensureRaceInfoHeaderUi(){
   const cont = document.getElementById("race-info-container");
   if (!cont) return;
@@ -13036,7 +13115,7 @@ function __ensureRaceInfoHeaderUi(){
 }
 
 
-/* ===== RACEINFO NAV pills (build 4.136) ===== */
+/* ===== RACEINFO NAV pills (build 4.139) ===== */
 function __ensureRaceInfoNav(){
   const cont = document.getElementById("race-info-container");
   if (!cont) return;
@@ -13063,6 +13142,13 @@ function __ensureRaceInfoNav(){
   // insert at top
   cont.insertBefore(navWrap, cont.firstChild);
 }
+
+
+/* Sync Home build badge */
+document.addEventListener("DOMContentLoaded", () => {
+  const el = document.getElementById("home-build");
+  if (el && typeof APP_VERSION !== "undefined") el.textContent = APP_VERSION;
+});
 
 </script>
 
