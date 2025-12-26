@@ -1,81 +1,124 @@
-const CACHE_NAME = "CRS_4.141";
-const FILES_TO_CACHE = [
-  "./",
-  "./index.html",
-  "./manifest.json",
-  "./crs-icon-192.png",
-  "./crs-icon-512.png",
-  "./crs-icon.png",
-  "./bg-track.jpg",
-  "./crs-banner.png"
+/* CRS_4.142 */
+'use strict';
+
+const BUILD = 'CRS_4.142';
+const CACHE_NAME = `crs-cache-${BUILD}`;
+const HTML_CACHE = `crs-html-${BUILD}`;
+const ASSET_CACHE = `crs-assets-${BUILD}`;
+
+// Files we want offline (keep minimal to reduce iOS cache weirdness)
+const CORE_ASSETS = [
+  './',
+  './index.html',
+  './manifest.json',
+  './icons/icon-192.png',
+  './icons/icon-512.png'
 ];
 
-self.addEventListener("message", (event) => {
-  if (event.data && event.data.type === "SKIP_WAITING") {
+// Heuristic: treat these as API and avoid caching
+function isApiRequest(url) {
+  // same-origin API path patterns (edit as needed)
+  return url.pathname.startsWith('/api/')
+    || url.pathname.includes('/api')
+    || url.pathname.endsWith('.php')
+    || url.pathname.endsWith('.json') && url.pathname.includes('/api');
+}
+
+self.addEventListener('install', (event) => {
+  self.skipWaiting();
+  event.waitUntil((async () => {
+    // Precache core
+    const cache = await caches.open(ASSET_CACHE);
+    await cache.addAll(CORE_ASSETS.map(u => new Request(u, { cache: 'reload' })));
+  })());
+});
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil((async () => {
+    // Claim clients so the new SW controls immediately
+    await self.clients.claim();
+
+    // Cleanup old caches
+    const keys = await caches.keys();
+    await Promise.all(
+      keys
+        .filter(k => k.startsWith('crs-') && ![CACHE_NAME, HTML_CACHE, ASSET_CACHE].includes(k))
+        .map(k => caches.delete(k))
+    );
+  })());
+});
+
+self.addEventListener('message', (event) => {
+  if (!event.data) return;
+  if (event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
 });
 
-self.addEventListener("install", (event) => {
-  event.waitUntil((async () => {
-    const cache = await caches.open(CACHE_NAME);
-    await cache.addAll(FILES_TO_CACHE);
-  })());
-  self.skipWaiting();
-});
+// Network-first for navigations / HTML (index.html)
+async function networkFirst(request) {
+  const cache = await caches.open(HTML_CACHE);
+  try {
+    const fresh = await fetch(request, {
+      cache: 'no-store' // important for iOS aggressive caching
+    });
+    // Cache only successful basic responses
+    if (fresh && fresh.ok) {
+      cache.put(request, fresh.clone());
+    }
+    return fresh;
+  } catch (err) {
+    const cached = await cache.match(request, { ignoreSearch: true });
+    if (cached) return cached;
+    // fallback to cached index for SPA-like navigations
+    const fallback = await cache.match('./index.html', { ignoreSearch: true });
+    return fallback || Response.error();
+  }
+}
 
-self.addEventListener("activate", (event) => {
-  event.waitUntil((async () => {
-    // Clean old caches
-    const keys = await caches.keys();
-    await Promise.all(keys.map((k) => (k !== CACHE_NAME ? caches.delete(k) : Promise.resolve())));
-    await self.clients.claim();
-    // Nudge clients to reload
-    const clients = await self.clients.matchAll({ type: "window", includeUncontrolled: true });
-    clients.forEach((c) => c.postMessage({ type: "RELOAD" }));
-  })());
-});
+// Stale-while-revalidate for static assets
+async function staleWhileRevalidate(request) {
+  const cache = await caches.open(ASSET_CACHE);
+  const cached = await cache.match(request, { ignoreSearch: true });
+  const fetchPromise = fetch(request).then((resp) => {
+    if (resp && resp.ok && resp.type === 'basic') {
+      cache.put(request, resp.clone());
+    }
+    return resp;
+  }).catch(() => null);
 
-self.addEventListener("fetch", (event) => {
+  return cached || (await fetchPromise) || Response.error();
+}
+
+self.addEventListener('fetch', (event) => {
   const req = event.request;
+
+  // Only handle GET
+  if (req.method !== 'GET') return;
+
   const url = new URL(req.url);
 
-  // Never cache API / dynamic endpoints
-  if (url.hostname.includes("script.google.com")) return;
-
-  // Network-first for navigations (SPA) + index.html, with no-store to bypass iOS cache
-  if (req.mode === "navigate" || url.pathname.endsWith("/index.html") || url.pathname.endsWith("index.html")) {
-    event.respondWith((async () => {
-      try {
-        const fresh = await fetch(req, { cache: "no-store" });
-        const cache = await caches.open(CACHE_NAME);
-        cache.put("./index.html", fresh.clone());
-        return fresh;
-      } catch (e) {
-        const cache = await caches.open(CACHE_NAME);
-        const cached = await cache.match("./index.html");
-        return cached || new Response("Offline", { status: 503, headers: { "Content-Type": "text/plain" } });
-      }
-    })());
+  // Avoid caching cross-origin and APIs
+  if (url.origin !== self.location.origin) {
+    return; // let it pass-through
+  }
+  if (isApiRequest(url)) {
+    // Always network for API (no cache)
+    event.respondWith(fetch(req));
     return;
   }
 
-  // Cache-first for static assets (same-origin)
-  if (url.origin === location.origin) {
-    event.respondWith((async () => {
-      const cache = await caches.open(CACHE_NAME);
-      const cached = await cache.match(req);
-      if (cached) return cached;
-      try {
-        const fresh = await fetch(req);
-        if (fresh && fresh.ok && (fresh.type === "basic" || fresh.type === "cors")) {
-          cache.put(req, fresh.clone());
-        }
-        return fresh;
-      } catch (e) {
-        return cached || new Response("Offline", { status: 503 });
-      }
-    })());
+  // Network-first for navigations (includes opening from Home Screen)
+  if (req.mode === 'navigate' || (req.headers.get('accept') || '').includes('text/html')) {
+    // Always use a normalized request for index.html
+    const navReq = new Request('./index.html', {
+      headers: req.headers,
+      cache: 'no-store'
+    });
+    event.respondWith(networkFirst(navReq));
     return;
   }
+
+  // For static assets: SWR
+  event.respondWith(staleWhileRevalidate(req));
 });
