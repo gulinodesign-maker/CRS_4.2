@@ -1,7 +1,7 @@
-/* CRS_4.145 */
+/* CRS_4.146 */
 'use strict';
 
-const BUILD = 'CRS_4.145';
+const BUILD = 'CRS_4.146';
 const CACHE_NAME = `crs-cache-${BUILD}`;
 const HTML_CACHE = `crs-html-${BUILD}`;
 const ASSET_CACHE = `crs-assets-${BUILD}`;
