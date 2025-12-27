@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- PWA / Manifest -->
-  <link rel="manifest" href="manifest.json?v=CRS_4.145">
+  <link rel="manifest" href="manifest.json?v=CRS_4.149">
   <meta name="theme-color" content="#000000">
 
   <!-- iOS specifico (iPhone / iPad) -->
@@ -8313,7 +8313,7 @@ body.results-mode #save-race-button{
 
 
 <style id="hide-bottom-bars">
-/* BUILD CRS_4.145 – remove bottom red tabs */
+/* BUILD CRS_4.149 – remove bottom red tabs */
 #main-buttons,
 .main-buttons,
 #calc-btn,
@@ -8456,7 +8456,7 @@ body.results-mode #save-race-button{
       </div>
 
       <div class="tsb-right">
-        <div id="version-label">CRS_4.145</div>
+        <div id="version-label">CRS_4.149</div>
       </div>
     </div>
   </div>
@@ -8777,7 +8777,7 @@ body.results-mode #save-race-button{
 <script>
 "use strict";
 
-const APP_VERSION = "CRS_4.148";
+const APP_VERSION = "4.143";
 const BUILD_DATE = "";
 const API_URL = "https://script.google.com/macros/s/AKfycbxon71F47wVkq1DFK7DBqQ2-j90ZTevoKOWEpE6h8DEbE5pW4eAl0GvC6gbTGXQp-_1sA/exec";
 
@@ -12076,30 +12076,7 @@ document.addEventListener("keydown", (e) => {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
-      const reg = await (async () => {
-  try{
-    const reg = await navigator.serviceWorker.register(`service-worker.js?v=${APP_VERSION}`, { updateViaCache: 'none' });
-
-    // Force an update check on every launch (helps iOS home-screen apps)
-    try{ await reg.update(); }catch(e){}
-
-    // If there's already a waiting SW, activate it now
-    if (reg.waiting) {
-      reg.waiting.postMessage({ type: 'SKIP_WAITING' });
-    }
-
-    // When a new SW is found, ask it to skip waiting when installed
-    reg.addEventListener('updatefound', () => {
-      const sw = reg.installing;
-      if (!sw) return;
-      sw.addEventListener('statechange', () => {
-        if (sw.state === 'installed' && navigator.serviceWorker.controller) {
-          sw.postMessage({ type: 'SKIP_WAITING' });
-        }
-      });
-    });
-  }catch(e){}
-})();
+      const reg = await navigator.serviceWorker.register(`service-worker.js?v=${APP_VERSION}`);
       if (reg && reg.update) reg.update().catch(() => {});
       reg.addEventListener("updatefound", () => {
         const nw = reg.installing;
@@ -12708,7 +12685,7 @@ function __initPercentNav(){
 }
 
 
-/* ===== INFO GARA — header title + NAV pills (build 4.148) ===== */
+/* ===== INFO GARA — header title + NAV pills (build 4.140) ===== */
 function __ensureInfoHeaderUi(){
   const hdr = document.getElementById("race-info-header");
   if (!hdr) return;
@@ -12770,7 +12747,7 @@ function __ensureInfoHeaderUi(){
 }
 
 
-/* ===== RACEINFO — header title + NAV pills (build 4.148) ===== */
+/* ===== RACEINFO — header title + NAV pills (build 4.140) ===== */
 function __ensureRaceInfoHeaderUi(){
   const cont = document.getElementById("race-info-container");
   if (!cont) return;
@@ -12828,7 +12805,7 @@ function __ensureRaceInfoHeaderUi(){
 }
 
 
-/* ===== RACEINFO NAV pills (build 4.148) ===== */
+/* ===== RACEINFO NAV pills (build 4.140) ===== */
 function __ensureRaceInfoNav(){
   const cont = document.getElementById("race-info-container");
   if (!cont) return;
@@ -13078,7 +13055,7 @@ function bpSetCompareControlsVisibility() {
   --lg-pill-border: rgba(255,255,255,0.22);
   --lg-pill-shadow: 0 10px 24px rgba(0,0,0,0.34);
   --lg-pill-bg-rgb: 255,255,255;     /* default "vetro" */
-  --lg-pill-bg-a: 0.14;
+  --lg-pill-bg-a: 0.05;
 }
 
 /* Target "pillole" principali (bottoni + pill class) */
@@ -13146,7 +13123,7 @@ button.btn:active,
 .bp-return-btn,
 #race-calendar button.has-race{ 
   --lg-pill-bg-rgb: var(--lg-red-rgb);
-  --lg-pill-bg-a: 0.32;
+  --lg-pill-bg-a: 0.05;
   color: #fff !important;
 }
 
@@ -13154,7 +13131,7 @@ button.btn:active,
 #bp-compare-go,
 #race-calendar button.selected{ 
   --lg-pill-bg-rgb: var(--lg-yellow-rgb);
-  --lg-pill-bg-a: 0.30;
+  --lg-pill-bg-a: 0.05;
   color: #111827 !important;
 }
 
@@ -13164,20 +13141,20 @@ button.btn:active,
 .race-pill,
 #race-calendar button{ 
   --lg-pill-bg-rgb: var(--lg-slate-rgb);
-  --lg-pill-bg-a: 0.20;
+  --lg-pill-bg-a: 0.05;
 }
 
 /* Compare toggle "dark" quando non attivo */
 #bp-compare-toggle{ 
   --lg-pill-bg-rgb: var(--lg-dark-rgb);
-  --lg-pill-bg-a: 0.28;
+  --lg-pill-bg-a: 0.05;
   color: #fff !important;
 }
 
 /* Compare toggle attivo: rosso vetro */
 #bp-compare-toggle.active{ 
   --lg-pill-bg-rgb: var(--lg-red-rgb);
-  --lg-pill-bg-a: 0.30;
+  --lg-pill-bg-a: 0.05;
   color: #fff !important;
 }
 
@@ -13234,7 +13211,7 @@ button.btn:active,
 
 <script id="build-inject">
 (() => {
-  const BUILD = "4.148";
+  const BUILD = "4.140";
   // Home label
   const hv = document.getElementById("home-version-label") || document.getElementById("app-version");
   if (hv) hv.textContent = BUILD;

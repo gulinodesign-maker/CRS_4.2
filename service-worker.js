@@ -1,7 +1,7 @@
-/* CRS_4.148 */
+/* CRS_4.149 */
 'use strict';
 
-const BUILD = 'CRS_4.148';
+const BUILD = 'CRS_4.149';
 const CACHE_NAME = `crs-cache-${BUILD}`;
 const HTML_CACHE = `crs-html-${BUILD}`;
 const ASSET_CACHE = `crs-assets-${BUILD}`;
@@ -14,7 +14,7 @@ const CORE_ASSETS = [
   './bg-track.jpg',
   './crs-icon.png',
   './icons/icon-192.png',
-  './icons/icon-512.png',
+  './icons/icon-512.png'
 ];
 
 // Heuristic: treat these as API and avoid caching

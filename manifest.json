@@ -1,7 +1,7 @@
 {
   "name": "CRS Score",
   "short_name": "CRS",
-  "start_url": "./?v=CRS_4.148",
+  "start_url": "./?v=CRS_4.149",
   "scope": "./",
   "display": "standalone",
   "background_color": "#0f0f12",
