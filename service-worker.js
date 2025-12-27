@@ -1,7 +1,7 @@
-/* CRS_4.149 */
+/* CRS_4.150 */
 'use strict';
 
-const BUILD = 'CRS_4.149';
+const BUILD = 'CRS_4.150';
 const CACHE_NAME = `crs-cache-${BUILD}`;
 const HTML_CACHE = `crs-html-${BUILD}`;
 const ASSET_CACHE = `crs-assets-${BUILD}`;
@@ -12,6 +12,7 @@ const CORE_ASSETS = [
   './index.html',
   './manifest.json',
   './bg-track.jpg',
+  './bg-track.jpeg',
   './crs-icon.png',
   './icons/icon-192.png',
   './icons/icon-512.png'

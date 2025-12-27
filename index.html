@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- PWA / Manifest -->
-  <link rel="manifest" href="manifest.json?v=CRS_4.149">
+  <link rel="manifest" href="manifest.json?v=CRS_4.150">
   <meta name="theme-color" content="#000000">
 
   <!-- iOS specifico (iPhone / iPad) -->
@@ -8313,7 +8313,7 @@ body.results-mode #save-race-button{
 
 
 <style id="hide-bottom-bars">
-/* BUILD CRS_4.149 – remove bottom red tabs */
+/* BUILD CRS_4.150 – remove bottom red tabs */
 #main-buttons,
 .main-buttons,
 #calc-btn,
@@ -8456,7 +8456,7 @@ body.results-mode #save-race-button{
       </div>
 
       <div class="tsb-right">
-        <div id="version-label">CRS_4.149</div>
+        <div id="version-label">CRS_4.150</div>
       </div>
     </div>
   </div>
@@ -8777,7 +8777,8 @@ body.results-mode #save-race-button{
 <script>
 "use strict";
 
-const APP_VERSION = "4.143";
+const APP_VERSION = "CRS_4.150";
+const APP_BUILD = "4.150";
 const BUILD_DATE = "";
 const API_URL = "https://script.google.com/macros/s/AKfycbxon71F47wVkq1DFK7DBqQ2-j90ZTevoKOWEpE6h8DEbE5pW4eAl0GvC6gbTGXQp-_1sA/exec";
 
@@ -12076,7 +12077,7 @@ document.addEventListener("keydown", (e) => {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
-      const reg = await navigator.serviceWorker.register(`service-worker.js?v=${APP_VERSION}`);
+      const reg = await navigator.serviceWorker.register(`service-worker.js?v=${APP_VERSION}`, { updateViaCache: 'none' });
       if (reg && reg.update) reg.update().catch(() => {});
       reg.addEventListener("updatefound", () => {
         const nw = reg.installing;
@@ -13211,7 +13212,7 @@ button.btn:active,
 
 <script id="build-inject">
 (() => {
-  const BUILD = "4.140";
+  const BUILD = (typeof APP_BUILD !== "undefined" ? APP_BUILD : "4.150");
   // Home label
   const hv = document.getElementById("home-version-label") || document.getElementById("app-version");
   if (hv) hv.textContent = BUILD;
